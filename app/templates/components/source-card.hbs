@@ -1,0 +1,15 @@
+<PaperCard as |Card|>
+  <Card.title as |Title|>
+    <Title.text as |Text|>
+      <Text.headline>{{@source.title}}</Text.headline>
+      <Text.subhead>{{@source.author.name}}</Text.subhead>
+    </Title.text>
+  </Card.title>
+  <Card.actions>
+    <PaperButton
+      @onClick={{action this.goToSourceDetail}}
+    >
+      Details
+    </PaperButton>
+  </Card.actions>
+</PaperCard>
