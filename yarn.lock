@@ -775,6 +775,18 @@
     ember-cli-babel-plugin-helpers "^1.0.0"
     ember-cli-version-checker "^2.1.0"
 
+"@ember/jquery@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@ember/jquery/-/jquery-0.6.0.tgz#5fe9d39b15c9d47fe495302b2a6176059a6267cd"
+  integrity sha512-O81+JslKE7bsV+5wrhXEmBU1Bpte2u9bm6MLIoRYePvWDo50l7llDW1RM38l1KkeSj/s7iXTsviZ4uunhIcKow==
+  dependencies:
+    broccoli-funnel "^2.0.1"
+    broccoli-merge-trees "^3.0.2"
+    ember-cli-babel "^7.4.0"
+    ember-cli-version-checker "^3.0.0"
+    jquery "^3.3.1"
+    resolve "^1.10.0"
+
 "@ember/optional-features@^0.7.0":
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/@ember/optional-features/-/optional-features-0.7.0.tgz#f65a858007020ddfb8342f586112750c32abd2d9"
@@ -3822,7 +3834,7 @@ ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6
     ember-cli-version-checker "^2.1.2"
     semver "^5.5.0"
 
-ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.4, ember-cli-babel@^7.2.0, ember-cli-babel@^7.4.3, ember-cli-babel@^7.5.0, ember-cli-babel@^7.6.0:
+ember-cli-babel@^7.0.0, ember-cli-babel@^7.1.4, ember-cli-babel@^7.2.0, ember-cli-babel@^7.4.0, ember-cli-babel@^7.4.3, ember-cli-babel@^7.5.0, ember-cli-babel@^7.6.0:
   version "7.6.0"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-7.6.0.tgz#2e7f1df888fb62eb54d170defce4b6c536e8dfd3"
   integrity sha512-2m400ZW9c4EE343g/j1U7beJgjJezTdDCgXM2koHdhpLlZB1Kz7iQw8S+t8gzXGwSGXlf7C7v0RHxP1/bo8frA==
