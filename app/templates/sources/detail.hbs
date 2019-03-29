@@ -1,0 +1,22 @@
+<BackButton />
+
+<PaperCard as |Card|>
+  <Card.title as |Title|>
+    <Title.text as |Text|>
+      <Text.headline>{{this.model.title}}</Text.headline>
+      <Text.subhead>{{this.model.author.name}}</Text.subhead>
+    </Title.text>
+  </Card.title>
+  <Card.content>
+    <PaperList>
+      {{#each this.model.quotes as |quote|}}
+        <PaperItem>
+          <div class="md-list-item-text">
+            <h3>{{quote.text}}</h3>
+            <h4>{{quote.idea.summary}}</h4>
+          </div>
+        </PaperItem>
+      {{/each}}
+    </PaperList>
+  </Card.content>
+</PaperCard>
