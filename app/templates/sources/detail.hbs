@@ -1,0 +1,21 @@
+<BackButton @to="sources" />
+
+<PaperCard as |Card|>
+  <Card.title as |Title|>
+    <Title.text as |Text|>
+      <Text.headline>{{this.model.title}}</Text.headline>
+      <Text.subhead>{{this.model.author.name}}</Text.subhead>
+    </Title.text>
+  </Card.title>
+</PaperCard>
+
+{{#each this.model.quotes as |quote|}}
+  <PaperCard as |Card|>
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>{{quote.text}}</Text.headline>
+        <Text.subhead>{{quote.idea.summary}}</Text.subhead>
+      </Title.text>
+    </Card.title>
+  </PaperCard>
+{{/each}}

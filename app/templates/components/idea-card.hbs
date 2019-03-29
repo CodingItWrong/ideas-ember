@@ -1,0 +1,12 @@
+<PaperCard as |Card|>
+  <Card.title as |Title|>
+    <Title.text as |Text|>
+      <Text.headline>{{@idea.summary}}</Text.headline>
+    </Title.text>
+  </Card.title>
+  <Card.actions>
+    <NavButton @to="ideas" @id={{@idea.id}}>
+      Details
+    </NavButton>
+  </Card.actions>
+</PaperCard>
