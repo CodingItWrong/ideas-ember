@@ -6,8 +6,8 @@
     </Title.text>
   </Card.title>
   <Card.actions>
-    <PaperButton @onClick={{this.goToSourceDetail}}>
+    <NavButton @to="sources.detail" @id={{@source.id}}>
       Details
-    </PaperButton>
+    </NavButton>
   </Card.actions>
 </PaperCard>

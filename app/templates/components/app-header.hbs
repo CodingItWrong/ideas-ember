@@ -1,7 +1,17 @@
 <PaperToolbar>
   <PaperToolbarTools>
-    <PaperButton @onClick={{this.goToRoot}}>
+    <NavButton @to="index">
       Ideas
-    </PaperButton>
+    </NavButton>
+
+    <span class="flex"></span>
+
+    <NavButton @to="index">
+      Ideas
+    </NavButton>
+
+    <NavButton @to="sources">
+      Sources
+    </NavButton>
   </PaperToolbarTools>
 </PaperToolbar>
