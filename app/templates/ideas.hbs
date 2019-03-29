@@ -6,17 +6,18 @@
       <Text.headline>{{this.model.summary}}</Text.headline>
     </Title.text>
   </Card.title>
-  <Card.content>
-    <PaperList>
-      {{#each this.model.quotes as |quote|}}
-        <PaperItem>
-          <div class="md-list-item-text">
-            <h3>{{quote.text}}</h3>
-            <h4>{{quote.source.author.name}}</h4>
-            <p>{{quote.source.title}}</p>
-          </div>
-        </PaperItem>
-      {{/each}}
-    </PaperList>
-  </Card.content>
 </PaperCard>
+
+{{#each this.model.quotes as |quote|}}
+  <PaperCard as |Card|>
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>{{quote.text}}</Text.headline>
+        <Text.subhead>
+          {{quote.source.author.name}},
+          {{quote.source.title}}
+        </Text.subhead>
+      </Title.text>
+    </Card.title>
+  </PaperCard>
+{{/each}}
