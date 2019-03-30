@@ -9,15 +9,8 @@
 </PaperCard>
 
 {{#each this.model.quotes as |quote|}}
-  <PaperCard as |Card|>
-    <Card.title as |Title|>
-      <Title.text as |Text|>
-        <Text.headline>{{quote.text}}</Text.headline>
-        <Text.subhead>
-          {{quote.source.author.name}},
-          {{quote.source.title}}
-        </Text.subhead>
-      </Title.text>
-    </Card.title>
-  </PaperCard>
+  <QuoteCard @quote={{quote}}>
+    {{quote.source.author.name}},
+    {{quote.source.title}}
+  </QuoteCard>
 {{/each}}
