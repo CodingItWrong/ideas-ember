@@ -14,7 +14,9 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    camelcase: 'off', // for destructuring underscored values
+  },
   overrides: [
     // node files
     {
