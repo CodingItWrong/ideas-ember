@@ -1,0 +1,25 @@
+<PaperCard as |Card|>
+  <PaperForm @onSubmit={{this.createIdea}} as |Form|>
+    <Card.content>
+      <div class="layout-col layout-gt-xs-row">
+        <div class="flex-gt-xs-80">
+          <Form.input
+            @textarea={{true}}
+            @block={{true}}
+            @label="New Idea"
+            @value={{this.summary}}
+            @onChange={{action (mut this.summary)}}
+          />
+        </div>
+        <div class="flex-gt-xs-20">
+          <Form.submit-button
+            @raised={{true}}
+            @primary={{true}}
+          >
+            Save
+          </Form.submit-button>
+        </div>
+      </div>
+    </Card.content>
+  </PaperForm>
+</PaperCard>
