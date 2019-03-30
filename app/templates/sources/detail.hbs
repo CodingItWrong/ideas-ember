@@ -3,13 +3,13 @@
 <PaperCard as |Card|>
   <Card.title as |Title|>
     <Title.text as |Text|>
-      <Text.headline>{{this.model.title}}</Text.headline>
-      <Text.subhead>{{this.model.author.name}}</Text.subhead>
+      <Text.headline>{{this.model.source.title}}</Text.headline>
+      <Text.subhead>{{this.model.source.author.name}}</Text.subhead>
     </Title.text>
   </Card.title>
 </PaperCard>
 
-{{#each this.model.quotes as |quote|}}
+{{#each this.model.source.quotes as |quote|}}
   <PaperCard as |Card|>
     <Card.title as |Title|>
       <Title.text as |Text|>
