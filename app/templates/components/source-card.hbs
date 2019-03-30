@@ -2,7 +2,9 @@
   <Card.title as |Title|>
     <Title.text as |Text|>
       <Text.headline>{{@source.title}}</Text.headline>
-      <Text.subhead>{{@source.author.name}}</Text.subhead>
+      {{#if (has-block)}}
+        <Text.subhead>{{yield}}</Text.subhead>
+      {{/if}}
     </Title.text>
   </Card.title>
   <Card.actions>
