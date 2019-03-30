@@ -9,6 +9,11 @@
   </Card.title>
 </PaperCard>
 
+<NewQuoteForm
+  @ideas={{this.model.ideas}}
+  @source={{this.model.source}}
+/>
+
 {{#each this.model.source.quotes as |quote|}}
   <PaperCard as |Card|>
     <Card.title as |Title|>

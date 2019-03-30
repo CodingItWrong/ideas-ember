@@ -1,0 +1,25 @@
+<PaperCard as |Card|>
+  <PaperForm @onSubmit={{this.createQuote}} as |Form|>
+    <Card.content>
+      <Form.input
+        @textarea={{true}}
+        @block={{true}}
+        @label="New Quote"
+        @value={{this.text}}
+        @onChange={{action (mut this.text)}}
+      />
+      <select value={{this.idea.id}} onChange={{this.handleIdeaChange}}>
+        <option value="">(choose)</option>
+        {{#each @ideas as |idea|}}
+          <option value={{idea.id}}>{{idea.summary}}</option>
+        {{/each}}
+      </select>
+      <Form.submit-button
+        @raised={{true}}
+        @primary={{true}}
+      >
+        Save
+      </Form.submit-button>
+    </Card.content>
+  </PaperForm>
+</PaperCard>
