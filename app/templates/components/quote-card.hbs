@@ -1,0 +1,20 @@
+<PaperCard as |Card|>
+  <Card.title as |Title|>
+    <Title.text as |Text|>
+      <Text.headline>{{@quote.text}}</Text.headline>
+      <Text.subhead>
+        {{#if (has-block)}}
+          {{yield}}
+        {{else}}
+          {{@quote.source.author.name}},
+          {{@quote.source.title}}
+        {{/if}}
+      </Text.subhead>
+    </Title.text>
+  </Card.title>
+  <Card.actions>
+    <PaperButton @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </PaperButton>
+  </Card.actions>
+</PaperCard>

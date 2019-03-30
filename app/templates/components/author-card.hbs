@@ -1,14 +1,11 @@
 <PaperCard as |Card|>
   <Card.title as |Title|>
     <Title.text as |Text|>
-      <Text.headline>{{@source.title}}</Text.headline>
-      {{#if (has-block)}}
-        <Text.subhead>{{yield}}</Text.subhead>
-      {{/if}}
+      <Text.headline>{{@author.name}}</Text.headline>
     </Title.text>
   </Card.title>
   <Card.actions>
-    <NavButton @to="sources.detail" @id={{@source.id}}>
+    <NavButton @to="authors.detail" @id={{@author.id}}>
       Details
     </NavButton>
     <PaperButton @warn={{true}} @onClick={{this.delete}}>

@@ -3,19 +3,19 @@
 <PaperCard as |Card|>
   <Card.title as |Title|>
     <Title.text as |Text|>
-      <Text.headline>{{this.model.title}}</Text.headline>
-      <Text.subhead>{{this.model.author.name}}</Text.subhead>
+      <Text.headline>{{this.model.source.title}}</Text.headline>
+      <Text.subhead>{{this.model.source.author.name}}</Text.subhead>
     </Title.text>
   </Card.title>
 </PaperCard>
 
-{{#each this.model.quotes as |quote|}}
-  <PaperCard as |Card|>
-    <Card.title as |Title|>
-      <Title.text as |Text|>
-        <Text.headline>{{quote.text}}</Text.headline>
-        <Text.subhead>{{quote.idea.summary}}</Text.subhead>
-      </Title.text>
-    </Card.title>
-  </PaperCard>
+<NewQuoteForm
+  @ideas={{this.model.ideas}}
+  @source={{this.model.source}}
+/>
+
+{{#each this.model.source.quotes as |quote|}}
+  <QuoteCard @quote={{quote}}>
+    {{quote.idea.summary}}
+  </QuoteCard>
 {{/each}}

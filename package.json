@@ -37,7 +37,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.1",
     "ember-cli-uglify": "^2.1.0",
-    "ember-data": "github:emberjs/data#a61651df4b6c1e759cf308212b9272055cf4e9a9",
+    "ember-data": "github:emberjs/data#ccf43b41e8dbf51921b60e0c71f4b3bc4a22a325",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^2.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
