@@ -6,16 +6,22 @@
 
     <span class="flex"></span>
 
-    <NavButton @to="index">
-      Ideas
-    </NavButton>
+    {{#if this.session.isAuthenticated}}
+      <NavButton @to="index">
+        Ideas
+      </NavButton>
 
-    <NavButton @to="sources">
-      Sources
-    </NavButton>
+      <NavButton @to="sources">
+        Sources
+      </NavButton>
 
-    <NavButton @to="authors">
-      Authors
-    </NavButton>
+      <NavButton @to="authors">
+        Authors
+      </NavButton>
+
+      <PaperButton @onClick="logOut">
+        Log Out
+      </PaperButton>
+    {{/if}}
   </PaperToolbarTools>
 </PaperToolbar>

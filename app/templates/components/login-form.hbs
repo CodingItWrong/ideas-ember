@@ -1,0 +1,28 @@
+<PaperCard as |Card|>
+  <PaperForm @onSubmit={{this.logIn}} as |Form|>
+    <Card.content>
+      <p>{{this.errorMessage}}</p>
+      <Form.input
+        @block={{true}}
+        @label="Email"
+        @value={{this.email}}
+        @onChange={{action (mut this.email)}}
+      />
+      <Form.input
+        @block={{true}}
+        @type="password"
+        @label="Password"
+        @value={{this.password}}
+        @onChange={{action (mut this.password)}}
+      />
+    </Card.content>
+    <Card.actions>
+      <Form.submit-button
+        @raised={{true}}
+        @primary={{true}}
+      >
+        Log In
+      </Form.submit-button>
+    </Card.actions>
+  </PaperForm>
+</PaperCard>
