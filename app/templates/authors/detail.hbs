@@ -8,6 +8,8 @@
   </Card.title>
 </PaperCard>
 
+<NewSourceForm @author={{this.model}} />
+
 {{#each this.model.sources as |source|}}
   <SourceCard @source={{source}} />
 {{/each}}
