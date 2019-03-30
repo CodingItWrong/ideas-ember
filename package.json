@@ -44,6 +44,7 @@
     "ember-paper": "^1.0.0-beta.24",
     "ember-qunit": "^4.1.2",
     "ember-resolver": "^5.1.3",
+    "ember-simple-auth": "^1.8.2",
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/707a938e536cb921dbe80ee270c431d1b9717e38.tgz",
     "eslint-config-codingitwrong": "^0.1.4",
     "eslint-config-prettier": "^4.1.0",
