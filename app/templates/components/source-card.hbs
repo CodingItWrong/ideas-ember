@@ -11,5 +11,8 @@
     <NavButton @to="sources.detail" @id={{@source.id}}>
       Details
     </NavButton>
+    <PaperButton @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </PaperButton>
   </Card.actions>
 </PaperCard>
