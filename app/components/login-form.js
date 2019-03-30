@@ -7,8 +7,8 @@ export default class LoginFormComponent extends Component {
   @service session;
   @service router;
 
-  email = 'example@example.com';
-  password = 'password';
+  email = '';
+  password = '';
 
   @tracked
   errorMessage = '';
