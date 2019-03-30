@@ -9,7 +9,5 @@
 </PaperCard>
 
 {{#each this.model.sources as |source|}}
-  <SourceCard @source={{source}}>
-    {{quote.idea.summary}}
-  </SourceCard>
+  <SourceCard @source={{source}} />
 {{/each}}
