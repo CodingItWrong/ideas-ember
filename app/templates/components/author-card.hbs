@@ -8,5 +8,8 @@
     <NavButton @to="authors.detail" @id={{@author.id}}>
       Details
     </NavButton>
+    <PaperButton @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </PaperButton>
   </Card.actions>
 </PaperCard>
