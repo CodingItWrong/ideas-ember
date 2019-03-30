@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('authors', function() {
     this.route('detail', { path: '/:id' });
   });
+  this.route('login');
 });
 
 export default Router;
