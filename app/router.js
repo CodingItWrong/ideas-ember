@@ -11,7 +11,9 @@ Router.map(function() {
   this.route('sources', function() {
     this.route('detail', { path: '/:id' });
   });
-  this.route('authors', function() {});
+  this.route('authors', function() {
+    this.route('detail', { path: '/:id' });
+  });
 });
 
 export default Router;

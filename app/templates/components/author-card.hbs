@@ -4,4 +4,9 @@
       <Text.headline>{{@author.name}}</Text.headline>
     </Title.text>
   </Card.title>
+  <Card.actions>
+    <NavButton @to="authors.detail" @id={{@author.id}}>
+      Details
+    </NavButton>
+  </Card.actions>
 </PaperCard>
