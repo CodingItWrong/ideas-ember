@@ -7,21 +7,62 @@
     <span class="flex"></span>
 
     {{#if this.session.isAuthenticated}}
-      <NavButton @to="index">
-        Ideas
-      </NavButton>
+      <div class="hide-xs show-gt-xs">
+        <NavButton @to="index">
+          Ideas
+        </NavButton>
 
-      <NavButton @to="sources">
-        Sources
-      </NavButton>
+        <NavButton @to="sources">
+          Sources
+        </NavButton>
 
-      <NavButton @to="authors">
-        Authors
-      </NavButton>
+        <NavButton @to="authors">
+          Authors
+        </NavButton>
 
-      <PaperButton @onClick="logOut">
-        Log Out
-      </PaperButton>
+        <PaperButton @onClick={{this.logOut}}>
+          Log Out
+        </PaperButton>
+      </div>
+      <div class="show-xs hide-gt-xs">
+        <PaperButton
+          @iconButton={{true}}
+          @onClick={{action (mut this.showMenu) (not this.showMenu)}}
+        >
+          {{paper-icon "menu"}}
+        </PaperButton>
+      </div>
     {{/if}}
   </PaperToolbarTools>
 </PaperToolbar>
+
+{{#if this.showMenu}}
+  <div class="show-xs hide-gt-xs">
+    <PaperCard as |Card|>
+      <Card.content>
+        <PaperList>
+          <PaperItem>
+            <NavButton @to="index">
+              Ideas
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <NavButton @to="sources">
+              Sources
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <NavButton @to="authors">
+              Authors
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <PaperButton @onClick={{this.logOut}}>
+              Log Out
+            </PaperButton>
+          </PaperItem>
+        </PaperList>
+      </Card.content>
+    </PaperCard>
+  </div>
+{{/if}}
