@@ -9,13 +9,18 @@ export default class NewSourceFormComponent extends Component {
   @tracked
   title = '';
 
+  @tracked
+  url = '';
+
   @action
   async createSource() {
     const source = this.store.createRecord('source', {
       title: this.title,
+      url: this.url,
       author: this.args.author,
     });
     await source.save();
     this.title = '';
+    this.url = '';
   }
 }

@@ -1,7 +1,13 @@
 <PaperCard as |Card|>
   <Card.title as |Title|>
     <Title.text as |Text|>
-      <Text.headline>{{@source.title}}</Text.headline>
+      <Text.headline>
+        {{#if @source.url}}
+          <a href={{@source.url}} target="_blank">{{@source.title}}</a>
+        {{else}}
+          {{@source.title}}
+        {{/if}}
+      </Text.headline>
       {{#if (has-block)}}
         <Text.subhead>{{yield}}</Text.subhead>
       {{/if}}
