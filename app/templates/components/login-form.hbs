@@ -3,12 +3,14 @@
     <Card.content>
       <p>{{this.errorMessage}}</p>
       <Form.input
+        @passThru={{hash name="email"}}
         @block={{true}}
         @label="Email"
         @value={{this.email}}
         @onChange={{action (mut this.email)}}
       />
       <Form.input
+        @passThru={{hash name="password"}}
         @block={{true}}
         @type="password"
         @label="Password"
