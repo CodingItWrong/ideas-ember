@@ -8,6 +8,7 @@
             @label="New Source"
             @value={{this.title}}
             @onChange={{action (mut this.title)}}
+            @passThru={{hash autocapitalize="words"}}
           />
         </div>
         <div class="flex-gt-xs-20">

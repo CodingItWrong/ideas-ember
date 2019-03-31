@@ -7,6 +7,7 @@
         @label="New Quote"
         @value={{this.text}}
         @onChange={{action (mut this.text)}}
+        @passThru={{hash autocapitalize="sentences"}}
       />
       <div>
         <PaperSelect

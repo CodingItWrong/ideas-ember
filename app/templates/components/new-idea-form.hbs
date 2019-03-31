@@ -9,6 +9,7 @@
             @label="New Idea"
             @value={{this.summary}}
             @onChange={{action (mut this.summary)}}
+            @passThru={{hash autocapitalize="sentences"}}
           />
         </div>
         <div class="flex-gt-xs-20">
