@@ -10,16 +10,7 @@ export default class NewQuoteFormComponent extends Component {
   text = '';
 
   @tracked
-  ideaId = null;
-
-  @action
-  handleIdeaChange(event) {
-    this.ideaId = event.target.value;
-  }
-
-  get idea() {
-    return this.args.ideas.find(idea => idea.id === this.ideaId);
-  }
+  idea = null;
 
   @action
   async createQuote() {
@@ -31,6 +22,6 @@ export default class NewQuoteFormComponent extends Component {
     await quote.save();
 
     this.text = '';
-    this.ideaId = null;
+    this.idea = null;
   }
 }

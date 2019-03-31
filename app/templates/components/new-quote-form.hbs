@@ -8,12 +8,15 @@
         @value={{this.text}}
         @onChange={{action (mut this.text)}}
       />
-      <select value={{this.idea.id}} onChange={{this.handleIdeaChange}}>
-        <option value="">(choose)</option>
-        {{#each @ideas as |idea|}}
-          <option value={{idea.id}}>{{idea.summary}}</option>
-        {{/each}}
-      </select>
+      <PaperSelect
+        label="Idea"
+        @options={{@ideas}}
+        @selected={{this.idea}}
+        @onChange={{action (mut this.idea)}}
+        as |idea|
+      >
+        {{idea.summary}}
+      </PaperSelect>
       <Form.submit-button
         @raised={{true}}
         @primary={{true}}
