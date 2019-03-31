@@ -19,9 +19,13 @@ export default class NewQuoteFormComponent extends Component {
       idea: this.idea,
       text: this.text,
     });
-    await quote.save();
-
-    this.text = '';
-    this.idea = null;
+    try {
+      await quote.save();
+      this.text = '';
+      this.idea = null;
+    } catch (e) {
+      alert('An error occurred while saving this quote.');
+      console.error(e);
+    }
   }
 }
