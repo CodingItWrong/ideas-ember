@@ -4,6 +4,10 @@ import { action } from '@ember/object';
 export default class SourceCardComponent extends Component {
   @action
   delete() {
+    if (!confirm('Are you sure you want to delete this source?')) {
+      return;
+    }
+
     this.args.source.destroyRecord().catch(error => {
       console.error(error);
       alert(

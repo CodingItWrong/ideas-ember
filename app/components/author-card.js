@@ -4,6 +4,10 @@ import { action } from '@ember/object';
 export default class AuthorCardComponent extends Component {
   @action
   delete() {
+    if (!confirm('Are you sure you want to delete this author?')) {
+      return;
+    }
+
     this.args.author.destroyRecord().catch(error => {
       console.error(error);
       alert(
