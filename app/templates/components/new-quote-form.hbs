@@ -8,15 +8,18 @@
         @value={{this.text}}
         @onChange={{action (mut this.text)}}
       />
-      <PaperSelect
-        label="Idea"
-        @options={{@ideas}}
-        @selected={{this.idea}}
-        @onChange={{action (mut this.idea)}}
-        as |idea|
-      >
-        {{idea.summary}}
-      </PaperSelect>
+      <div>
+        <PaperSelect
+          @label="Idea"
+          @block={{true}}
+          @options={{@ideas}}
+          @selected={{this.idea}}
+          @onChange={{action (mut this.idea)}}
+          as |idea|
+        >
+          {{idea.summary}}
+        </PaperSelect>
+      </div>
       <Form.submit-button
         @raised={{true}}
         @primary={{true}}
