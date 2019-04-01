@@ -12,7 +12,37 @@
       </Text.subhead>
     </Title.text>
   </Card.title>
+  {{#if this.addingIdea}}
+    <Card.content>
+      <div>
+        <PaperSelect
+          @label="Idea"
+          @block={{true}}
+          @options={{@ideas}}
+          @selected={{this.idea}}
+          @onChange={{action (mut this.idea)}}
+          as |idea|
+        >
+          {{idea.summary}}
+        </PaperSelect>
+      </div>
+    </Card.content>
+  {{/if}}
   <Card.actions>
+    {{#if (not @quote.idea)}}
+      {{#if this.addingIdea}}
+        <PaperButton @onClick={{action (mut this.addingIdea) false}}>
+          Cancel
+        </PaperButton>
+        <PaperButton @onClick={{this.saveIdea}}>
+          Save Idea
+        </PaperButton>
+      {{else}}
+        <PaperButton @onClick={{action (mut this.addingIdea) true}}>
+          Add Idea
+        </PaperButton>
+      {{/if}}
+    {{/if}}
     <PaperButton @warn={{true}} @onClick={{this.delete}}>
       Delete
     </PaperButton>
