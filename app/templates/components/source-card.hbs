@@ -3,7 +3,7 @@
     <Title.text as |Text|>
       <Text.headline>
         {{#if @source.url}}
-          <a href={{@source.url}} target="_blank">{{@source.title}}</a>
+          <a href={{@source.url}} target="_blank" rel="noopener">{{@source.title}}</a>
         {{else}}
           {{@source.title}}
         {{/if}}
