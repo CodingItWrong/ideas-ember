@@ -14,18 +14,47 @@
   </Card.title>
   {{#if this.addingIdea}}
     <Card.content>
-      <div>
-        <PaperSelect
-          @label="Idea"
-          @block={{true}}
-          @options={{@ideas}}
-          @selected={{this.idea}}
-          @onChange={{action (mut this.idea)}}
-          as |idea|
-        >
-          {{idea.summary}}
-        </PaperSelect>
-      </div>
+      {{#if this.addingNewIdea}}
+        <div class="layout-col layout-gt-xs-row">
+          <div class="flex-sm-60 flex-gt-sm-70">
+            <PaperForm @onSubmit={{this.saveIdea}} as |Form|>
+              <Form.input
+                @type="text"
+                @placeholder="New Idea"
+                @block={{true}}
+                @value={{this.newIdeaSummary}}
+                @onChange={{action (mut this.newIdeaSummary)}}
+                @passThru={{hash autocapitalize="sentences"}}
+              />
+            </PaperForm>
+          </div>
+          <div class="flex-sm-40 flex-gt-sm-30">
+            <PaperButton @onClick={{action this.switchToExistingIdea}}>
+              Switch to Existing Idea
+            </PaperButton>
+          </div>
+        </div>
+      {{else}}
+        <div class="layout-col layout-gt-xs-row">
+          <div class="flex-sm-60 flex-gt-sm-70">
+            <PaperSelect
+              @label="Existing Idea"
+              @block={{true}}
+              @options={{@ideas}}
+              @selected={{this.idea}}
+              @onChange={{action (mut this.idea)}}
+              as |idea|
+            >
+              {{idea.summary}}
+            </PaperSelect>
+          </div>
+          <div class="flex-sm-40 flex-gt-sm-30">
+            <PaperButton @onClick={{action this.switchToNewIdea}}>
+              Switch to New Idea
+            </PaperButton>
+          </div>
+        </div>
+      {{/if}}
     </Card.content>
   {{/if}}
   <Card.actions>
