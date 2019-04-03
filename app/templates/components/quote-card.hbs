@@ -1,19 +1,19 @@
 <PaperCard as |Card|>
   <Card.title as |Title|>
     <Title.text as |Text|>
-      <Text.headline>{{@quote.text}}</Text.headline>
-      <Text.subhead>
+      <Text.headline>
         {{#if (has-block)}}
           {{yield}}
         {{else}}
           {{@quote.source.author.name}},
           {{@quote.source.title}}
         {{/if}}
-      </Text.subhead>
+      </Text.headline>
     </Title.text>
   </Card.title>
-  {{#if this.addingIdea}}
-    <Card.content>
+  <Card.content>
+    <p>{{@quote.text}}</p>
+    {{#if this.addingIdea}}
       {{#if this.addingNewIdea}}
         <div class="layout-col layout-gt-xs-row">
           <div class="flex-sm-60 flex-gt-sm-70">
@@ -55,8 +55,8 @@
           </div>
         </div>
       {{/if}}
-    </Card.content>
   {{/if}}
+  </Card.content>
   <Card.actions>
     {{#if (not @quote.idea)}}
       {{#if this.addingIdea}}
