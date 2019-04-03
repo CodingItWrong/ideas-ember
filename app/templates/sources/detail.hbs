@@ -11,11 +11,4 @@
 
 <NewQuoteForm @source={{this.model.source}} />
 
-{{#each this.model.source.quotes as |quote|}}
-  <QuoteCard
-    @quote={{quote}}
-    @ideas={{this.model.ideas}}
-  >
-    {{quote.idea.summary}}
-  </QuoteCard>
-{{/each}}
+<QuoteList @quotes={{this.model.source.quotes}} />

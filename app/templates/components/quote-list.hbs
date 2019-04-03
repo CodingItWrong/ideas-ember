@@ -1,0 +1,8 @@
+{{#each this.sortedQuotes as |quote|}}
+  <QuoteCard
+    @quote={{quote}}
+    @ideas={{this.model.ideas}}
+  >
+    {{quote.idea.summary}}
+  </QuoteCard>
+{{/each}}

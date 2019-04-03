@@ -1,5 +1,3 @@
 <NewAuthorForm />
 
-{{#each this.model as |author|}}
-  <AuthorCard @author={{author}} />
-{{/each}}
+<AuthorList @authors={{this.model}} />

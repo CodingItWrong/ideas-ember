@@ -1,5 +1,1 @@
-{{#each this.model as |source|}}
-  <SourceCard @source={{source}}>
-    {{source.author.name}}
-  </SourceCard>
-{{/each}}
+<SourceList @sources={{this.model}} />

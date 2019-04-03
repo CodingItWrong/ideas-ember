@@ -10,6 +10,4 @@
 
 <NewSourceForm @author={{this.model}} />
 
-{{#each this.model.sources as |source|}}
-  <SourceCard @source={{source}} />
-{{/each}}
+<SourceList @sources={{this.model.sources}} />

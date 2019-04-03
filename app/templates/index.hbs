@@ -1,5 +1,3 @@
 <NewIdeaForm />
 
-{{#each this.model as |idea|}}
-  <IdeaCard @idea={{idea}} />
-{{/each}}
+<IdeaList @ideas={{this.model}} />
