@@ -1,3 +1,7 @@
 $primary: 'yellow';
 
 @import 'ember-paper';
+
+.preserve-line-breaks {
+  white-space: pre-line;
+}
