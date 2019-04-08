@@ -5,11 +5,11 @@
     </Title.text>
   </Card.title>
   <Card.actions>
-    <NavButton @to="ideas" @id={{@idea.id}}>
-      Details
-    </NavButton>
     <PaperButton @warn={{true}} @onClick={{this.delete}}>
       Delete
     </PaperButton>
+    <NavButton @to="ideas" @id={{@idea.id}}>
+      Details
+    </NavButton>
   </Card.actions>
 </PaperCard>

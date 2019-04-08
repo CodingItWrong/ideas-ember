@@ -60,6 +60,9 @@
     {{/if}}
   </Card.content>
   <Card.actions>
+    <PaperButton @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </PaperButton>
     {{#if (not @quote.idea)}}
       {{#if this.addingIdea}}
         <PaperButton @onClick={{action (mut this.addingIdea) false}}>
@@ -74,8 +77,5 @@
         </PaperButton>
       {{/if}}
     {{/if}}
-    <PaperButton @warn={{true}} @onClick={{this.delete}}>
-      Delete
-    </PaperButton>
   </Card.actions>
 </PaperCard>
