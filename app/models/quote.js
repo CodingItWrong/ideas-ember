@@ -5,4 +5,8 @@ export default class QuoteModel extends Model {
   @attr() text;
   @belongsTo('source') source;
   @belongsTo('idea') idea;
+
+  get numericId() {
+    return Number(this.id);
+  }
 }
