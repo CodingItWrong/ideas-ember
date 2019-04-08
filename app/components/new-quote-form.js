@@ -7,7 +7,16 @@ export default class NewQuoteFormComponent extends Component {
   @service store;
 
   @tracked
-  text = '';
+  rawText = '';
+
+  get text() {
+    return this.rawText;
+  }
+
+  set text(value) {
+    const trimmedValue = value.replace(/\n*Excerpt From:.*/, '');
+    this.rawText = trimmedValue;
+  }
 
   @action
   async createQuote() {
