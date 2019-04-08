@@ -9,12 +9,14 @@
         @onChange={{action (mut this.text)}}
         @passThru={{hash autocapitalize="sentences"}}
       />
+    </Card.content>
+    <Card.actions>
       <Form.submit-button
         @raised={{true}}
         @primary={{true}}
       >
         Save
       </Form.submit-button>
-    </Card.content>
+    </Card.actions>
   </PaperForm>
 </PaperCard>

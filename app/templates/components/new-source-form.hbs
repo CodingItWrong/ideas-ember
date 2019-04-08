@@ -16,12 +16,14 @@
         @value={{this.url}}
         @onChange={{action (mut this.url)}}
       />
+    </Card.content>
+    <Card.actions>
       <Form.submit-button
         @raised={{true}}
         @primary={{true}}
       >
         Save
       </Form.submit-button>
-    </Card.content>
+    </Card.actions>
   </PaperForm>
 </PaperCard>
