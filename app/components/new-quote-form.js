@@ -14,7 +14,7 @@ export default class NewQuoteFormComponent extends Component {
   }
 
   set text(value) {
-    const trimmedValue = value.replace(/\n*Excerpt From:.*/, '');
+    const trimmedValue = value.replace(/\n*Excerpt From[\s\S]*/, '');
     this.rawText = trimmedValue;
   }
 
