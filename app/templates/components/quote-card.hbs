@@ -20,6 +20,8 @@
             <PaperForm @onSubmit={{this.saveIdea}} as |Form|>
               <Form.input
                 @type="text"
+                @textarea={{true}}
+                @block={{true}}
                 @placeholder="New Idea"
                 @block={{true}}
                 @value={{this.newIdeaSummary}}
