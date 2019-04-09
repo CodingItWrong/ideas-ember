@@ -4428,9 +4428,10 @@ ember-css-transitions@^0.1.15:
     ember-cli-babel "^6.16.0"
     ember-cli-requestanimationframe-polyfill "^0.0.1"
 
-"ember-data@github:emberjs/data#af0dee9dd72a70f10983406fba032543ecfb20ff":
-  version "3.9.0-canary"
-  resolved "https://codeload.github.com/emberjs/data/tar.gz/af0dee9dd72a70f10983406fba032543ecfb20ff"
+ember-data@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/ember-data/-/ember-data-3.9.0.tgz#9f0d55829e107c57307777bd5cf1e36b088d5c40"
+  integrity sha512-yU9ptLTX9nmHt8cSuQc5K2tdZFmj0oZIYUt2/TIk0yN9e21oJBI8eOYH2N7KJSxptLWqysCmDh0Vcqs2eZnWUw==
   dependencies:
     "@ember/ordered-set" "^2.0.3"
     "@glimmer/env" "^0.1.7"
