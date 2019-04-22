@@ -1,23 +1,30 @@
 <PaperCard as |Card|>
-  <Card.title as |Title|>
-    <Title.text as |Text|>
-      <Text.headline>
-        {{#if (has-block)}}
-          {{yield}}
-        {{else}}
-          {{@quote.source.author.name}},
-          {{@quote.source.title}}
-        {{/if}}
-      </Text.headline>
-    </Title.text>
-  </Card.title>
-  <Card.content>
-    <p class="preserve-line-breaks">{{@quote.text}}</p>
-    {{#if this.addingIdea}}
-      {{#if this.addingNewIdea}}
-        <div class="layout-col layout-gt-xs-row">
-          <div class="flex-sm-60 flex-gt-sm-70">
-            <PaperForm @onSubmit={{this.saveIdea}} as |Form|>
+  {{#if this.editing}}
+    <PaperForm @onSubmit={{this.saveIdea}} as |Form|>
+      <Card.title as |Title|>
+        <Title.text as |Text|>
+          <Text.headline>
+            {{#if (has-block)}}
+              {{yield}}
+            {{else}}
+              {{@quote.source.author.name}},
+              {{@quote.source.title}}
+            {{/if}}
+          </Text.headline>
+        </Title.text>
+      </Card.title>
+      <Card.content>
+        <Form.input
+          @type="text"
+          @placeholder="Quote"
+          @block={{true}}
+          @value={{this.editedQuoteText}}
+          @onChange={{action (mut this.editedQuoteText)}}
+          @passThru={{hash autocapitalize="sentences"}}
+        />
+        {{#if this.addingNewIdea}}
+          <div class="layout-col layout-gt-xs-row">
+            <div class="flex-sm-60 flex-gt-sm-70">
               <Form.input
                 @type="text"
                 @placeholder="New Idea"
@@ -26,54 +33,67 @@
                 @onChange={{action (mut this.newIdeaSummary)}}
                 @passThru={{hash autocapitalize="sentences"}}
               />
-            </PaperForm>
+            </div>
+            <div class="flex-sm-40 flex-gt-sm-30">
+              <PaperButton @onClick={{action this.switchToExistingIdea}}>
+                Switch to Existing Idea
+              </PaperButton>
+            </div>
           </div>
-          <div class="flex-sm-40 flex-gt-sm-30">
-            <PaperButton @onClick={{action this.switchToExistingIdea}}>
-              Switch to Existing Idea
-            </PaperButton>
+        {{else}}
+          <div class="layout-col layout-gt-xs-row">
+            <div class="flex-sm-60 flex-gt-sm-70">
+              <PaperSelect
+                @label="Existing Idea"
+                @block={{true}}
+                @options={{@ideas}}
+                @selected={{this.idea}}
+                @onChange={{action (mut this.idea)}}
+                as |idea|
+              >
+                {{idea.summary}}
+              </PaperSelect>
+            </div>
+            <div class="flex-sm-40 flex-gt-sm-30">
+              <PaperButton @onClick={{action this.switchToNewIdea}}>
+                Switch to New Idea
+              </PaperButton>
+            </div>
           </div>
-        </div>
-      {{else}}
-        <div class="layout-col layout-gt-xs-row">
-          <div class="flex-sm-60 flex-gt-sm-70">
-            <PaperSelect
-              @label="Existing Idea"
-              @block={{true}}
-              @options={{@ideas}}
-              @selected={{this.idea}}
-              @onChange={{action (mut this.idea)}}
-              as |idea|
-            >
-              {{idea.summary}}
-            </PaperSelect>
-          </div>
-          <div class="flex-sm-40 flex-gt-sm-30">
-            <PaperButton @onClick={{action this.switchToNewIdea}}>
-              Switch to New Idea
-            </PaperButton>
-          </div>
-        </div>
-      {{/if}}
-    {{/if}}
-  </Card.content>
-  <Card.actions>
-    <PaperButton @warn={{true}} @onClick={{this.delete}}>
-      Delete
-    </PaperButton>
-    {{#if (not @quote.idea)}}
-      {{#if this.addingIdea}}
-        <PaperButton @onClick={{action (mut this.addingIdea) false}}>
+        {{/if}}
+      </Card.content>
+      <Card.actions>
+        <PaperButton @onClick={{this.cancelEditing}}>
           Cancel
         </PaperButton>
-        <PaperButton @onClick={{this.saveIdea}}>
-          Save Idea
+        <PaperButton @onClick={{this.save}}>
+          Save
         </PaperButton>
-      {{else}}
-        <PaperButton @onClick={{action (mut this.addingIdea) true}}>
-          Add Idea
-        </PaperButton>
-      {{/if}}
-    {{/if}}
-  </Card.actions>
+      </Card.actions>
+    </PaperForm>
+  {{else}}
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>
+          {{#if (has-block)}}
+            {{yield}}
+          {{else}}
+            {{@quote.source.author.name}},
+            {{@quote.source.title}}
+          {{/if}}
+        </Text.headline>
+      </Title.text>
+    </Card.title>
+    <Card.content>
+      <p class="preserve-line-breaks">{{@quote.text}}</p>
+    </Card.content>
+    <Card.actions>
+      <PaperButton @warn={{true}} @onClick={{this.delete}}>
+        Delete
+      </PaperButton>
+      <PaperButton @onClick={{this.startEditing}}>
+        Edit
+      </PaperButton>
+    </Card.actions>
+  {{/if}}
 </PaperCard>

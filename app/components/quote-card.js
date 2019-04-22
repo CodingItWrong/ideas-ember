@@ -7,7 +7,7 @@ export default class QuoteCardComponent extends Component {
   @service store;
 
   @tracked
-  addingIdea = false;
+  editing = false;
 
   @tracked
   addingNewIdea = false;
@@ -16,7 +16,22 @@ export default class QuoteCardComponent extends Component {
   idea = null;
 
   @tracked
+  editedQuoteText = '';
+
+  @tracked
   newIdeaSummary = '';
+
+  @action
+  startEditing() {
+    this.editedQuoteText = this.args.quote.text;
+    this.idea = this.args.quote.idea;
+    this.editing = true;
+  }
+
+  @action
+  cancelEditing() {
+    this.editing = false;
+  }
 
   @action
   switchToNewIdea() {
@@ -31,7 +46,7 @@ export default class QuoteCardComponent extends Component {
   }
 
   @action
-  async saveIdea() {
+  async save() {
     const { quote } = this.args;
 
     let idea;
@@ -42,15 +57,17 @@ export default class QuoteCardComponent extends Component {
       idea = this.store.createRecord('idea', { summary: this.newIdeaSummary });
       await idea.save();
     } else {
-      alert('Either choose an existing idea or enter a new idea.');
-      return;
+      // did not select an idea
     }
 
-    quote.set('idea', idea);
+    quote.setProperties({
+      text: this.editedQuoteText,
+      idea,
+    });
     await quote.save();
 
     this.idea = null;
-    this.addingIdea = false;
+    this.editing = false;
   }
 
   @action
