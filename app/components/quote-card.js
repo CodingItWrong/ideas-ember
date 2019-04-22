@@ -31,7 +31,7 @@ export default class QuoteCardComponent extends Component {
   }
 
   @action
-  async saveIdea() {
+  async save() {
     const { quote } = this.args;
 
     let idea;
