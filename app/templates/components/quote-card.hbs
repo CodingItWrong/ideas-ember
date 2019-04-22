@@ -1,19 +1,19 @@
 <PaperCard as |Card|>
-  <Card.title as |Title|>
-    <Title.text as |Text|>
-      <Text.headline>
-        {{#if (has-block)}}
-          {{yield}}
-        {{else}}
-          {{@quote.source.author.name}},
-          {{@quote.source.title}}
-        {{/if}}
-      </Text.headline>
-    </Title.text>
-  </Card.title>
-  <Card.content>
-    <p class="preserve-line-breaks">{{@quote.text}}</p>
-    {{#if this.editing}}
+  {{#if this.editing}}
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>
+          {{#if (has-block)}}
+            {{yield}}
+          {{else}}
+            {{@quote.source.author.name}},
+            {{@quote.source.title}}
+          {{/if}}
+        </Text.headline>
+      </Title.text>
+    </Card.title>
+    <Card.content>
+      <p class="preserve-line-breaks">{{@quote.text}}</p>
       {{#if this.addingNewIdea}}
         <div class="layout-col layout-gt-xs-row">
           <div class="flex-sm-60 flex-gt-sm-70">
@@ -55,25 +55,38 @@
           </div>
         </div>
       {{/if}}
-    {{/if}}
-  </Card.content>
-  <Card.actions>
-    <PaperButton @warn={{true}} @onClick={{this.delete}}>
-      Delete
-    </PaperButton>
-    {{#if (not @quote.idea)}}
-      {{#if this.editing}}
-        <PaperButton @onClick={{action (mut this.editing) false}}>
-          Cancel
-        </PaperButton>
-        <PaperButton @onClick={{this.saveIdea}}>
-          Save Idea
-        </PaperButton>
-      {{else}}
-        <PaperButton @onClick={{action (mut this.editing) true}}>
-          Add Idea
-        </PaperButton>
-      {{/if}}
-    {{/if}}
-  </Card.actions>
+    </Card.content>
+    <Card.actions>
+      <PaperButton @onClick={{action (mut this.editing) false}}>
+        Cancel
+      </PaperButton>
+      <PaperButton @onClick={{this.saveIdea}}>
+        Save Idea
+      </PaperButton>
+    </Card.actions>
+  {{else}}
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>
+          {{#if (has-block)}}
+            {{yield}}
+          {{else}}
+            {{@quote.source.author.name}},
+            {{@quote.source.title}}
+          {{/if}}
+        </Text.headline>
+      </Title.text>
+    </Card.title>
+    <Card.content>
+      <p class="preserve-line-breaks">{{@quote.text}}</p>
+    </Card.content>
+    <Card.actions>
+      <PaperButton @warn={{true}} @onClick={{this.delete}}>
+        Delete
+      </PaperButton>
+      <PaperButton @onClick={{action (mut this.editing) true}}>
+        Edit
+      </PaperButton>
+    </Card.actions>
+  {{/if}}
 </PaperCard>
