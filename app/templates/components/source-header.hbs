@@ -1,0 +1,50 @@
+<PaperCard as |Card|>
+  {{#if this.editing}}
+    <Card.content>
+      <PaperForm @onSubmit={{this.save}} as |Form|>
+        <Form.input
+          @type="text"
+          @block={{true}}
+          @label="Source"
+          @value={{this.editedTitle}}
+          @onChange={{action (mut this.editedTitle)}}
+          @passThru={{hash autocapitalize="words"}}
+        />
+        <Form.input
+          @type="url"
+          @block={{true}}
+          @label="URL"
+          @value={{this.editedUrl}}
+          @onChange={{action (mut this.editedUrl)}}
+        />
+      </PaperForm>
+    </Card.content>
+    <Card.actions>
+      <PaperButton @onClick={{action (mut this.editing) false}}>
+        Cancel
+      </PaperButton>
+      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
+        Save
+      </PaperButton>
+    </Card.actions>
+  {{else}}
+    <Card.title as |Title|>
+      <Title.text as |Text|>
+        <Text.headline>
+          {{#if @source.url}}
+            <a href={{@source.url}} target="_blank" rel="noopener">
+              {{@source.title}}
+            </a>
+          {{else}}
+            {{@source.title}}
+          {{/if}}
+        </Text.headline>
+      </Title.text>
+    </Card.title>
+    <Card.actions>
+      <PaperButton @onClick={{action (mut this.editing) true}}>
+        Edit
+      </PaperButton>
+    </Card.actions>
+  {{/if}}
+</PaperCard>

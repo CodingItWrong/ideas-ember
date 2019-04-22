@@ -1,21 +1,6 @@
 <BackButton @to="sources" />
 
-<PaperCard as |Card|>
-  <Card.title as |Title|>
-    <Title.text as |Text|>
-      <Text.headline>
-        {{#if this.model.source.url}}
-          <a href={{this.model.source.url}} target="_blank" rel="noopener">
-            {{this.model.source.title}}
-          </a>
-        {{else}}
-          {{this.model.source.title}}
-        {{/if}}
-      </Text.headline>
-      <Text.subhead>{{this.model.source.author.name}}</Text.subhead>
-    </Title.text>
-  </Card.title>
-</PaperCard>
+<SourceHeader @source={{this.model.source}} />
 
 <NewQuoteForm @source={{this.model.source}} />
 
