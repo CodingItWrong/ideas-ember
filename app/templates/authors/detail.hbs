@@ -1,12 +1,6 @@
 <BackButton @to="authors" />
 
-<PaperCard as |Card|>
-  <Card.title as |Title|>
-    <Title.text as |Text|>
-      <Text.headline>{{this.model.name}}</Text.headline>
-    </Title.text>
-  </Card.title>
-</PaperCard>
+<AuthorHeader @author={{this.model}} />
 
 <NewSourceForm @author={{this.model}} />
 
