@@ -1,4 +1,9 @@
 <PaperCard as |Card|>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Authors</h2>
+    </Toolbar.tools>
+  </PaperToolbar>
   <PaperForm @onSubmit={{this.createAuthor}} as |Form|>
     <Card.content>
       <div class="layout-col layout-gt-xs-row">

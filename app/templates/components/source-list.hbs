@@ -1,5 +1,10 @@
-{{#if this.sortedSources}}
-  <PaperCard>
+<PaperCard>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Sources</h2>
+    </Toolbar.tools>
+  </PaperToolbar>
+  {{#if this.sortedSources}}
     <PaperList>
       {{#each this.sortedSources as |source|}}
         {{#if (has-block)}}
@@ -11,5 +16,7 @@
         {{/if}}
       {{/each}}
     </PaperList>
-  </PaperCard>
-{{/if}}
+  {{else}}
+    <p>No sources added yet.</p>
+  {{/if}}
+</PaperCard>
