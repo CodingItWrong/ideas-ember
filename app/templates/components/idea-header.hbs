@@ -4,7 +4,8 @@
       <Title.text>
         <PaperForm @onSubmit={{this.save}} as |Form|>
           <Form.input
-            @type="text"
+            @textarea={{true}}
+            @block={{true}}
             @placeholder="Idea"
             @value={{this.editedIdeaSummary}}
             @onChange={{action (mut this.editedIdeaSummary)}}

@@ -1,23 +1,11 @@
 <PaperCard as |Card|>
   {{#if this.editing}}
     <PaperForm @onSubmit={{this.saveIdea}} as |Form|>
-      <Card.title as |Title|>
-        <Title.text as |Text|>
-          <Text.headline>
-            {{#if (has-block)}}
-              {{yield}}
-            {{else}}
-              {{@quote.source.author.name}},
-              {{@quote.source.title}}
-            {{/if}}
-          </Text.headline>
-        </Title.text>
-      </Card.title>
       <Card.content>
         <Form.input
-          @type="text"
-          @placeholder="Quote"
+          @textarea={{true}}
           @block={{true}}
+          @placeholder="Quote"
           @value={{this.editedQuoteText}}
           @onChange={{action (mut this.editedQuoteText)}}
           @passThru={{hash autocapitalize="sentences"}}
@@ -26,9 +14,9 @@
           <div class="layout-col layout-gt-xs-row">
             <div class="flex-sm-60 flex-gt-sm-70">
               <Form.input
-                @type="text"
-                @placeholder="New Idea"
+                @textarea={{true}}
                 @block={{true}}
+                @placeholder="New Idea"
                 @value={{this.newIdeaSummary}}
                 @onChange={{action (mut this.newIdeaSummary)}}
                 @passThru={{hash autocapitalize="sentences"}}
@@ -44,8 +32,8 @@
           <div class="layout-col layout-gt-xs-row">
             <div class="flex-sm-60 flex-gt-sm-70">
               <PaperSelect
-                @label="Existing Idea"
                 @block={{true}}
+                @label="Existing Idea"
                 @options={{@ideas}}
                 @selected={{this.idea}}
                 @onChange={{action (mut this.idea)}}
