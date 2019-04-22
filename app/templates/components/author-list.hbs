@@ -1,7 +1,9 @@
-<PaperCard>
-  <PaperList>
-    {{#each this.sortedAuthors as |author|}}
-      <AuthorItem @author={{author}} />
-    {{/each}}
-  </PaperList>
-</PaperCard>
+{{#if this.sortedAuthors}}
+  <PaperCard>
+    <PaperList>
+      {{#each this.sortedAuthors as |author|}}
+        <AuthorItem @author={{author}} />
+      {{/each}}
+    </PaperList>
+  </PaperCard>
+{{/if}}

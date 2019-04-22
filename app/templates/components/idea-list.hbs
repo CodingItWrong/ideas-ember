@@ -1,7 +1,9 @@
-<PaperCard>
-  <PaperList>
-    {{#each this.sortedIdeas as |idea|}}
-      <IdeaItem @idea={{idea}} />
-    {{/each}}
-  </PaperList>
-</PaperCard>
+{{#if this.sortedIdeas}}
+  <PaperCard>
+    <PaperList>
+      {{#each this.sortedIdeas as |idea|}}
+        <IdeaItem @idea={{idea}} />
+      {{/each}}
+    </PaperList>
+  </PaperCard>
+{{/if}}
