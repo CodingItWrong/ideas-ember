@@ -1,4 +1,9 @@
 <PaperCard as |Card|>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Source</h2>
+    </Toolbar.tools>
+  </PaperToolbar>
   {{#if this.editing}}
     <Card.content>
       <PaperForm @onSubmit={{this.save}} as |Form|>
@@ -42,6 +47,9 @@
       </Title.text>
     </Card.title>
     <Card.actions>
+      <PaperButton @warn={{true}} @onClick={{this.delete}}>
+        Delete
+      </PaperButton>
       <PaperButton @onClick={{this.startEditing}}>
         Edit
       </PaperButton>
