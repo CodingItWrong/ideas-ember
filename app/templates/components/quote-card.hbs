@@ -13,7 +13,7 @@
   </Card.title>
   <Card.content>
     <p class="preserve-line-breaks">{{@quote.text}}</p>
-    {{#if this.addingIdea}}
+    {{#if this.editing}}
       {{#if this.addingNewIdea}}
         <div class="layout-col layout-gt-xs-row">
           <div class="flex-sm-60 flex-gt-sm-70">
@@ -62,15 +62,15 @@
       Delete
     </PaperButton>
     {{#if (not @quote.idea)}}
-      {{#if this.addingIdea}}
-        <PaperButton @onClick={{action (mut this.addingIdea) false}}>
+      {{#if this.editing}}
+        <PaperButton @onClick={{action (mut this.editing) false}}>
           Cancel
         </PaperButton>
         <PaperButton @onClick={{this.saveIdea}}>
           Save Idea
         </PaperButton>
       {{else}}
-        <PaperButton @onClick={{action (mut this.addingIdea) true}}>
+        <PaperButton @onClick={{action (mut this.editing) true}}>
           Add Idea
         </PaperButton>
       {{/if}}

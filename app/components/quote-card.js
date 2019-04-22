@@ -7,7 +7,7 @@ export default class QuoteCardComponent extends Component {
   @service store;
 
   @tracked
-  addingIdea = false;
+  editing = false;
 
   @tracked
   addingNewIdea = false;
@@ -50,7 +50,7 @@ export default class QuoteCardComponent extends Component {
     await quote.save();
 
     this.idea = null;
-    this.addingIdea = false;
+    this.editing = false;
   }
 
   @action
