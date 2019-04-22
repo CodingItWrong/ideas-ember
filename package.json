@@ -35,7 +35,7 @@
     "ember-cli-netlify": "^0.2.0",
     "ember-cli-sass": "^10.0.0",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-template-lint": "^1.0.0-beta.1",
+    "ember-cli-template-lint": "^1.0.0-beta.3",
     "ember-cli-uglify": "^3.0.0",
     "ember-data": "github:emberjs/data#af0dee9dd72a70f10983406fba032543ecfb20ff",
     "ember-export-application-global": "^2.0.0",
