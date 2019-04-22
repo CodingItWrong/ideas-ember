@@ -7,7 +7,18 @@ export default class AuthorHeaderComponent extends Component {
   editing = false;
 
   @tracked
-  editedAuthorName = this.args.author.name;
+  editedAuthorName;
+
+  @action
+  startEditing() {
+    this.editedAuthorName = this.args.author.name;
+    this.editing = true;
+  }
+
+  @action
+  cancelEditing() {
+    this.editing = false;
+  }
 
   @action
   async save() {

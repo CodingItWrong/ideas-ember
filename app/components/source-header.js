@@ -7,10 +7,22 @@ export default class SourceHeaderComponent extends Component {
   editing = false;
 
   @tracked
-  editedTitle = this.args.source.title;
+  editedTitle;
 
   @tracked
-  editedUrl = this.args.source.url;
+  editedUrl;
+
+  @action
+  startEditing() {
+    this.editedTitle = this.args.source.title;
+    this.editedUrl = this.args.source.url;
+    this.editing = true;
+  }
+
+  @action
+  cancelEditing() {
+    this.editing = false;
+  }
 
   @action
   async save() {

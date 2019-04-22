@@ -14,7 +14,7 @@
       </Title.text>
     </Card.title>
     <Card.actions>
-      <PaperButton @onClick={{action (mut this.editing) false}}>
+      <PaperButton @onClick={{this.cancelEditing}}>
         Cancel
       </PaperButton>
       <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
@@ -28,7 +28,7 @@
       </Title.text>
     </Card.title>
     <Card.actions>
-      <PaperButton @onClick={{action (mut this.editing) true}}>
+      <PaperButton @onClick={{this.startEditing}}>
         Edit
       </PaperButton>
     </Card.actions>
