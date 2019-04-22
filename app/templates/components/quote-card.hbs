@@ -14,7 +14,14 @@
         </Title.text>
       </Card.title>
       <Card.content>
-        <p class="preserve-line-breaks">{{@quote.text}}</p>
+        <Form.input
+          @type="text"
+          @placeholder="Quote"
+          @block={{true}}
+          @value={{this.editedQuoteText}}
+          @onChange={{action (mut this.editedQuoteText)}}
+          @passThru={{hash autocapitalize="sentences"}}
+        />
         {{#if this.addingNewIdea}}
           <div class="layout-col layout-gt-xs-row">
             <div class="flex-sm-60 flex-gt-sm-70">
@@ -56,7 +63,7 @@
         {{/if}}
       </Card.content>
       <Card.actions>
-        <PaperButton @onClick={{action (mut this.editing) false}}>
+        <PaperButton @onClick={{this.cancelEditing}}>
           Cancel
         </PaperButton>
         <PaperButton @onClick={{this.save}}>
@@ -84,7 +91,7 @@
       <PaperButton @warn={{true}} @onClick={{this.delete}}>
         Delete
       </PaperButton>
-      <PaperButton @onClick={{action (mut this.editing) true}}>
+      <PaperButton @onClick={{this.startEditing}}>
         Edit
       </PaperButton>
     </Card.actions>
