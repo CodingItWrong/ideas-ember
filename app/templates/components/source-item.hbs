@@ -1,0 +1,13 @@
+<PaperItem @onClick={{this.goToSourceDetail}} class="md-3-line" as |Controls|>
+  <div class="md-list-item-text">
+    <h3 class="preserve-line-breaks">{{@source.title}}</h3>
+    {{#if (has-block)}}
+      <h4>{{yield}}</h4>
+    {{/if}}
+  </div>
+  <div class="md-secondary-container">
+    <Controls.button @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </Controls.button>
+  </div>
+</PaperItem>
