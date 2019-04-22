@@ -1,7 +1,15 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
-export default class AuthorCardComponent extends Component {
+export default class AuthorItemComponent extends Component {
+  @service router;
+
+  @action
+  goToAuthorDetail() {
+    this.router.transitionTo('authors.detail', this.args.author.id);
+  }
+
   @action
   delete() {
     if (!confirm('Are you sure you want to delete this author?')) {

@@ -1,5 +1,13 @@
-{{#each this.sortedSources as |source|}}
-  <SourceCard @source={{source}}>
-    {{source.author.name}}
-  </SourceCard>
-{{/each}}
+<PaperCard>
+  <PaperList>
+    {{#each this.sortedSources as |source|}}
+      {{#if (has-block)}}
+        <SourceItem @source={{source}}>
+          {{yield source}}
+        </SourceItem>
+      {{else}}
+        <SourceItem @source={{source}} />
+      {{/if}}
+    {{/each}}
+  </PaperList>
+</PaperCard>

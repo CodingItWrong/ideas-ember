@@ -1,1 +1,3 @@
-<SourceList @sources={{this.model}} />
+<SourceList @sources={{this.model}} as |source|>
+  {{source.author.name}}
+</SourceList>
