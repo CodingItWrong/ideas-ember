@@ -1,0 +1,10 @@
+<PaperItem @onClick={{this.goToIdeaDetail}} class="md-2-line" as |Controls|>
+  <div class="md-list-item-text">
+    <h3 class="preserve-line-breaks">{{@idea.summary}}</h3>
+  </div>
+  <div class="md-secondary-container">
+    <Controls.button @warn={{true}} @onClick={{this.delete}}>
+      Delete
+    </Controls.button>
+  </div>
+</PaperItem>
