@@ -12,9 +12,13 @@ export default class IdeaHeaderComponent extends Component {
   @tracked
   editedIdeaSummary;
 
+  @tracked
+  editedIdeaComments;
+
   @action
   startEditing() {
     this.editedIdeaSummary = this.args.idea.summary;
+    this.editedIdeaComments = this.args.idea.comments;
     this.editing = true;
   }
 
@@ -26,7 +30,10 @@ export default class IdeaHeaderComponent extends Component {
   @action
   async save() {
     const { idea } = this.args;
-    idea.set('summary', this.editedIdeaSummary);
+    idea.setProperties({
+      summary: this.editedIdeaSummary,
+      comments: this.editedIdeaComments,
+    });
     await idea.save();
     this.editing = false;
   }
