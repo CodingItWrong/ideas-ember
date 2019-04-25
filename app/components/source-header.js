@@ -15,10 +15,14 @@ export default class SourceHeaderComponent extends Component {
   @tracked
   editedUrl;
 
+  @tracked
+  editedDate;
+
   @action
   startEditing() {
     this.editedTitle = this.args.source.title;
     this.editedUrl = this.args.source.url;
+    this.editedDate = this.args.source.date;
     this.editing = true;
   }
 
@@ -33,6 +37,7 @@ export default class SourceHeaderComponent extends Component {
     source.setProperties({
       title: this.editedTitle,
       url: this.editedUrl,
+      date: this.editedDate,
     });
     await source.save();
     this.editing = false;
