@@ -16,6 +16,14 @@
             @onChange={{action (mut this.editedIdeaSummary)}}
             @passThru={{hash autocapitalize="sentences"}}
           />
+          <Form.input
+            @textarea={{true}}
+            @block={{true}}
+            @placeholder="Comments"
+            @value={{this.editedIdeaComments}}
+            @onChange={{action (mut this.editedIdeaComments)}}
+            @passThru={{hash autocapitalize="sentences"}}
+          />
         </PaperForm>
       </Title.text>
     </Card.title>

@@ -4,4 +4,6 @@
 
 <NewSourceForm @author={{this.model}} />
 
-<SourceList @sources={{this.model.sources}} />
+<SourceList @sources={{this.model.sources}} as |source|>
+  {{source.date}}
+</SourceList>

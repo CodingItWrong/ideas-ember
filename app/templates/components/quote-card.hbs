@@ -10,6 +10,14 @@
           @onChange={{action (mut this.editedQuoteText)}}
           @passThru={{hash autocapitalize="sentences"}}
         />
+        <Form.input
+          @textarea={{true}}
+          @block={{true}}
+          @placeholder="Comments"
+          @value={{this.editedQuoteComments}}
+          @onChange={{action (mut this.editedQuoteComments)}}
+          @passThru={{hash autocapitalize="sentences"}}
+        />
         {{#if this.addingNewIdea}}
           <div class="layout-col layout-gt-xs-row">
             <div class="flex-sm-60 flex-gt-sm-70">
@@ -54,7 +62,7 @@
         <PaperButton @onClick={{this.cancelEditing}}>
           Cancel
         </PaperButton>
-        <PaperButton @onClick={{this.save}}>
+        <PaperButton @raised={{true}} @primary={{true}} @onClick={{this.save}}>
           Save
         </PaperButton>
       </Card.actions>
