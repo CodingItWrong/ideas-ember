@@ -2,29 +2,34 @@
   <PaperToolbar as |Toolbar|>
     <Toolbar.tools>
       <h2>Authors</h2>
+      <span class="flex"></span>
+      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+        Add
+      </PaperButton>
     </Toolbar.tools>
   </PaperToolbar>
-  <PaperForm @onSubmit={{this.createAuthor}} as |Form|>
-    <Card.content>
-      <div class="layout-col layout-gt-xs-row">
-        <div class="flex-gt-xs-80">
-          <Form.input
-            @block={{true}}
-            @label="New Author"
-            @value={{this.name}}
-            @onChange={{action (mut this.name)}}
-            @passThru={{hash autocapitalize="words"}}
-          />
-        </div>
-        <div class="flex-gt-xs-20 layout-row layout-align-end-center">
-          <Form.submit-button
-            @raised={{true}}
-            @primary={{true}}
-          >
-            Save
-          </Form.submit-button>
-        </div>
-      </div>
-    </Card.content>
-  </PaperForm>
+  {{#if this.isAdding}}
+    <PaperForm @onSubmit={{this.createAuthor}} as |Form|>
+      <Card.content>
+        <Form.input
+          @block={{true}}
+          @label="New Author"
+          @value={{this.name}}
+          @onChange={{action (mut this.name)}}
+          @passThru={{hash autocapitalize="words"}}
+        />
+      </Card.content>
+      <Card.actions>
+        <PaperButton @onClick={{action (mut this.isAdding) false}}>
+          Cancel
+        </PaperButton>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+        >
+          Save
+        </Form.submit-button>
+      </Card.actions>
+    </PaperForm>
+  {{/if}}
 </PaperCard>
