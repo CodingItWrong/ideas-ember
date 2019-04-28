@@ -19,6 +19,11 @@ export default class NewQuoteFormComponent extends Component {
   }
 
   @action
+  saveInputElement(element) {
+    this.textInput = element.getElementsByTagName('textarea')[0];
+  }
+
+  @action
   async createQuote() {
     const quote = this.store.createRecord('quote', {
       source: this.args.source,

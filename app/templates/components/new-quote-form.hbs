@@ -18,6 +18,7 @@
           @value={{this.text}}
           @onChange={{action (mut this.text)}}
           @passThru={{hash autocapitalize="sentences"}}
+          {{did-insert this.saveInputElement}}
         />
       </Card.content>
       <Card.actions>
