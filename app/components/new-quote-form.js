@@ -32,6 +32,7 @@ export default class NewQuoteFormComponent extends Component {
     try {
       await quote.save();
       this.text = '';
+      this.textInput.focus();
     } catch (e) {
       alert('An error occurred while saving this quote.');
       console.error(e);
