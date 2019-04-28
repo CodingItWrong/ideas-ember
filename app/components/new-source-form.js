@@ -23,6 +23,6 @@ export default class NewSourceFormComponent extends Component {
     await source.save();
     this.title = '';
     this.url = '';
-    this.router.transitionTo('sources.detail', source);
+    this.router.transitionTo('sources.detail', source.id);
   }
 }
