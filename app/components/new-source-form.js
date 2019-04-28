@@ -5,6 +5,7 @@ import { tracked } from '@glimmer/tracking';
 
 export default class NewSourceFormComponent extends Component {
   @service store;
+  @service router;
 
   @tracked
   title = '';
@@ -22,5 +23,6 @@ export default class NewSourceFormComponent extends Component {
     await source.save();
     this.title = '';
     this.url = '';
+    this.router.transitionTo('sources.detail', source);
   }
 }
