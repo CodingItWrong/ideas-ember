@@ -1,3 +1,12 @@
+<PaperCard as |Card|>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Sources</h2>
+    </Toolbar.tools>
+  </PaperToolbar>
+</PaperCard>
+
+
 <SourceList @sources={{this.model}} as |source|>
   {{source.author.name}}
 </SourceList>
