@@ -19,6 +19,11 @@ export default class NewQuoteFormComponent extends Component {
   }
 
   @action
+  saveInputElement(element) {
+    this.textInput = element.getElementsByTagName('textarea')[0];
+  }
+
+  @action
   async createQuote() {
     const quote = this.store.createRecord('quote', {
       source: this.args.source,
@@ -27,6 +32,7 @@ export default class NewQuoteFormComponent extends Component {
     try {
       await quote.save();
       this.text = '';
+      this.textInput.focus();
     } catch (e) {
       alert('An error occurred while saving this quote.');
       console.error(e);
