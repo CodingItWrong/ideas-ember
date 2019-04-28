@@ -1,4 +1,4 @@
-<PaperCard>
+<PaperCard as |Card|>
   <PaperToolbar as |Toolbar|>
     <Toolbar.tools>
       <h2>Sources</h2>
@@ -17,6 +17,8 @@
       {{/each}}
     </PaperList>
   {{else}}
-    <p>No sources added yet.</p>
+    <Card.content>
+      <p>No sources added yet.</p>
+    </Card.content>
   {{/if}}
 </PaperCard>
