@@ -4998,10 +4998,10 @@ eslint-config-codingitwrong@^0.1.4:
   resolved "https://registry.yarnpkg.com/eslint-config-codingitwrong/-/eslint-config-codingitwrong-0.1.4.tgz#7c59cbf4dc6c9eb65486d7b73d49391722318fb3"
   integrity sha512-Z89ffprPB/jFSIUNmPUTsaPfUvUT/0FxMN+sNfbofD1SlPBpK1iY0xKuH06inGUvEtgoCYWuETYrJ6hbgSqJjA==
 
-eslint-config-prettier@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.1.0.tgz#181364895899fff9fd3605fecb5c4f20e7d5f395"
-  integrity sha512-zILwX9/Ocz4SV2vX7ox85AsrAgXV3f2o2gpIicdMIOra48WYqgUnWNH/cR/iHtmD2Vb3dLSC3LiEJnS05Gkw7w==
+eslint-config-prettier@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-4.2.0.tgz#70b946b629cd0e3e98233fd9ecde4cb9778de96c"
+  integrity sha512-y0uWc/FRfrHhpPZCYflWC8aE0KRJRY04rdZVfl8cL3sEZmOYyaBdhdlQPjKZBnuRMyLVK+JUZr7HaZFClQiH4w==
   dependencies:
     get-stdin "^6.0.0"
 
@@ -9099,14 +9099,6 @@ resolve-package-path@^1.0.11, resolve-package-path@^1.2.6:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/resolve-package-path/-/resolve-package-path-1.2.6.tgz#48f5d69a5b3a0ea68f7b9c7398459dd4125807c7"
   integrity sha512-He6cGWU74tJ6wLYSKrbvWOfIXf2tUu5RcBWqX/2K9Ju00CncF5WRdCOJQisqCtaULcqIqpLvMtz8ZjfpwlBwqg==
-  dependencies:
-    path-root "^0.1.1"
-    resolve "^1.10.0"
-
-resolve-package-path@^1.2.7:
-  version "1.2.7"
-  resolved "https://registry.yarnpkg.com/resolve-package-path/-/resolve-package-path-1.2.7.tgz#2a7bc37ad96865e239330e3102c31322847e652e"
-  integrity sha512-fVEKHGeK85bGbVFuwO9o1aU0n3vqQGrezPc51JGu9UTXpFQfWq5qCeKxyaRUSvephs+06c5j5rPq/dzHGEo8+Q==
   dependencies:
     path-root "^0.1.1"
     resolve "^1.10.0"
