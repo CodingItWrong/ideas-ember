@@ -2,30 +2,35 @@
   <PaperToolbar as |Toolbar|>
     <Toolbar.tools>
       <h2>Ideas</h2>
+      <span class="flex"></span>
+      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+        Add
+      </PaperButton>
     </Toolbar.tools>
   </PaperToolbar>
-  <PaperForm @onSubmit={{this.createIdea}} as |Form|>
-    <Card.content>
-      <div class="layout-col layout-gt-xs-row">
-        <div class="flex-gt-xs-80">
-          <Form.input
-            @textarea={{true}}
-            @block={{true}}
-            @label="New Idea"
-            @value={{this.summary}}
-            @onChange={{action (mut this.summary)}}
-            @passThru={{hash autocapitalize="sentences"}}
-          />
-        </div>
-        <div class="flex-gt-xs-20 layout-row layout-align-end-center">
-          <Form.submit-button
-            @raised={{true}}
-            @primary={{true}}
-          >
-            Save
-          </Form.submit-button>
-        </div>
-      </div>
-    </Card.content>
-  </PaperForm>
+  {{#if this.isAdding}}
+    <PaperForm @onSubmit={{this.createIdea}} as |Form|>
+      <Card.content>
+        <Form.input
+          @textarea={{true}}
+          @block={{true}}
+          @label="New Idea"
+          @value={{this.summary}}
+          @onChange={{action (mut this.summary)}}
+          @passThru={{hash autocapitalize="sentences"}}
+        />
+      </Card.content>
+      <Card.actions>
+        <PaperButton @onClick={{action (mut this.isAdding) false}}>
+          Cancel
+        </PaperButton>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+        >
+          Save
+        </Form.submit-button>
+      </Card.actions>
+    </PaperForm>
+  {{/if}}
 </PaperCard>

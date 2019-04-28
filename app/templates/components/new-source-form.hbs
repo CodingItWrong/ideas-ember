@@ -1,29 +1,43 @@
 <PaperCard as |Card|>
-  <PaperForm @onSubmit={{this.createSource}} as |Form|>
-    <Card.content>
-      <Form.input
-        @type="text"
-        @block={{true}}
-        @label="New Source"
-        @value={{this.title}}
-        @onChange={{action (mut this.title)}}
-        @passThru={{hash autocapitalize="words"}}
-      />
-      <Form.input
-        @type="url"
-        @block={{true}}
-        @label="URL"
-        @value={{this.url}}
-        @onChange={{action (mut this.url)}}
-      />
-    </Card.content>
-    <Card.actions>
-      <Form.submit-button
-        @raised={{true}}
-        @primary={{true}}
-      >
-        Save
-      </Form.submit-button>
-    </Card.actions>
-  </PaperForm>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Sources</h2>
+      <span class="flex"></span>
+      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+        Add
+      </PaperButton>
+    </Toolbar.tools>
+  </PaperToolbar>
+  {{#if this.isAdding}}
+    <PaperForm @onSubmit={{this.createSource}} as |Form|>
+      <Card.content>
+        <Form.input
+          @type="text"
+          @block={{true}}
+          @label="New Source"
+          @value={{this.title}}
+          @onChange={{action (mut this.title)}}
+          @passThru={{hash autocapitalize="words"}}
+        />
+        <Form.input
+          @type="url"
+          @block={{true}}
+          @label="URL"
+          @value={{this.url}}
+          @onChange={{action (mut this.url)}}
+        />
+      </Card.content>
+      <Card.actions>
+        <PaperButton @onClick={{action (mut this.isAdding) false}}>
+          Cancel
+        </PaperButton>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+        >
+          Save
+        </Form.submit-button>
+      </Card.actions>
+    </PaperForm>
+  {{/if}}
 </PaperCard>
