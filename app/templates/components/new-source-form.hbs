@@ -26,6 +26,13 @@
           @value={{this.url}}
           @onChange={{action (mut this.url)}}
         />
+        <Form.input
+          @type="date"
+          @block={{true}}
+          @label="Date"
+          @value={{this.date}}
+          @onChange={{action (mut this.date)}}
+        />
       </Card.content>
       <Card.actions>
         <PaperButton @onClick={{action (mut this.isAdding) false}}>
