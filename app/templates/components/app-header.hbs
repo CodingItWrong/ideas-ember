@@ -1,8 +1,10 @@
 <PaperToolbar>
   <PaperToolbarTools>
-    <NavButton @to="index">
-      Ideas
-    </NavButton>
+    {{#paper-sidenav-toggle name="left" as |toggleAction|}}
+      <PaperButton @onClick={{toggleAction}}>
+        Ideas
+      </PaperButton>
+    {{/paper-sidenav-toggle}}
 
     <span class="flex"></span>
 
@@ -66,3 +68,23 @@
     </PaperCard>
   </div>
 {{/if}}
+
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      Çup?
+    {{/paper-content}}
+  {{/paper-sidenav}}
+
+  {{#paper-card-content class="flex"}}
+    {{yield}}
+  {{/paper-card-content}}
+{{/paper-sidenav-container}}
