@@ -1,24 +1,3 @@
-<PaperToolbar>
-  <PaperToolbarTools>
-    <PaperSidenavToggle @name="left" as |toggleAction|>
-      <PaperButton @onClick={{toggleAction}}>
-        Ideas
-      </PaperButton>
-
-      <span class="flex"></span>
-
-      <div class="show-lt-md hide-gt-sm">
-        <PaperButton
-          @iconButton={{true}}
-          @onClick={{toggleAction}}
-        >
-          {{paper-icon "menu"}}
-        </PaperButton>
-      </div>
-    </PaperSidenavToggle>
-  </PaperToolbarTools>
-</PaperToolbar>
-
 <PaperSidenavContainer @class="inner-sidenav">
   <PaperSidenav
     @class="md-whiteframe-z2"
@@ -57,7 +36,26 @@
     </PaperContent>
   </PaperSidenav>
 
-  {{#paper-card-content class="flex"}}
-    {{yield}}
-  {{/paper-card-content}}
+  <div>
+    <PaperToolbar>
+      <PaperToolbarTools>
+        <PaperSidenavToggle @name="left" as |toggleAction|>
+          <PaperButton
+            @onClick={{toggleAction}}
+            @iconButton={{true}}
+            class="show-lt-md hide-gt-sm"
+          >
+            {{paper-icon "menu"}}
+          </PaperButton>
+          <h2 class="show-lt-md hide-gt-sm">
+            Ideas
+          </h2>
+        </PaperSidenavToggle>
+      </PaperToolbarTools>
+    </PaperToolbar>
+
+    {{#paper-card-content class="flex"}}
+      {{yield}}
+    {{/paper-card-content}}
+  </div>
 </PaperSidenavContainer>
