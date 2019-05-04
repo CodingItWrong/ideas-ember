@@ -3,6 +3,7 @@ const { Model, attr, belongsTo } = DS;
 
 export default class QuoteModel extends Model {
   @attr() text;
+  @attr() location;
   @attr() comments;
   @belongsTo('source') source;
   @belongsTo('idea') idea;

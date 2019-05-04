@@ -12,6 +12,12 @@
         />
         <Form.input
           @textarea={{true}}
+          @placeholder="Location (page, timestamp, etc)"
+          @value={{this.editedQuoteLocation}}
+          @onChange={{action (mut this.editedQuoteLocation)}}
+        />
+        <Form.input
+          @textarea={{true}}
           @block={{true}}
           @placeholder="Comments"
           @value={{this.editedQuoteComments}}
@@ -76,6 +82,7 @@
           {{else}}
             {{@quote.source.author.name}},
             {{@quote.source.title}}
+            {{@quote.location}}
           {{/if}}
         </Text.headline>
       </Title.text>
