@@ -19,6 +19,9 @@ export default class QuoteCardComponent extends Component {
   editedQuoteText = '';
 
   @tracked
+  editedQuoteLocation = '';
+
+  @tracked
   editedQuoteComments = '';
 
   @tracked
@@ -27,6 +30,7 @@ export default class QuoteCardComponent extends Component {
   @action
   startEditing() {
     this.editedQuoteText = this.args.quote.text;
+    this.editedQuoteLocation = this.args.quote.location;
     this.editedQuoteComments = this.args.quote.comments;
     this.idea = this.args.quote.idea;
     this.editing = true;
@@ -66,6 +70,7 @@ export default class QuoteCardComponent extends Component {
 
     quote.setProperties({
       text: this.editedQuoteText,
+      location: this.editedQuoteLocation,
       comments: this.editedQuoteComments,
       idea,
     });
