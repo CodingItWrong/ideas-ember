@@ -1,0 +1,61 @@
+<PaperSidenavContainer @class="inner-sidenav">
+  <PaperSidenav
+    @class="md-whiteframe-z2"
+    @name="left"
+    @open={{this.leftSideBarOpen}}
+    @onToggle={{action (mut this.leftSideBarOpen)}}
+  >
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>Ideas</Toolbar.tools>
+    </PaperToolbar>
+    <PaperContent @padding={{true}}>
+      {{#if this.session.isAuthenticated}}
+        <PaperList>
+          <PaperItem>
+            <NavButton @to="index">
+              Ideas
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <NavButton @to="sources">
+              Sources
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <NavButton @to="authors">
+              Authors
+            </NavButton>
+          </PaperItem>
+          <PaperItem>
+            <PaperButton @onClick={{this.logOut}}>
+              Log Out
+            </PaperButton>
+          </PaperItem>
+        </PaperList>
+      {{/if}}
+    </PaperContent>
+  </PaperSidenav>
+
+  <div>
+    <PaperToolbar>
+      <PaperToolbarTools>
+        <PaperSidenavToggle @name="left" as |toggleAction|>
+          <PaperButton
+            @onClick={{toggleAction}}
+            @iconButton={{true}}
+            class="show-lt-md hide-gt-sm"
+          >
+            {{paper-icon "menu"}}
+          </PaperButton>
+          <h2 class="show-lt-md hide-gt-sm">
+            Ideas
+          </h2>
+        </PaperSidenavToggle>
+      </PaperToolbarTools>
+    </PaperToolbar>
+
+    {{#paper-card-content class="flex"}}
+      {{yield}}
+    {{/paper-card-content}}
+  </div>
+</PaperSidenavContainer>
