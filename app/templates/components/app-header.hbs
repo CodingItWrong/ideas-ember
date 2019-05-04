@@ -4,44 +4,33 @@
       <PaperButton @onClick={{toggleAction}}>
         Ideas
       </PaperButton>
-    {{/paper-sidenav-toggle}}
 
-    <span class="flex"></span>
+      <span class="flex"></span>
 
-    {{#if this.session.isAuthenticated}}
-      <div class="hide-xs show-gt-xs">
-        <NavButton @to="index">
-          Ideas
-        </NavButton>
-
-        <NavButton @to="sources">
-          Sources
-        </NavButton>
-
-        <NavButton @to="authors">
-          Authors
-        </NavButton>
-
-        <PaperButton @onClick={{this.logOut}}>
-          Log Out
-        </PaperButton>
-      </div>
-      <div class="show-xs hide-gt-xs">
+      <div class="show-lt-md hide-gt-sm">
         <PaperButton
           @iconButton={{true}}
-          @onClick={{action (mut this.showMenu) (not this.showMenu)}}
+          @onClick={{toggleAction}}
         >
           {{paper-icon "menu"}}
         </PaperButton>
       </div>
-    {{/if}}
+    {{/paper-sidenav-toggle}}
   </PaperToolbarTools>
 </PaperToolbar>
 
-{{#if this.showMenu}}
-  <div class="show-xs hide-gt-xs">
-    <PaperCard as |Card|>
-      <Card.content>
+{{#paper-sidenav-container class="inner-sidenav"}}
+
+  {{#paper-sidenav
+    class="md-whiteframe-z2"
+    name="left"
+    open=leftSideBarOpen
+    onToggle=(action (mut leftSideBarOpen))}}
+    {{#paper-toolbar as |toolbar|}}
+      {{#paper-toolbar-tools}}Ideas{{/paper-toolbar-tools}}
+    {{/paper-toolbar}}
+    {{#paper-content padding=true}}
+      {{#if this.session.isAuthenticated}}
         <PaperList>
           <PaperItem>
             <NavButton @to="index">
@@ -64,23 +53,7 @@
             </PaperButton>
           </PaperItem>
         </PaperList>
-      </Card.content>
-    </PaperCard>
-  </div>
-{{/if}}
-
-{{#paper-sidenav-container class="inner-sidenav"}}
-
-  {{#paper-sidenav
-    class="md-whiteframe-z2"
-    name="left"
-    open=leftSideBarOpen
-    onToggle=(action (mut leftSideBarOpen))}}
-    {{#paper-toolbar as |toolbar|}}
-      {{#paper-toolbar-tools}}Left Sidenav{{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-    {{#paper-content padding=true}}
-      Çup?
+      {{/if}}
     {{/paper-content}}
   {{/paper-sidenav}}
 
