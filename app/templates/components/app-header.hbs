@@ -1,6 +1,6 @@
 <PaperToolbar>
   <PaperToolbarTools>
-    {{#paper-sidenav-toggle name="left" as |toggleAction|}}
+    <PaperSidenavToggle @name="left" as |toggleAction|>
       <PaperButton @onClick={{toggleAction}}>
         Ideas
       </PaperButton>
@@ -15,21 +15,21 @@
           {{paper-icon "menu"}}
         </PaperButton>
       </div>
-    {{/paper-sidenav-toggle}}
+    </PaperSidenavToggle>
   </PaperToolbarTools>
 </PaperToolbar>
 
-{{#paper-sidenav-container class="inner-sidenav"}}
-
-  {{#paper-sidenav
-    class="md-whiteframe-z2"
-    name="left"
-    open=leftSideBarOpen
-    onToggle=(action (mut leftSideBarOpen))}}
-    {{#paper-toolbar as |toolbar|}}
-      {{#paper-toolbar-tools}}Ideas{{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-    {{#paper-content padding=true}}
+<PaperSidenavContainer @class="inner-sidenav">
+  <PaperSidenav
+    @class="md-whiteframe-z2"
+    @name="left"
+    @open={{this.leftSideBarOpen}}
+    @onToggle={{action (mut this.leftSideBarOpen)}}
+  >
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>Ideas</Toolbar.tools>
+    </PaperToolbar>
+    <PaperContent @padding={{true}}>
       {{#if this.session.isAuthenticated}}
         <PaperList>
           <PaperItem>
@@ -54,10 +54,10 @@
           </PaperItem>
         </PaperList>
       {{/if}}
-    {{/paper-content}}
-  {{/paper-sidenav}}
+    </PaperContent>
+  </PaperSidenav>
 
   {{#paper-card-content class="flex"}}
     {{yield}}
   {{/paper-card-content}}
-{{/paper-sidenav-container}}
+</PaperSidenavContainer>
