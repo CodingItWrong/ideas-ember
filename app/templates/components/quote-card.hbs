@@ -12,6 +12,7 @@
         />
         <Form.input
           @textarea={{true}}
+          @block={{true}}
           @placeholder="Location (page, timestamp, etc)"
           @value={{this.editedQuoteLocation}}
           @onChange={{action (mut this.editedQuoteLocation)}}

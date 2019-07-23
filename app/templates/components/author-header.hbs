@@ -9,6 +9,7 @@
       <Title.text>
         <PaperForm @onSubmit={{this.save}} as |Form|>
           <Form.input
+            @block={{true}}
             @type="text"
             @placeholder="Author Name"
             @value={{this.editedAuthorName}}
