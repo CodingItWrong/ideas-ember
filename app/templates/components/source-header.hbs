@@ -32,6 +32,9 @@
         <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
           Save
         </PaperButton>
+        <PaperButton @warn={{true}} @onClick={{this.delete}}>
+          Delete
+        </PaperButton>
         <PaperButton @onClick={{this.cancelEditing}}>
           Cancel
         </PaperButton>
@@ -57,9 +60,6 @@
       </Title.text>
     </Card.title>
     <Card.actions>
-      <PaperButton @warn={{true}} @onClick={{this.delete}}>
-        Delete
-      </PaperButton>
       <PaperButton @onClick={{this.startEditing}}>
         Edit
       </PaperButton>
