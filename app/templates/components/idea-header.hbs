@@ -24,17 +24,19 @@
             @onChange={{action (mut this.editedIdeaComments)}}
             @passThru={{hash autocapitalize="sentences"}}
           />
+          <Form.submit-button
+            @primary={{true}}
+            @raised={{true}}
+            @onClick={{this.save}}
+          >
+            Save
+          </Form.submit-button>
+          <PaperButton @onClick={{this.cancelEditing}}>
+            Cancel
+          </PaperButton>
         </PaperForm>
       </Title.text>
     </Card.title>
-    <Card.actions>
-      <PaperButton @onClick={{this.cancelEditing}}>
-        Cancel
-      </PaperButton>
-      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
-        Save
-      </PaperButton>
-    </Card.actions>
   {{else}}
     <Card.title as |Title|>
       <Title.text as |Text|>

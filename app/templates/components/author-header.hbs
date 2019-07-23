@@ -5,28 +5,28 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.editing}}
-    <Card.title as |Title|>
-      <Title.text>
-        <PaperForm @onSubmit={{this.save}} as |Form|>
-          <Form.input
-            @block={{true}}
-            @type="text"
-            @placeholder="Author Name"
-            @value={{this.editedAuthorName}}
-            @onChange={{action (mut this.editedAuthorName)}}
-            @passThru={{hash autocapitalize="words"}}
-          />
-        </PaperForm>
-      </Title.text>
-    </Card.title>
-    <Card.actions>
-      <PaperButton @onClick={{this.cancelEditing}}>
-        Cancel
-      </PaperButton>
-      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
-        Save
-      </PaperButton>
-    </Card.actions>
+    <Card.content>
+      <PaperForm @onSubmit={{this.save}} as |Form|>
+        <Form.input
+          @block={{true}}
+          @type="text"
+          @placeholder="Author Name"
+          @value={{this.editedAuthorName}}
+          @onChange={{action (mut this.editedAuthorName)}}
+          @passThru={{hash autocapitalize="words"}}
+        />
+        <Form.submit-button
+          @primary={{true}}
+          @raised={{true}}
+          @onClick={{this.save}}
+        >
+          Save
+        </Form.submit-button>
+        <PaperButton @onClick={{this.cancelEditing}}>
+          Cancel
+        </PaperButton>
+      </PaperForm>
+    </Card.content>
   {{else}}
     <Card.title as |Title|>
       <Title.text as |Text|>

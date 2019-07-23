@@ -29,16 +29,14 @@
           @value={{this.editedDate}}
           @onChange={{action (mut this.editedDate)}}
         />
+        <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
+          Save
+        </PaperButton>
+        <PaperButton @onClick={{this.cancelEditing}}>
+          Cancel
+        </PaperButton>
       </PaperForm>
     </Card.content>
-    <Card.actions>
-      <PaperButton @onClick={{this.cancelEditing}}>
-        Cancel
-      </PaperButton>
-      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
-        Save
-      </PaperButton>
-    </Card.actions>
   {{else}}
     <Card.title as |Title|>
       <Title.text as |Text|>
