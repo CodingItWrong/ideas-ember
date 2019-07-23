@@ -58,10 +58,11 @@
         </PaperButton>
       </Toolbar.tools>
     </PaperToolbar>
-    {{#if @source.date}}
-      <Card.content>
-        {{@source.date}}
-      </Card.content>
-    {{/if}}
+    <Card.content>
+      <p>{{@source.author.name}}</p>
+      {{#if @source.date}}
+        <p>{{@source.date}}</p>
+      {{/if}}
+    </Card.content>
   {{/if}}
 </PaperCard>
