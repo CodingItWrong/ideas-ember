@@ -3,7 +3,10 @@
     @quote={{quote}}
     @ideas={{@ideas}}
   >
-    <div class="preserve-line-breaks">{{quote.idea.summary}}</div>
+    <div class="preserve-line-breaks">{{#link-to
+      "ideas"
+      quote.idea.id
+    }}{{quote.idea.summary}}{{/link-to}}</div>
     <div>{{quote.location}}</div>
   </QuoteCard>
 {{/each}}
