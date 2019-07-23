@@ -1,10 +1,10 @@
 <PaperCard as |Card|>
-  <PaperToolbar as |Toolbar|>
-    <Toolbar.tools>
-      <h2>Author</h2>
-    </Toolbar.tools>
-  </PaperToolbar>
   {{#if this.editing}}
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>Author</h2>
+      </Toolbar.tools>
+    </PaperToolbar>
     <Card.content>
       <PaperForm @onSubmit={{this.save}} as |Form|>
         <Form.input
@@ -31,15 +31,14 @@
       </PaperForm>
     </Card.content>
   {{else}}
-    <Card.title as |Title|>
-      <Title.text as |Text|>
-        <Text.headline>{{@author.name}}</Text.headline>
-      </Title.text>
-    </Card.title>
-    <Card.actions>
-      <PaperButton @onClick={{this.startEditing}}>
-        Edit
-      </PaperButton>
-    </Card.actions>
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>{{@author.name}}</h2>
+        <span class="flex"></span>
+        <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+          {{paper-icon "edit"}}
+        </PaperButton>
+      </Toolbar.tools>
+    </PaperToolbar>
   {{/if}}
 </PaperCard>
