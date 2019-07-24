@@ -86,14 +86,8 @@
           {{#if (has-block)}}
             {{yield}}
           {{else}}
-            {{#link-to
-              "authors.detail"
-              @quote.source.author.id
-            }}{{@quote.source.author.name}}{{/link-to}},
-            {{#link-to
-              "sources.detail"
-              @quote.source.id
-            }}{{@quote.source.title}}{{/link-to}}
+            {{#link-to "authors.detail" @quote.source.author.id}}{{@quote.source.author.name}}{{/link-to}},
+            {{#link-to "sources.detail" @quote.source.id }}{{@quote.source.title}}{{/link-to}}
             {{@quote.location}}
           {{/if}}
         </Text.headline>
