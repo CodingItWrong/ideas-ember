@@ -1,10 +1,10 @@
 <PaperCard as |Card|>
-  <PaperToolbar as |Toolbar|>
-    <Toolbar.tools>
-      <h2>Idea</h2>
-    </Toolbar.tools>
-  </PaperToolbar>
   {{#if this.editing}}
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>Idea</h2>
+      </Toolbar.tools>
+    </PaperToolbar>
     <Card.title as |Title|>
       <Title.text>
         <PaperForm @onSubmit={{this.save}} as |Form|>
@@ -24,30 +24,36 @@
             @onChange={{action (mut this.editedIdeaComments)}}
             @passThru={{hash autocapitalize="sentences"}}
           />
+          <Form.submit-button
+            @primary={{true}}
+            @raised={{true}}
+            @onClick={{this.save}}
+          >
+            Save
+          </Form.submit-button>
+          <PaperButton @warn={{true}} @onClick={{this.delete}}>
+            Delete
+          </PaperButton>
+          <PaperButton @onClick={{this.cancelEditing}}>
+            Cancel
+          </PaperButton>
         </PaperForm>
       </Title.text>
     </Card.title>
-    <Card.actions>
-      <PaperButton @onClick={{this.cancelEditing}}>
-        Cancel
-      </PaperButton>
-      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
-        Save
-      </PaperButton>
-    </Card.actions>
   {{else}}
-    <Card.title as |Title|>
-      <Title.text as |Text|>
-        <Text.headline>{{@idea.summary}}</Text.headline>
-      </Title.text>
-    </Card.title>
-    <Card.actions>
-      <PaperButton @warn={{true}} @onClick={{this.delete}}>
-        Delete
-      </PaperButton>
-      <PaperButton @onClick={{this.startEditing}}>
-        Edit
-      </PaperButton>
-    </Card.actions>
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>{{@idea.summary}}</h2>
+        <span class="flex"></span>
+        <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+          {{paper-icon "edit"}}
+        </PaperButton>
+      </Toolbar.tools>
+    </PaperToolbar>
+    {{#if @idea.comments}}
+      <Card.content>
+        {{@idea.comments}}
+      </Card.content>
+    {{/if}}
   {{/if}}
 </PaperCard>

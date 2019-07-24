@@ -12,6 +12,7 @@
         />
         <Form.input
           @textarea={{true}}
+          @block={{true}}
           @placeholder="Location (page, timestamp, etc)"
           @value={{this.editedQuoteLocation}}
           @onChange={{action (mut this.editedQuoteLocation)}}
@@ -63,15 +64,20 @@
             </div>
           </div>
         {{/if}}
-      </Card.content>
-      <Card.actions>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+          @onClick={{this.save}}
+        >
+          Save
+        </Form.submit-button>
+        <PaperButton @warn={{true}} @onClick={{this.delete}}>
+          Delete
+        </PaperButton>
         <PaperButton @onClick={{this.cancelEditing}}>
           Cancel
         </PaperButton>
-        <PaperButton @raised={{true}} @primary={{true}} @onClick={{this.save}}>
-          Save
-        </PaperButton>
-      </Card.actions>
+      </Card.content>
     </PaperForm>
   {{else}}
     <Card.title as |Title|>
@@ -80,8 +86,8 @@
           {{#if (has-block)}}
             {{yield}}
           {{else}}
-            {{@quote.source.author.name}},
-            {{@quote.source.title}}
+            {{#link-to "authors.detail" @quote.source.author.id}}{{@quote.source.author.name}}{{/link-to}},
+            {{#link-to "sources.detail" @quote.source.id }}{{@quote.source.title}}{{/link-to}}
             {{@quote.location}}
           {{/if}}
         </Text.headline>
@@ -91,9 +97,6 @@
       <p class="preserve-line-breaks">{{@quote.text}}</p>
     </Card.content>
     <Card.actions>
-      <PaperButton @warn={{true}} @onClick={{this.delete}}>
-        Delete
-      </PaperButton>
       <PaperButton @onClick={{this.startEditing}}>
         Edit
       </PaperButton>

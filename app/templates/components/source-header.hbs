@@ -1,10 +1,10 @@
 <PaperCard as |Card|>
-  <PaperToolbar as |Toolbar|>
-    <Toolbar.tools>
-      <h2>Source</h2>
-    </Toolbar.tools>
-  </PaperToolbar>
   {{#if this.editing}}
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>Source</h2>
+      </Toolbar.tools>
+    </PaperToolbar>
     <Card.content>
       <PaperForm @onSubmit={{this.save}} as |Form|>
         <Form.input
@@ -29,20 +29,21 @@
           @value={{this.editedDate}}
           @onChange={{action (mut this.editedDate)}}
         />
+        <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
+          Save
+        </PaperButton>
+        <PaperButton @warn={{true}} @onClick={{this.delete}}>
+          Delete
+        </PaperButton>
+        <PaperButton @onClick={{this.cancelEditing}}>
+          Cancel
+        </PaperButton>
       </PaperForm>
     </Card.content>
-    <Card.actions>
-      <PaperButton @onClick={{this.cancelEditing}}>
-        Cancel
-      </PaperButton>
-      <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}}>
-        Save
-      </PaperButton>
-    </Card.actions>
   {{else}}
-    <Card.title as |Title|>
-      <Title.text as |Text|>
-        <Text.headline>
+    <PaperToolbar as |Toolbar|>
+      <Toolbar.tools>
+        <h2>
           {{#if @source.url}}
             <a href={{@source.url}} target="_blank" rel="noopener">
               {{@source.title}}
@@ -50,21 +51,18 @@
           {{else}}
             {{@source.title}}
           {{/if}}
-        </Text.headline>
-        {{#if @source.date}}
-          <Text.subhead>
-            {{@source.date}}
-          </Text.subhead>
-        {{/if}}
-      </Title.text>
-    </Card.title>
-    <Card.actions>
-      <PaperButton @warn={{true}} @onClick={{this.delete}}>
-        Delete
-      </PaperButton>
-      <PaperButton @onClick={{this.startEditing}}>
-        Edit
-      </PaperButton>
-    </Card.actions>
+        </h2>
+        <span class="flex"></span>
+        <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+          {{paper-icon "edit"}}
+        </PaperButton>
+      </Toolbar.tools>
+    </PaperToolbar>
+    <Card.content>
+      <p>{{@source.author.name}}</p>
+      {{#if @source.date}}
+        <p>{{@source.date}}</p>
+      {{/if}}
+    </Card.content>
   {{/if}}
 </PaperCard>
