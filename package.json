@@ -49,7 +49,7 @@
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/91656e1154afe39791514cbe937ada954eab8d11.tgz",
     "eslint-config-codingitwrong": "^0.1.4",
     "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-ember": "^6.8.2",
+    "eslint-plugin-ember": "^6.9.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "2.7.0",
     "loader.js": "^4.7.0",
