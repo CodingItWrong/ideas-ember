@@ -4262,10 +4262,10 @@ ember-cli-lodash-subset@^2.0.1:
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
   integrity sha1-IMtop5D+D94kiN39jvu332/nZvI=
 
-ember-cli-netlify@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-netlify/-/ember-cli-netlify-0.3.0.tgz#940a31817063d9a7f50e8ae152a91337739688ca"
-  integrity sha512-LpbDfDOBhCV7SysBeiaPbyj/XU32dCn4q8MVz0+kF3ki9T0YFD/Cwrm7f0gdzP8T6C2eoCyp4C03xUXeB6ZbTQ==
+ember-cli-netlify@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-netlify/-/ember-cli-netlify-0.3.1.tgz#5092024b44d983260f18db87240c9a37f8e17595"
+  integrity sha512-NCjd19y+ok6XhrKssAyFy6+GySrESsMNlYyq1uw7a/wk+JgUaiazoWBE8V5HpQ+VB9MW9iBlaTLoFrV1uYrLGA==
 
 ember-cli-normalize-entity-name@^1.0.0:
   version "1.0.0"
