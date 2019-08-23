@@ -46,7 +46,7 @@
     "ember-qunit": "^4.5.1",
     "ember-resolver": "^5.2.1",
     "ember-simple-auth": "^1.9.2",
-    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/91656e1154afe39791514cbe937ada954eab8d11.tgz",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/302c7dc3aecef11e572126b1617549f927072c94.tgz",
     "eslint-config-codingitwrong": "^0.1.4",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-ember": "^6.10.0",
