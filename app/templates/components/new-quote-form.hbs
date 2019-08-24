@@ -3,7 +3,7 @@
     <Toolbar.tools>
       <h2>Quotes</h2>
       <span class="flex"></span>
-      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+      <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-quote-button>
         Add
       </PaperButton>
     </Toolbar.tools>
@@ -19,10 +19,12 @@
           @onChange={{action (mut this.text)}}
           @passThru={{hash autocapitalize="sentences"}}
           {{did-insert this.saveInputElement}}
+          data-test-quote-field
         />
         <Form.submit-button
           @raised={{true}}
           @primary={{true}}
+          data-test-save-quote-button
         >
           Save
         </Form.submit-button>
