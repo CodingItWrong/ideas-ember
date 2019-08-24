@@ -649,14 +649,6 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-typescript@^7.1.0":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.4.0.tgz#0389ec53a34e80f99f708c4ca311181449a68eb1"
-  integrity sha512-U7/+zKnRZg04ggM/Bm+xmu2B/PrwyDQTT/V89FXWYWNMxBDwSx56u6jtk9SEbfLFbZaEI72L+5LPvQjeZgFCrQ==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-syntax-typescript" "^7.2.0"
-
 "@babel/plugin-transform-typescript@~7.4.0":
   version "7.4.5"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-typescript/-/plugin-transform-typescript-7.4.5.tgz#ab3351ba35307b79981993536c93ff8be050ba28"
@@ -1010,16 +1002,16 @@
     "@glimmer/util" "^0.38.1"
     "@glimmer/wire-format" "^0.38.1"
 
-"@glimmer/component@^0.14.0-alpha.12":
-  version "0.14.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-0.14.0-alpha.12.tgz#1fea4fbb8c53064789c0c87c1b93491816272426"
-  integrity sha512-2FThzkaqOLf0AbalC4oeOWGd02mECfwKdYmToW8JA8zt8RHuKLdOopDSkBnNTYvF6Q13qIUvdG4q9ttoa8k4Nw==
+"@glimmer/component@^0.14.0-alpha.13":
+  version "0.14.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/component/-/component-0.14.0-alpha.13.tgz#5e1912bee8a00504e8ea20cc59600956a9c435ee"
+  integrity sha512-dYXfMwIyOUi0XEYJMiGo1/1LiN3QQO0fuUqmEIb5Wj5po3eXch6FV3Vdq5RoekCuVfIUfD32CseEMC8qbj6R/Q==
   dependencies:
     "@glimmer/di" "^0.1.9"
     "@glimmer/env" "^0.1.7"
     "@glimmer/reference" "^0.41.0"
     "@glimmer/runtime" "^0.41.0"
-    "@glimmer/tracking" "^0.14.0-alpha.12"
+    "@glimmer/tracking" "^0.14.0-alpha.13"
     "@glimmer/util" "^0.41.0"
     broccoli-file-creator "^2.1.1"
     broccoli-merge-trees "^3.0.2"
@@ -1119,10 +1111,10 @@
     handlebars "^4.0.6"
     simple-html-tokenizer "^0.5.6"
 
-"@glimmer/tracking@^0.14.0-alpha.12":
-  version "0.14.0-alpha.12"
-  resolved "https://registry.yarnpkg.com/@glimmer/tracking/-/tracking-0.14.0-alpha.12.tgz#122f43147b66a145af8aa71565383803a63d27f7"
-  integrity sha512-E1nhZW5Ur8jPQXi1uGpbXzVXyla4/TuA2rD5orIwKqxljErU+hdtlGER0XnYIxN62boRcaXv1YVXxiDWVjOlMQ==
+"@glimmer/tracking@^0.14.0-alpha.13":
+  version "0.14.0-alpha.13"
+  resolved "https://registry.yarnpkg.com/@glimmer/tracking/-/tracking-0.14.0-alpha.13.tgz#aac853f3bd1ce2e076b9dec3495e5af84e9156de"
+  integrity sha512-JI6sI/v6c7mjWu4k9++/LVakEyvOxcUqpbJ7W4KwgpcYHtv8giVzQkR3gECJZp+PKRnhnU5OVyG+KsN1ZV2ptQ==
   dependencies:
     "@glimmer/di" "^0.1.9"
     "@glimmer/env" "^0.1.7"
@@ -4727,25 +4719,7 @@ ember-cli-test-loader@^2.2.0:
   dependencies:
     ember-cli-babel "^6.8.1"
 
-ember-cli-typescript@^2.0.0-rc.1:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-2.0.0.tgz#c31f7b649892ff8f7bb518539ccfa336d0613965"
-  integrity sha512-UUm/uMI1ToBQMmr5aiArEhHiCTyARXNxzbQxU+Yf1cBKuIXbDFTa/jdS55wt2o8qCPNay8v90m2C0Nvk3KuAEQ==
-  dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.1.0"
-    "@babel/plugin-transform-typescript" "^7.1.0"
-    ansi-to-html "^0.6.6"
-    debug "^4.0.0"
-    ember-cli-babel-plugin-helpers "^1.0.0"
-    execa "^1.0.0"
-    fs-extra "^7.0.0"
-    resolve "^1.5.0"
-    rsvp "^4.8.1"
-    semver "^5.5.1"
-    stagehand "^1.0.0"
-    walk-sync "^1.0.0"
-
-ember-cli-typescript@^2.0.2:
+ember-cli-typescript@^2.0.0-rc.1, ember-cli-typescript@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/ember-cli-typescript/-/ember-cli-typescript-2.0.2.tgz#464984131fbdc05655eb61d1c3cdd911d3137f0d"
   integrity sha512-7I5azCTxOgRDN8aSSnJZIKSqr+MGnT+jLTUbBYqF8wu6ojs2DUnTePxUcQMcvNh3Q3B1ySv7Q/uZFSjdU9gSjA==
