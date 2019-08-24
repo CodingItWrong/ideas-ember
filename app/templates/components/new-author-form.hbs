@@ -3,7 +3,7 @@
     <Toolbar.tools>
       <h2>Authors</h2>
       <span class="flex"></span>
-      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+      <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-author-button>
         Add
       </PaperButton>
     </Toolbar.tools>
@@ -17,10 +17,12 @@
           @value={{this.name}}
           @onChange={{action (mut this.name)}}
           @passThru={{hash autocapitalize="words"}}
+          data-test-author-name-field
         />
         <Form.submit-button
           @raised={{true}}
           @primary={{true}}
+          data-test-save-author-button
         >
           Save
         </Form.submit-button>
