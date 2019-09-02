@@ -1,7 +1,10 @@
-# ideas
+# Ideas
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Frontend client for Ideas, an app for grouping quotes into conceptual ideas.
+
+Implemented with Ember.js using the preview version of the upcoming [Octane edition](https://emberjs.com/editions/octane/). This app will be kept up-to-date with the latest Octane features and serves as a good example of a "typical" Ember app using Octane.
+
+Powered by a Rails JSON:API backend, [ideas-api](https://github.com/CodingItWrong/ideas-api).
 
 ## Prerequisites
 
@@ -11,7 +14,6 @@ You will need the following things properly installed on your computer.
 * [Node.js](https://nodejs.org/)
 * [Yarn](https://yarnpkg.com/)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
