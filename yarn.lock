@@ -4537,9 +4537,10 @@ ember-cli-htmlbars@^3.0.0, ember-cli-htmlbars@^3.0.1:
 
 ember-cli-htmlbars@ember-cli/ember-cli-htmlbars#colocation:
   version "3.2.0-alpha.0"
-  uid b9295c5b39c3f89ca32c231c24dcd4811db71e5b
-  resolved "https://codeload.github.com/ember-cli/ember-cli-htmlbars/tar.gz/b9295c5b39c3f89ca32c231c24dcd4811db71e5b"
+  uid "1dbfb87ab5db6886ce68ad207726e2570ce2413d"
+  resolved "https://codeload.github.com/ember-cli/ember-cli-htmlbars/tar.gz/1dbfb87ab5db6886ce68ad207726e2570ce2413d"
   dependencies:
+    broccoli-debug "^0.6.5"
     broccoli-persistent-filter "^2.3.1"
     broccoli-plugin "^2.0.0"
     fs-copy-file-sync "^1.1.1"
