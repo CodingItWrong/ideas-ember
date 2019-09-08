@@ -2,9 +2,8 @@
 
 <SourceHeader @source={{this.model.source}} />
 
-<NewQuoteForm @source={{this.model.source}} />
-
 <QuoteList
   @quotes={{this.model.source.quotes}}
   @ideas={{this.sortedIdeas}}
+  @source={{this.model.source}}
 />

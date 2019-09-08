@@ -1,13 +1,14 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 
-export default class QuoteCardComponent extends Component {
+export default class QuoteLine extends Component {
   @tracked
   editing = false;
 
   @action
-  startEditing() {
+  startEditing(e) {
+    e.preventDefault();
     this.editing = true;
   }
 

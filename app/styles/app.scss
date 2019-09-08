@@ -5,3 +5,10 @@ $primary: 'yellow';
 .preserve-line-breaks {
   white-space: pre-line;
 }
+
+.clickable-quote a,
+.clickable-quote a:hover,
+.clickable-quote a:visited {
+  color: black;
+  text-decoration: none;
+}

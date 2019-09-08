@@ -1,0 +1,10 @@
+{{#if this.editing}}
+  <EditQuoteForm
+    @quote={{@quote}}
+    @ideas={{@ideas}}
+    @onSave={{this.stopEditing}}
+    @onCancel={{this.stopEditing}}
+  />
+{{else}}
+  <p class="preserve-line-breaks clickable-quote" data-test-quote-text><a href="#" {{on "click" this.startEditing}}>{{@quote.text}}</a></p>
+{{/if}}
