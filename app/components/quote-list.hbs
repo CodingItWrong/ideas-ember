@@ -1,9 +1,15 @@
 <PaperCard as |Card|>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Quotes</h2>
+    </Toolbar.tools>
+  </PaperToolbar>
   <Card.content>
     {{#each this.sortedQuotes as |quote|}}
       <QuoteLine
         @quote={{quote}} @ideas={{@ideas}}
       />
     {{/each}}
+    <NewQuoteForm @source={{@source}} />
   </Card.content>
 </PaperCard>
