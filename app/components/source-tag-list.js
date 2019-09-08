@@ -2,8 +2,11 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { sort } from '@ember/object/computed';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default class SourceTagList extends Component {
+  @service router;
+
   sortProperties = Object.freeze(['title:asc']);
 
   @tracked isAdding = false;
@@ -22,6 +25,11 @@ export default class SourceTagList extends Component {
     await source.save();
     this.isAdding = false;
     this.tagToAdd = null;
+  }
+
+  @action
+  navigateToTag(tag) {
+    this.router.transitionTo('tags.detail', tag.id);
   }
 
   @action
