@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 
 export default class NewTagForm extends Component {
   @service store;
+  @service router;
 
   @tracked
   name = '';
@@ -14,5 +15,6 @@ export default class NewTagForm extends Component {
     const tag = this.store.createRecord('tag', { name: this.name });
     await tag.save();
     this.name = '';
+    this.router.transitionTo('tags.detail', tag.id);
   }
 }

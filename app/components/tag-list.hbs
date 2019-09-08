@@ -2,11 +2,7 @@
   <PaperCard>
     <PaperList>
       {{#each this.sortedTags as |tag|}}
-        <PaperItem class="md-2-line">
-          <div class="md-list-item-text">
-            <h3 class="preserve-line-breaks">{{tag.name}}</h3>
-          </div>
-        </PaperItem>
+        <TagItem @tag={{tag}} />
       {{/each}}
     </PaperList>
   </PaperCard>
