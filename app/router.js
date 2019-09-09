@@ -15,6 +15,9 @@ Router.map(function() {
     this.route('detail', { path: '/:id' });
   });
   this.route('login');
+  this.route('tags', function() {
+    this.route('detail', { path: '/:id' });
+  });
 });
 
 export default Router;

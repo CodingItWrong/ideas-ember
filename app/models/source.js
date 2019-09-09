@@ -7,4 +7,5 @@ export default class SourceModel extends Model {
   @attr() date;
   @belongsTo('author') author;
   @hasMany('quote') quotes;
+  @hasMany('tag') tags;
 }
