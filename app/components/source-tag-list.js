@@ -46,4 +46,10 @@ export default class SourceTagList extends Component {
     source.tags.removeObject(tag);
     await source.save();
   }
+
+  @action
+  cancelAdd() {
+    this.isAdding = false;
+    this.tagToAdd = null;
+  }
 }

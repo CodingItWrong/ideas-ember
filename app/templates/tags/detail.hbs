@@ -1,5 +1,10 @@
 <BackButton @to="tags" />
 
-<TagHeader @tag={{this.model}} />
+<TagHeader @tag={{this.model.tag}} />
 
-<SourceList @sources={{this.model.sources}} />
+<SourceList @sources={{this.model.tag.sources}} />
+
+<TagSourceList
+  @tag={{this.model.tag}}
+  @sources={{this.model.sources}}
+/>

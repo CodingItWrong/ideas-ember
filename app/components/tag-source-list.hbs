@@ -1,26 +1,26 @@
-<PaperCard as |Card|>
+fn<PaperCard as |Card|>
   <PaperToolbar as |Toolbar|>
     <Toolbar.tools>
-      <h2>Tags</h2>
+      <h2>Sources</h2>
       <span class="flex"></span>
-      <PaperButton @onClick={{fn (mut this.isAdding) true}} data-test-add-author-button>
+      <PaperButton @onClick={{fn (mut this.isAdding) true}}>
         Add
       </PaperButton>
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
     <Card.content>
-      <PaperForm @onSubmit={{this.addTagToSource}} as |Form|>
+      <PaperForm @onSubmit={{this.addSourceToTag}} as |Form|>
         <div>
           <PaperSelect
             @block={{true}}
-            @label="Tags"
-            @options={{this.sortedTags}}
-            @selected={{this.tagToAdd}}
-            @onChange={{fn (mut this.tagToAdd)}}
-            as |tag|
+            @label="Sources"
+            @options={{this.sortedSources}}
+            @selected={{this.sourceToAdd}}
+            @onChange={{fn (mut this.sourceToAdd)}}
+            as |source|
           >
-            {{tag.name}}
+            {{source.title}} - {{source.author.name}}
           </PaperSelect>
         </div>
         <Form.submit-button
@@ -35,16 +35,17 @@
       </PaperForm>
     </Card.content>
   {{/if}}
-  {{#each this.sortedSourceTags as |tag|}}
-    <PaperItem @onClick={{fn this.navigateToTag tag}} class="md-2-line" as |Controls|>
+  {{#each this.sortedTagSources as |source|}}
+    <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line" as |Controls|>
       <div class="md-list-item-text">
-        <h3 class="preserve-line-breaks">{{tag.name}}</h3>
+        <h3 class="preserve-line-breaks">{{source.title}}</h3>
+        <h4>{{source.author.name}}</h4>
       </div>
       <div class="md-secondary-container">
         <Controls.button
           @secondary={{true}}
           @iconButton={{true}}
-          @onClick={{fn this.promptToRemoveTag tag}}
+          @onClick={{fn this.promptToRemoveSource source}}
         >
           {{paper-icon "delete"}}
         </Controls.button>
