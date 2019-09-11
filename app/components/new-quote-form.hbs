@@ -24,7 +24,12 @@
     </Card.content>
   </PaperForm>
 {{else}}
-  <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-quote-button>
+  <PaperButton
+    @raised={{true}}
+    @primary={{true}}
+    @onClick={{action (mut this.isAdding) true}}
+    data-test-add-quote-button
+  >
     Add
   </PaperButton>
 {{/if}}
