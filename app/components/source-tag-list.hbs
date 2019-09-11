@@ -3,7 +3,7 @@
     <Toolbar.tools>
       <h2>Tags</h2>
       <span class="flex"></span>
-      <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-author-button>
+      <PaperButton @onClick={{fn (mut this.isAdding) true}} data-test-add-author-button>
         Add
       </PaperButton>
     </Toolbar.tools>
