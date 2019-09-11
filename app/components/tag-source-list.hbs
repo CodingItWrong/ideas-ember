@@ -1,0 +1,55 @@
+fn<PaperCard as |Card|>
+  <PaperToolbar as |Toolbar|>
+    <Toolbar.tools>
+      <h2>Sources</h2>
+      <span class="flex"></span>
+      <PaperButton @onClick={{fn (mut this.isAdding) true}}>
+        Add
+      </PaperButton>
+    </Toolbar.tools>
+  </PaperToolbar>
+  {{#if this.isAdding}}
+    <Card.content>
+      <PaperForm @onSubmit={{this.addSourceToTag}} as |Form|>
+        <div>
+          <PaperSelect
+            @block={{true}}
+            @label="Sources"
+            @options={{this.sortedSources}}
+            @selected={{this.sourceToAdd}}
+            @onChange={{fn (mut this.sourceToAdd)}}
+            as |source|
+          >
+            {{source.title}} - {{source.author.name}}
+          </PaperSelect>
+        </div>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+        >
+          Save
+        </Form.submit-button>
+        <PaperButton @onClick={{this.cancelAdd}}>
+          Cancel
+        </PaperButton>
+      </PaperForm>
+    </Card.content>
+  {{/if}}
+  {{#each this.sortedTagSources as |source|}}
+    <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line" as |Controls|>
+      <div class="md-list-item-text">
+        <h3 class="preserve-line-breaks">{{source.title}}</h3>
+        <h4>{{source.author.name}}</h4>
+      </div>
+      <div class="md-secondary-container">
+        <Controls.button
+          @secondary={{true}}
+          @iconButton={{true}}
+          @onClick={{fn this.promptToRemoveSource source}}
+        >
+          {{paper-icon "delete"}}
+        </Controls.button>
+      </div>
+    </PaperItem>
+  {{/each}}
+</PaperCard>
