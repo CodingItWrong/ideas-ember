@@ -11,29 +11,27 @@
   {{#if this.isAdding}}
     <Card.content>
       <PaperForm @onSubmit={{this.addTagToSource}} as |Form|>
-        <Card.content>
-          <div>
-            <PaperSelect
-              @block={{true}}
-              @label="Tags"
-              @options={{@tags}}
-              @selected={{this.tagToAdd}}
-              @onChange={{action (mut this.tagToAdd)}}
-              as |tag|
-            >
-              {{tag.name}}
-            </PaperSelect>
-          </div>
-          <Form.submit-button
-            @raised={{true}}
-            @primary={{true}}
+        <div>
+          <PaperSelect
+            @block={{true}}
+            @label="Tags"
+            @options={{this.sortedTags}}
+            @selected={{this.tagToAdd}}
+            @onChange={{fn (mut this.tagToAdd)}}
+            as |tag|
           >
-            Save
-          </Form.submit-button>
-          <PaperButton @onClick={{action (mut this.isAdding) false}}>
-            Cancel
-          </PaperButton>
-        </Card.content>
+            {{tag.name}}
+          </PaperSelect>
+        </div>
+        <Form.submit-button
+          @raised={{true}}
+          @primary={{true}}
+        >
+          Save
+        </Form.submit-button>
+        <PaperButton @onClick={{this.cancelAdd}}>
+          Cancel
+        </PaperButton>
       </PaperForm>
     </Card.content>
   {{/if}}
