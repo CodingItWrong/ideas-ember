@@ -7,10 +7,11 @@ export default class EditAuthorForm extends Component {
   @tracked editedAffiliation = '';
 
   @action
-  save() {
-    const { author } = this.args;
+  async save() {
+    const { author, onSave } = this.args;
     author.set('name', this.editedName);
     author.set('affiliation', this.editedAffiliation);
-    author.save();
+    await author.save();
+    onSave();
   }
 }

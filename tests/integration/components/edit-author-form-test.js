@@ -15,6 +15,8 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
     test('it updates the author', async function(assert) {
       let saved = false;
+      let calledOnSave = false;
+
       author = EmberObject.create({
         name: 'Sandi Metz',
         affiliation: '',
@@ -22,9 +24,12 @@ module('Integration | Component | edit-author-form', function(hooks) {
       });
 
       this.set('author', author);
+      this.set('handleSave', () => (calledOnSave = true));
       // Handle any actions with this.set('myAction', function(val) { ... });
 
-      await render(hbs`<EditAuthorForm @author={{this.author}} />`);
+      await render(
+        hbs`<EditAuthorForm @author={{this.author}} @onSave={{this.handleSave}} />`,
+      );
 
       await fillIn('[data-test-name] input', updatedName);
       await fillIn('[data-test-affiliation] input', updatedAffiliation);
@@ -36,6 +41,9 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
       // saves
       assert.equal(saved, true);
+
+      // calls onSave
+      assert.equal(calledOnSave, true);
     });
   });
 });
