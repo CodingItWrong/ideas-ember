@@ -26,6 +26,13 @@
     Save
   </Form.submit-button>
   <PaperButton
+    data-test-delete-button
+    @warn={{true}}
+    @onClick={{this.delete}}
+  >
+    Delete
+  </PaperButton>
+  <PaperButton
     data-test-cancel-button
     @onClick={{@onCancel}}
   >

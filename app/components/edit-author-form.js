@@ -26,4 +26,10 @@ export default class EditAuthorForm extends Component {
     await author.save();
     onSave();
   }
+
+  @action
+  delete() {
+    const { onDelete } = this.args;
+    onDelete();
+  }
 }

@@ -64,5 +64,25 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
       assert.equal(calledOnCancel, true);
     });
+
+    test('it allows deleting', async function(assert) {
+      let calledOnDelete = false;
+
+      author = EmberObject.create({
+        name: 'Sandi Metz',
+        affiliation: '',
+      });
+
+      this.set('author', author);
+      this.set('handleDelete', () => (calledOnDelete = true));
+
+      await render(
+        hbs`<EditAuthorForm @author={{author}} @onDelete={{this.handleDelete}} />`,
+      );
+
+      await click('[data-test-delete-button]');
+
+      assert.equal(calledOnDelete, true);
+    });
   });
 });
