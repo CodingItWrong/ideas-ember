@@ -16,7 +16,7 @@
   {{else}}
     <PaperToolbar as |Toolbar|>
       <Toolbar.tools>
-        <h2>{{@author.name}}</h2>
+        <h2 data-test-author-name>{{@author.name}}</h2>
         <span class="flex"></span>
         <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
           {{paper-icon "edit"}}
