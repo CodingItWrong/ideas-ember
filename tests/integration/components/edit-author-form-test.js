@@ -25,7 +25,6 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
       this.set('author', author);
       this.set('handleSave', () => (calledOnSave = true));
-      // Handle any actions with this.set('myAction', function(val) { ... });
 
       await render(
         hbs`<EditAuthorForm @author={{this.author}} @onSave={{this.handleSave}} />`,
@@ -44,6 +43,31 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
       // calls onSave
       assert.equal(calledOnSave, true);
+    });
+
+    test('it allows cancelling', async function(assert) {
+      let saved = false;
+      let calledOnSave = false;
+      let calledOnCancel = false;
+
+      author = EmberObject.create({
+        name: 'Sandi Metz',
+        affiliation: '',
+        save: () => (saved = true),
+      });
+
+      this.set('author', author);
+      this.set('handleSave', () => (calledOnSave = true));
+      this.set('handleCancel', () => (calledOnCancel = true));
+
+      await render(
+        hbs`<EditAuthorForm @author={{this.author}} @onSave={{this.handleSave}} @onCancel={{this.handleCancel}} />`,
+      );
+
+      await click('[data-test-cancel-button]');
+
+      // calls onSave
+      assert.equal(calledOnCancel, true);
     });
   });
 });
