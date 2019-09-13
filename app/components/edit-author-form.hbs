@@ -1,0 +1,28 @@
+<PaperForm as |Form|>
+  <Form.input
+    @block={{true}}
+    @type="text"
+    @placeholder="Author Name"
+    @value={{this.editedName}}
+    @onChange={{action (mut this.editedName)}}
+    @passThru={{hash autocapitalize="words"}}
+    data-test-name
+  />
+  <Form.input
+    @block={{true}}
+    @type="text"
+    @placeholder="Affiliation"
+    @value={{this.editedAffiliation}}
+    @onChange={{action (mut this.editedAffiliation)}}
+    @passThru={{hash autocapitalize="words"}}
+    data-test-affiliation
+  />
+  <Form.submit-button
+    @primary={{true}}
+    @raised={{true}}
+    @onClick={{this.save}}
+    data-test-save-button
+  >
+    Save
+  </Form.submit-button>
+</PaperForm>
