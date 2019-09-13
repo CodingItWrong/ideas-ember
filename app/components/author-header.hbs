@@ -6,29 +6,12 @@
       </Toolbar.tools>
     </PaperToolbar>
     <Card.content>
-      <PaperForm @onSubmit={{this.save}} as |Form|>
-        <Form.input
-          @block={{true}}
-          @type="text"
-          @placeholder="Author Name"
-          @value={{this.editedAuthorName}}
-          @onChange={{action (mut this.editedAuthorName)}}
-          @passThru={{hash autocapitalize="words"}}
-        />
-        <Form.submit-button
-          @primary={{true}}
-          @raised={{true}}
-          @onClick={{this.save}}
-        >
-          Save
-        </Form.submit-button>
-        <PaperButton @warn={{true}} @onClick={{this.delete}}>
-          Delete
-        </PaperButton>
-        <PaperButton @onClick={{this.cancelEditing}}>
-          Cancel
-        </PaperButton>
-      </PaperForm>
+      <EditAuthorForm
+        @author={{@author}}
+        @onSave={{this.stopEditing}}
+        @onDelete={{this.handleDelete}}
+        @onCancel={{this.stopEditing}}
+      />
     </Card.content>
   {{else}}
     <PaperToolbar as |Toolbar|>
