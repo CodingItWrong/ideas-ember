@@ -11,5 +11,6 @@ export default class EditAuthorForm extends Component {
     const { author } = this.args;
     author.set('name', this.editedName);
     author.set('affiliation', this.editedAffiliation);
+    author.save();
   }
 }
