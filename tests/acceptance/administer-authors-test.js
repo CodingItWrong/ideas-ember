@@ -18,6 +18,7 @@ module('Acceptance | administer authors', function(hooks) {
 
     // add
     await addAuthor(assert, authorName);
+    await seeAuthorInList(assert, authorName);
   });
 
   async function addAuthor(assert, authorName) {
@@ -29,5 +30,10 @@ module('Acceptance | administer authors', function(hooks) {
     await click('[data-test-save-author-button]');
 
     assert.dom('[data-test-author-name]').hasText(authorName);
+  }
+
+  async function seeAuthorInList(assert, authorName) {
+    await click('[data-test-authors-nav-link]');
+    assert.dom(`[data-test-author="${authorName}"]`).exists();
   }
 });
