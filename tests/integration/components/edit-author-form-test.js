@@ -66,11 +66,16 @@ module('Integration | Component | edit-author-form', function(hooks) {
     });
 
     test('it allows deleting', async function(assert) {
+      let calledDestroyRecord = false;
       let calledOnDelete = false;
 
       author = EmberObject.create({
         name: 'Sandi Metz',
         affiliation: '',
+        destroyRecord: () => {
+          calledDestroyRecord = true;
+          return Promise.resolve();
+        },
       });
 
       this.set('author', author);
@@ -82,6 +87,7 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
       await click('[data-test-delete-button]');
 
+      assert.equal(calledDestroyRecord, true);
       assert.equal(calledOnDelete, true);
     });
   });

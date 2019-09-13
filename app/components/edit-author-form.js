@@ -30,6 +30,7 @@ export default class EditAuthorForm extends Component {
   @action
   delete() {
     const { onDelete } = this.args;
-    onDelete();
+
+    this.args.author.destroyRecord().then(() => onDelete());
   }
 }
