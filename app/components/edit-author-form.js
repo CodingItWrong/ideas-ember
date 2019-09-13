@@ -6,6 +6,18 @@ export default class EditAuthorForm extends Component {
   @tracked editedName = '';
   @tracked editedAffiliation = '';
 
+  constructor(owner, args) {
+    super(owner, args);
+    this.initializeFormData();
+  }
+
+  // TODO: test this
+  initializeFormData() {
+    const { author } = this.args;
+    this.editedName = author.name;
+    this.editedAffiliation = author.affiliation;
+  }
+
   @action
   async save() {
     const { author, onSave } = this.args;

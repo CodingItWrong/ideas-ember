@@ -47,8 +47,18 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
     test('it allows cancelling', async function(assert) {
       let calledOnCancel = false;
+
+      author = EmberObject.create({
+        name: 'Sandi Metz',
+        affiliation: '',
+      });
+
+      this.set('author', author);
       this.set('handleCancel', () => (calledOnCancel = true));
-      await render(hbs`<EditAuthorForm @onCancel={{this.handleCancel}} />`);
+
+      await render(
+        hbs`<EditAuthorForm @author={{author}} @onCancel={{this.handleCancel}} />`,
+      );
 
       await click('[data-test-cancel-button]');
 
