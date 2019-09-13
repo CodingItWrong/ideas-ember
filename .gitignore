@@ -22,6 +22,5 @@
 /bower.json.ember-try
 /package.json.ember-try
 
-# temporarily leave out generated tests
+# leave out model tests
 tests/unit/
-tests/integration/
