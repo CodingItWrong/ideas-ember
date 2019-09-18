@@ -1,35 +1,24 @@
-{{#if this.isAdding}}
-  <PaperForm @onSubmit={{this.createQuote}} as |Form|>
-    <Card.content>
-      <Form.input
-        @textarea={{true}}
-        @block={{true}}
-        @label="New Quote"
-        @value={{this.text}}
-        @onChange={{action (mut this.text)}}
-        @passThru={{hash autocapitalize="sentences"}}
-        {{did-insert this.saveInputElement}}
-        data-test-quote-field
-      />
-      <Form.submit-button
-        @raised={{true}}
-        @primary={{true}}
-        data-test-save-quote-button
-      >
-        Save
-      </Form.submit-button>
-      <PaperButton @onClick={{action (mut this.isAdding) false}}>
-        Cancel
-      </PaperButton>
-    </Card.content>
-  </PaperForm>
-{{else}}
-  <PaperButton
-    @raised={{true}}
-    @primary={{true}}
-    @onClick={{action (mut this.isAdding) true}}
-    data-test-add-quote-button
-  >
-    Add
-  </PaperButton>
-{{/if}}
+<PaperForm @onSubmit={{this.createQuote}} as |Form|>
+  <Card.content>
+    <Form.input
+      @textarea={{true}}
+      @block={{true}}
+      @label="New Quote"
+      @value={{this.text}}
+      @onChange={{action (mut this.text)}}
+      @passThru={{hash autocapitalize="sentences"}}
+      {{did-insert this.saveInputElement}}
+      data-test-quote-field
+    />
+    <Form.submit-button
+      @raised={{true}}
+      @primary={{true}}
+      data-test-save-quote-button
+    >
+      Save
+    </Form.submit-button>
+    <PaperButton @onClick={{action (mut this.isAdding) false}}>
+      Cancel
+    </PaperButton>
+  </Card.content>
+</PaperForm>

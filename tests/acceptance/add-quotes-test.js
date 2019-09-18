@@ -28,7 +28,6 @@ module('Acceptance | add quotes', function(hooks) {
     );
     await click('[data-test-save-source-button]');
 
-    await click('[data-test-add-quote-button]');
     await fillIn('[data-test-quote-field] textarea', quote);
     await click('[data-test-save-quote-button]');
 
