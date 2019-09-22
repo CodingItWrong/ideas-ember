@@ -7,7 +7,7 @@ import { inject as service } from '@ember/service';
 export default class SourceTagList extends Component {
   @service router;
 
-  sortProperties = Object.freeze(['title:asc']);
+  sortProperties = Object.freeze(['name:asc']);
 
   @tracked isAdding = false;
   @tracked tagToAdd = null;

@@ -1,4 +1,4 @@
-<PaperForm @onSubmit={{this.createQuote}} as |Form|>
+<PaperForm @onSubmit={{this.createQuote}} class="layout-margin" as |Form|>
   <Card.content>
     <Form.input
       @textarea={{true}}
@@ -17,8 +17,5 @@
     >
       Save
     </Form.submit-button>
-    <PaperButton @onClick={{action (mut this.isAdding) false}}>
-      Cancel
-    </PaperButton>
   </Card.content>
 </PaperForm>
