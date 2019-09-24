@@ -4558,10 +4558,10 @@ ember-cli-htmlbars@^3.0.0, ember-cli-htmlbars@^3.0.1:
     json-stable-stringify "^1.0.1"
     strip-bom "^3.0.0"
 
-ember-cli-htmlbars@ember-cli/ember-cli-htmlbars#colocation:
-  version "3.2.0-alpha.0"
-  uid "253503f1cda5bce173d65fd7b15de1f447cfa5e7"
-  resolved "https://codeload.github.com/ember-cli/ember-cli-htmlbars/tar.gz/253503f1cda5bce173d65fd7b15de1f447cfa5e7"
+ember-cli-htmlbars@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-4.0.0.tgz#856b8e2335dc69fd9ecfc74aa0a04959e82a95de"
+  integrity sha512-BQpKjFYDpu6ozEoyAjn7DHljHxt5KUPUwFYOqF2NNMSJJjpky2DgoJgsaP4xG8wvSoZXwGLPUcbdtQLoOH2bIw==
   dependencies:
     "@ember/edition-utils" "^1.1.1"
     babel-plugin-htmlbars-inline-precompile "^2.1.0"
