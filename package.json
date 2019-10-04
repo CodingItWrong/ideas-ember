@@ -20,7 +20,7 @@
   "devDependencies": {
     "@ember/jquery": "^0.6.1",
     "@ember/optional-features": "^1.0.0",
-    "@ember/render-modifiers": "^1.0.1",
+    "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^0.14.0-alpha.13",
     "babel-eslint": "^9.0.0",
     "broccoli-asset-rev": "^3.0.0",
