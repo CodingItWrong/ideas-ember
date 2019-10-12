@@ -18,7 +18,6 @@
     "test": "ember test"
   },
   "devDependencies": {
-    "@ember/jquery": "^1.1.0",
     "@ember/optional-features": "^1.0.0",
     "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^0.14.0-alpha.13",
@@ -40,6 +39,7 @@
     "ember-cli-uglify": "^3.0.0",
     "ember-data": "^3.12.2",
     "ember-export-application-global": "^2.0.0",
+    "ember-fetch": "^6.7.1",
     "ember-load-initializers": "^2.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-paper": "1.0.0-beta.26",
