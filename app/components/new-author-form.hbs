@@ -16,7 +16,7 @@
           @label="New Author"
           @value={{this.name}}
           @onChange={{action (mut this.name)}}
-          @passThru={{hash autocapitalize="words"}}
+          @passThru={{hash autocapitalize="sentences"}}
           data-test-author-name-field
         />
         <Form.submit-button
