@@ -17,7 +17,7 @@
           @label="New Source"
           @value={{this.title}}
           @onChange={{action (mut this.title)}}
-          @passThru={{hash autocapitalize="words"}}
+          @passThru={{hash autocapitalize="sentences"}}
           data-test-title-field
         />
         <Form.input
