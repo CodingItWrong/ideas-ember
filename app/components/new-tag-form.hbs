@@ -16,7 +16,7 @@
           @label="New Tag"
           @value={{this.name}}
           @onChange={{action (mut this.name)}}
-          @passThru={{hash autocapitalize="words"}}
+          @passThru={{hash autocapitalize="sentences"}}
         />
         <Form.submit-button
           @raised={{true}}

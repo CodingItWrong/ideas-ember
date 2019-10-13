@@ -13,7 +13,7 @@
           @placeholder="Tag Name"
           @value={{this.editedTagName}}
           @onChange={{action (mut this.editedTagName)}}
-          @passThru={{hash autocapitalize="words"}}
+          @passThru={{hash autocapitalize="sentences"}}
         />
         <Form.submit-button
           @primary={{true}}
