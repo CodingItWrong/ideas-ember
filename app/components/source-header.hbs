@@ -13,7 +13,7 @@
           @label="Source"
           @value={{this.editedTitle}}
           @onChange={{action (mut this.editedTitle)}}
-          @passThru={{hash autocapitalize="words"}}
+          @passThru={{hash autocapitalize="sentences"}}
         />
         <Form.input
           @type="url"
