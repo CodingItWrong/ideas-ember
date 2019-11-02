@@ -1,7 +1,15 @@
 {{#if this.sortedAuthors}}
   <PaperCard>
     <PaperList>
-      {{#each this.sortedAuthors as |author|}}
+      <PaperItem class="md-2-line">
+        <PaperInput
+          @label="Filter"
+          @value={{this.filter}}
+          @onChange={{action (mut this.filter)}}
+          class="flex"
+        />
+      </PaperItem>
+      {{#each this.filteredAuthors as |author|}}
         <AuthorItem @author={{author}} />
       {{/each}}
     </PaperList>
