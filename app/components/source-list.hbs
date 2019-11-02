@@ -1,7 +1,15 @@
 <PaperCard as |Card|>
   {{#if this.sortedSources}}
     <PaperList>
-      {{#each this.sortedSources as |source|}}
+      <PaperItem class="md-2-line">
+        <PaperInput
+          @label="Filter"
+          @value={{this.filter}}
+          @onChange={{action (mut this.filter)}}
+          class="flex"
+        />
+      </PaperItem>
+      {{#each this.filteredSources as |source|}}
         {{#if (has-block)}}
           <SourceItem @source={{source}}>
             {{yield source}}
