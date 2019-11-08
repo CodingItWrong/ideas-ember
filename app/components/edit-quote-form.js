@@ -38,6 +38,21 @@ export default class EditQuoteForm extends Component {
 
   @action
   cancelEditing() {
+    const changed =
+      this.editedQuoteText !== this.args.quote.text ||
+      this.editedQuoteLocation !== this.args.quote.location ||
+      this.editedQuoteComments !== this.args.quote.comments ||
+      this.idea !== this.args.quote.idea;
+    if (changed) {
+      if (
+        !confirm(
+          'Are you sure you want to cancel editing this quote? Your changes will be lost.',
+        )
+      ) {
+        return;
+      }
+    }
+
     this.args.onCancel();
   }
 
