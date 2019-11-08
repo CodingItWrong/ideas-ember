@@ -24,6 +24,15 @@ export default class EditQuoteForm extends Component {
   @tracked
   newIdeaSummary = '';
 
+  get isChanged() {
+    return (
+      this.editedQuoteText !== this.args.quote.text ||
+      this.editedQuoteLocation !== this.args.quote.location ||
+      this.editedQuoteComments !== this.args.quote.comments ||
+      this.idea !== this.args.quote.idea
+    );
+  }
+
   constructor(owner, args) {
     super(owner, args);
     this.initializeFormData();
@@ -38,6 +47,16 @@ export default class EditQuoteForm extends Component {
 
   @action
   cancelEditing() {
+    if (this.isChanged) {
+      if (
+        !confirm(
+          'Are you sure you want to cancel editing this quote? Your changes will be lost.',
+        )
+      ) {
+        return;
+      }
+    }
+
     this.args.onCancel();
   }
 
