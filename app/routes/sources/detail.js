@@ -6,9 +6,10 @@ export default class SourcesDetailRoute extends Route {
     return RSVP.hash({
       ideas: this.store.findAll('idea'),
       tags: this.store.findAll('tag'),
+      media: this.store.findAll('medium'),
       source: this.store.findRecord('source', id, {
         reload: true,
-        include: 'author,tags,quotes,quotes.idea',
+        include: 'author,medium,tags,quotes,quotes.idea',
       }),
     });
   }
