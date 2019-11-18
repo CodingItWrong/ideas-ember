@@ -11,6 +11,9 @@ export default class NewSourceFormComponent extends Component {
   title = '';
 
   @tracked
+  medium = null;
+
+  @tracked
   url = '';
 
   @tracked
@@ -20,12 +23,14 @@ export default class NewSourceFormComponent extends Component {
   async createSource() {
     const source = this.store.createRecord('source', {
       title: this.title,
+      medium: this.medium,
       url: this.url,
       date: this.date,
       author: this.args.author,
     });
     await source.save();
     this.title = '';
+    this.medium = null;
     this.url = '';
     this.router.transitionTo('sources.detail', source.id);
   }

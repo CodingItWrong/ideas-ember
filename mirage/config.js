@@ -1,8 +1,10 @@
 export default function() {
   this.get('/authors');
+  this.get('/authors/:id');
   this.post('/authors');
 
   this.get('/ideas');
+  this.get('/media');
 
   this.get('/sources/:id');
   this.post('/sources');

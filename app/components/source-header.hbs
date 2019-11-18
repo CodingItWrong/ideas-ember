@@ -15,6 +15,16 @@
           @onChange={{action (mut this.editedTitle)}}
           @passThru={{hash autocapitalize="sentences"}}
         />
+        <Form.select
+          @block={{true}}
+          @label="Medium"
+          @options={{@media}}
+          @selected={{this.editedMedium}}
+          @onChange={{action (mut this.editedMedium)}}
+          as |medium|
+        >
+          {{medium.name}}
+        </Form.select>
         <Form.input
           @type="url"
           @block={{true}}

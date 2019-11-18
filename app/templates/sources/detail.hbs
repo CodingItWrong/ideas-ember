@@ -1,6 +1,9 @@
 <BackButton @to="authors.detail" @id={{this.model.source.author.id}} />
 
-<SourceHeader @source={{this.model.source}}/>
+<SourceHeader
+  @source={{this.model.source}}
+  @media={{this.model.media}}
+/>
 
 <SourceTagList
   @source={{this.model.source}}

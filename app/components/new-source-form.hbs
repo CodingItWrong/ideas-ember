@@ -20,6 +20,16 @@
           @passThru={{hash autocapitalize="sentences"}}
           data-test-title-field
         />
+        <Form.select
+          @block={{true}}
+          @label="Medium"
+          @options={{@media}}
+          @selected={{this.medium}}
+          @onChange={{action (mut this.medium)}}
+          as |medium|
+        >
+          {{medium.name}}
+        </Form.select>
         <Form.input
           @type="url"
           @block={{true}}

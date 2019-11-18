@@ -13,6 +13,9 @@ export default class SourceHeaderComponent extends Component {
   editedTitle;
 
   @tracked
+  editedMedium;
+
+  @tracked
   editedUrl;
 
   @tracked
@@ -21,6 +24,7 @@ export default class SourceHeaderComponent extends Component {
   @action
   startEditing() {
     this.editedTitle = this.args.source.title;
+    this.editedMedium = this.args.source.medium;
     this.editedUrl = this.args.source.url;
     this.editedDate = this.args.source.date;
     this.editing = true;
@@ -36,6 +40,7 @@ export default class SourceHeaderComponent extends Component {
     const { source } = this.args;
     source.setProperties({
       title: this.editedTitle,
+      medium: this.editedMedium,
       url: this.editedUrl,
       date: this.editedDate,
     });
