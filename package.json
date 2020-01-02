@@ -32,7 +32,7 @@
     "ember-cli-eslint": "^5.0.0",
     "ember-cli-htmlbars": "^4.2.0",
     "ember-cli-inject-live-reload": "^2.0.2",
-    "ember-cli-mirage": "^1.1.4",
+    "ember-cli-mirage": "^1.1.6",
     "ember-cli-netlify": "^0.3.1",
     "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
