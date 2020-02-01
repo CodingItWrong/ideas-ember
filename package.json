@@ -50,7 +50,7 @@
     "ember-source": "^3.14.2",
     "eslint-config-codingitwrong": "^0.1.4",
     "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-ember": "^7.7.1",
+    "eslint-plugin-ember": "^7.7.2",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-prettier": "2.6.0",
     "loader.js": "^4.7.0",
