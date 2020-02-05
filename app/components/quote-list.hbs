@@ -5,7 +5,7 @@
     </Toolbar.tools>
   </PaperToolbar>
   <Card.content>
-    {{#each this.sortedQuotes as |quote|}}
+    {{#each @quotes as |quote|}}
       <QuoteLine
         @quote={{quote}} @ideas={{@ideas}}
       />
