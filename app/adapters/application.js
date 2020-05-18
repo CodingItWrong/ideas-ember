@@ -7,13 +7,17 @@ import ENV from '../config/environment';
 let options = {
   session: service('session'),
 
-  headers: computed('session.data.authenticated.access_token', function() {
-    const headers = {};
-    if (this.session.isAuthenticated) {
-      headers.Authorization = `Bearer ${this.session.data.authenticated.access_token}`;
-    }
-    return headers;
-  }),
+  headers: computed(
+    'session.data.authenticated.access_token',
+    'session.isAuthenticated',
+    function() {
+      const headers = {};
+      if (this.session.isAuthenticated) {
+        headers.Authorization = `Bearer ${this.session.data.authenticated.access_token}`;
+      }
+      return headers;
+    },
+  ),
 };
 
 if (ENV.apiHost) {
