@@ -10,7 +10,7 @@ export default class IdeaListComponent extends Component {
   @sort('args.ideas', 'sortProperties')
   sortedIdeas;
 
-  @filter('sortedIdeas', ['filter'], function(idea) {
+  @filter('sortedIdeas', ['filter'], function (idea) {
     return (
       !this.filter ||
       idea.summary.toLowerCase().includes(this.filter.toLowerCase())
