@@ -1,5 +1,4 @@
-import DS from 'ember-data';
-const { Model, attr, belongsTo } = DS;
+import Model, { attr, hasMany, belongsTo } from '@ember-data/model';
 
 export default class QuoteModel extends Model {
   @attr() text;

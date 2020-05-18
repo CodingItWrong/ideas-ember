@@ -1,5 +1,4 @@
-import DS from 'ember-data';
-const { Model, attr, hasMany } = DS;
+import Model, { attr, hasMany, belongsTo } from '@ember-data/model';
 
 export default class TagModel extends Model {
   @attr() name;
