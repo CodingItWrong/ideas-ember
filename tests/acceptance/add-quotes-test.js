@@ -4,11 +4,11 @@ import { setupApplicationTest } from 'ember-qunit';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import { authenticateSession } from 'ember-simple-auth/test-support';
 
-module('Acceptance | add quotes', function(hooks) {
+module('Acceptance | add quotes', function (hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
 
-  test('allows adding quotes', async function(assert) {
+  test('allows adding quotes', async function (assert) {
     await authenticateSession({ access_token: 'ABC123' });
     await visit('/');
 

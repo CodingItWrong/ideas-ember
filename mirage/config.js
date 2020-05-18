@@ -1,4 +1,4 @@
-export default function() {
+export default function () {
   this.get('/authors');
   this.get('/authors/:id');
   this.post('/authors');

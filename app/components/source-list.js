@@ -10,7 +10,7 @@ export default class SourceListComponent extends Component {
   @sort('args.sources', 'sortProperties')
   sortedSources;
 
-  @filter('sortedSources', ['filter'], function(source) {
+  @filter('sortedSources', ['filter'], function (source) {
     return (
       !this.filter ||
       source.title.toLowerCase().includes(this.filter.toLowerCase())

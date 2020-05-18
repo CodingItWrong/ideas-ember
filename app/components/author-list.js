@@ -10,7 +10,7 @@ export default class AuthorListComponent extends Component {
   @sort('args.authors', 'sortProperties')
   sortedAuthors;
 
-  @filter('sortedAuthors', ['filter'], function(author) {
+  @filter('sortedAuthors', ['filter'], function (author) {
     return (
       !this.filter ||
       author.name.toLowerCase().includes(this.filter.toLowerCase())

@@ -4,7 +4,7 @@ import { render, fillIn, click } from '@ember/test-helpers';
 import EmberObject from '@ember/object';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Integration | Component | edit-author-form', function(hooks) {
+module('Integration | Component | edit-author-form', function (hooks) {
   setupRenderingTest(hooks);
 
   module('when save is clicked', () => {
@@ -13,7 +13,7 @@ module('Integration | Component | edit-author-form', function(hooks) {
 
     let author;
 
-    test('it updates the author', async function(assert) {
+    test('it updates the author', async function (assert) {
       let saved = false;
       let calledOnSave = false;
 
@@ -45,7 +45,7 @@ module('Integration | Component | edit-author-form', function(hooks) {
       assert.equal(calledOnSave, true);
     });
 
-    test('it allows cancelling', async function(assert) {
+    test('it allows cancelling', async function (assert) {
       let calledOnCancel = false;
 
       author = EmberObject.create({
@@ -65,7 +65,7 @@ module('Integration | Component | edit-author-form', function(hooks) {
       assert.equal(calledOnCancel, true);
     });
 
-    test('it allows deleting', async function(assert) {
+    test('it allows deleting', async function (assert) {
       let calledDestroyRecord = false;
       let calledOnDelete = false;
 
