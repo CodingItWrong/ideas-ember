@@ -15,8 +15,8 @@
           {{#if (has-block)}}
             {{yield}}
           {{else}}
-            {{#link-to "authors.detail" @quote.source.author.id}}{{@quote.source.author.name}}{{/link-to}},
-            {{#link-to "sources.detail" @quote.source.id }}{{@quote.source.title}}{{/link-to}}
+            <LinkTo @route="authors.detail" @model={{@quote.source.author.id}}>{{@quote.source.author.name}}</LinkTo>,
+            <LinkTo @route="sources.detail" @model={{@quote.source.id}}>{{@quote.source.title}}</LinkTo>
             {{@quote.location}}
           {{/if}}
         </Text.headline>
