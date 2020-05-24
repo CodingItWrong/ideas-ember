@@ -5,10 +5,8 @@
     </Toolbar.tools>
   </PaperToolbar>
   <Card.content>
-    {{#each @quotes as |quote|}}
-      <QuoteLine
-        @quote={{quote}} @ideas={{@ideas}}
-      />
+    {{#each this.quotesToShow as |quote|}}
+      <QuoteLine @quote={{quote}} @ideas={{@ideas}} />
     {{/each}}
     <NewQuoteForm @source={{@source}} />
   </Card.content>
