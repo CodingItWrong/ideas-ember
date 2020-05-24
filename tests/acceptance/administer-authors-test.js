@@ -19,6 +19,10 @@ module('Acceptance | administer authors', function (hooks) {
     // add
     await addAuthor(assert, authorName);
     await seeAuthorInList(assert, authorName);
+
+    // edit
+    const newAuthorName = 'Sandee Metz';
+    await editAuthor(assert, authorName, newAuthorName);
   });
 
   async function addAuthor(assert, authorName) {
@@ -35,5 +39,15 @@ module('Acceptance | administer authors', function (hooks) {
   async function seeAuthorInList(assert, authorName) {
     await click('[data-test-authors-nav-link]');
     assert.dom(`[data-test-author="${authorName}"]`).exists();
+  }
+
+  async function editAuthor(assert, oldAuthorName, newAuthorName) {
+    await click(`[data-test-author="${oldAuthorName}"] button`);
+    await click('[data-test-edit-author-button]');
+
+    await fillIn('[data-test-name] input[type="text"]', newAuthorName);
+    await click('[data-test-save-button]');
+
+    assert.dom('[data-test-author-name]').hasText(newAuthorName);
   }
 });
