@@ -18,7 +18,11 @@
       <Toolbar.tools>
         <h2 data-test-author-name>{{@author.name}}</h2>
         <span class="flex"></span>
-        <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+        <PaperButton
+          @iconButton={{true}}
+          @onClick={{this.startEditing}}
+          data-test-edit-author-button
+        >
           {{paper-icon "edit"}}
         </PaperButton>
       </Toolbar.tools>

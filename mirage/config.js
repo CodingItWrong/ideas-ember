@@ -2,6 +2,7 @@ export default function () {
   this.get('/authors');
   this.get('/authors/:id');
   this.post('/authors');
+  this.patch('/authors/:id');
 
   this.get('/ideas');
   this.get('/media');
