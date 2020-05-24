@@ -6,8 +6,8 @@ import { tracked } from '@glimmer/tracking';
 export default class NewQuoteFormComponent extends Component {
   @service store;
 
-  @tracked
-  rawText = '';
+  @tracked buttonDisabled = false;
+  @tracked rawText = '';
 
   get text() {
     return this.rawText;
@@ -29,6 +29,7 @@ export default class NewQuoteFormComponent extends Component {
       source: this.args.source,
       text: this.text,
     });
+    this.buttonDisabled = true;
     try {
       await quote.save();
       this.text = '';
@@ -36,6 +37,8 @@ export default class NewQuoteFormComponent extends Component {
     } catch (e) {
       alert('An error occurred while saving this quote.');
       console.error(e);
+    } finally {
+      this.buttonDisabled = false;
     }
   }
 }
