@@ -26,6 +26,7 @@
           @options={{@media}}
           @selected={{this.medium}}
           @onChange={{action (mut this.medium)}}
+          data-test-medium-select
           as |medium|
         >
           {{medium.name}}
@@ -36,6 +37,7 @@
           @label="URL"
           @value={{this.url}}
           @onChange={{action (mut this.url)}}
+          data-test-url-field
         />
         <Form.input
           @type="date"
@@ -43,6 +45,7 @@
           @label="Date"
           @value={{this.date}}
           @onChange={{action (mut this.date)}}
+          data-test-date-field
         />
         <Form.submit-button
           @raised={{true}}
