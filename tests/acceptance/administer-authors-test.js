@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, click, fillIn } from '@ember/test-helpers';
+import { visit, click, fillIn, pauseTest } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import { authenticateSession } from 'ember-simple-auth/test-support';
@@ -23,6 +23,9 @@ module('Acceptance | administer authors', function (hooks) {
     // edit
     const newAuthorName = 'Sandee Metz';
     await editAuthor(assert, authorName, newAuthorName);
+
+    // delete
+    await deleteAuthor(assert, newAuthorName);
   });
 
   async function addAuthor(assert, authorName) {
@@ -49,5 +52,12 @@ module('Acceptance | administer authors', function (hooks) {
     await click('[data-test-save-button]');
 
     assert.dom('[data-test-author-name]').hasText(newAuthorName);
+  }
+
+  async function deleteAuthor(assert, authorName) {
+    await click('[data-test-edit-author-button]');
+    await click('[data-test-delete-button]');
+
+    assert.dom('[data-test-author-name]').doesNotExist();
   }
 });
