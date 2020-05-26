@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import ENV from '../config/environment';
 
 export default class SourceHeaderComponent extends Component {
   @service router;
@@ -50,8 +51,10 @@ export default class SourceHeaderComponent extends Component {
 
   @action
   delete() {
-    if (!confirm('Are you sure you want to delete this source?')) {
-      return;
+    if (ENV.environment !== 'test') {
+      if (!confirm('Are you sure you want to delete this source?')) {
+        return;
+      }
     }
 
     this.args.source
