@@ -47,7 +47,7 @@ module('Acceptance | administer sources', function (hooks) {
 
     await fillIn('[data-test-title-field] input[type="text"]', sourceTitle);
     await fillIn('[data-test-url-field] input', 'https://example.com');
-    await fillIn('[data-test-date-field] input', '07/09/1982');
+    await fillIn('[data-test-date-field] input', '1982-07-09');
 
     // Error: cannot read property 'appendChild' of null
     // await click('[data-test-medium-select] [role="button"]');
