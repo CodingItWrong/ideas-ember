@@ -28,6 +28,9 @@ module('Acceptance | administer sources', function (hooks) {
     // edit
     const newSourceTitle = '99 Bottles of OOP';
     await editSource(assert, sourceTitle, newSourceTitle);
+
+    // delete
+    await deleteCurrentSource(assert);
   });
 
   async function addAuthor(assert, authorName) {
@@ -69,5 +72,12 @@ module('Acceptance | administer sources', function (hooks) {
     await click('[data-test-save-button]');
 
     assert.dom('[data-test-source-title]').hasText(newSourceTitle);
+  }
+
+  async function deleteCurrentSource(assert) {
+    await click('[data-test-edit-source-button]');
+    await click('[data-test-delete-button]');
+
+    assert.dom('[data-test-source-name]').doesNotExist();
   }
 });

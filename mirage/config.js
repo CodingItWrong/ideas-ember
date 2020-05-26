@@ -8,6 +8,7 @@ export default function () {
   this.get('/ideas');
   this.get('/media');
 
+  this.get('/sources');
   this.get('/sources/:id');
   this.post('/sources');
   this.patch('/sources/:id');
