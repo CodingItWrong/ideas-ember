@@ -25,7 +25,7 @@ module('Acceptance | administer authors', function (hooks) {
     await editAuthor(assert, authorName, newAuthorName);
 
     // delete
-    await deleteAuthor(assert, newAuthorName);
+    await deleteCurrentAuthor(assert);
   });
 
   async function addAuthor(assert, authorName) {
@@ -54,7 +54,7 @@ module('Acceptance | administer authors', function (hooks) {
     assert.dom('[data-test-author-name]').hasText(newAuthorName);
   }
 
-  async function deleteAuthor(assert, authorName) {
+  async function deleteCurrentAuthor(assert) {
     await click('[data-test-edit-author-button]');
     await click('[data-test-delete-button]');
 
