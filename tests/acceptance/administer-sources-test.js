@@ -24,6 +24,10 @@ module('Acceptance | administer sources', function (hooks) {
     // add
     await addSource(assert, sourceTitle);
     await seeSourceInList(assert, sourceTitle);
+
+    // edit
+    const newSourceTitle = '99 Bottles of OOP';
+    await editSource(assert, sourceTitle, newSourceTitle);
   });
 
   async function addAuthor(assert, authorName) {
@@ -55,5 +59,15 @@ module('Acceptance | administer sources', function (hooks) {
   async function seeSourceInList(assert, sourceTitle) {
     await click('[data-test-back-button]');
     assert.dom(`[data-test-source="${sourceTitle}"]`).exists();
+  }
+
+  async function editSource(assert, oldSourceTitle, newSourceTitle) {
+    await click(`[data-test-source="${oldSourceTitle}"] button`);
+    await click('[data-test-edit-source-button]');
+
+    await fillIn('[data-test-title] input[type="text"]', newSourceTitle);
+    await click('[data-test-save-button]');
+
+    assert.dom('[data-test-source-title]').hasText(newSourceTitle);
   }
 });

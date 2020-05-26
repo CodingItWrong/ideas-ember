@@ -10,6 +10,8 @@ export default function () {
 
   this.get('/sources/:id');
   this.post('/sources');
+  this.patch('/sources/:id');
+  this.delete('/sources/:id');
 
   this.post('/quotes');
 
