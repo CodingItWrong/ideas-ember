@@ -1,4 +1,4 @@
-<PaperItem @onClick={{this.goToSourceDetail}} class="md-2-line">
+<PaperItem @onClick={{this.goToSourceDetail}} class="md-2-line" data-test-source={{@source.title}}>
   <div class="md-list-item-text">
     <h3 class="preserve-line-breaks">{{@source.title}}</h3>
     {{#if (has-block)}}
