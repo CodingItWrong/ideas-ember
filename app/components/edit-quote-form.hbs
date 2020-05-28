@@ -7,6 +7,7 @@
       @value={{this.editedQuoteText}}
       @onChange={{action (mut this.editedQuoteText)}}
       @passThru={{hash autocapitalize="sentences"}}
+      data-test-edit-quote-field
     />
     <Form.input
       @textarea={{true}}
@@ -66,6 +67,7 @@
       @raised={{true}}
       @primary={{true}}
       @onClick={{this.save}}
+      data-test-save-edited-quote-button
     >
       Save
     </Form.submit-button>
