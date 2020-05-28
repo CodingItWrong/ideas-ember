@@ -13,6 +13,9 @@ module('Acceptance | administer quotes', function (hooks) {
 
     const quote = 'Unfortunately, something will change.';
     await addQuote(assert, quote);
+
+    const newQuote = 'It always does.';
+    await editQuote(assert, newQuote);
   });
 
   async function setUpSource(server) {
@@ -35,5 +38,12 @@ module('Acceptance | administer quotes', function (hooks) {
     await fillIn('[data-test-quote-field] textarea', quote);
     await click('[data-test-save-quote-button]');
     assert.dom(`[data-test-quote-text]`).hasText(quote);
+  }
+
+  async function editQuote(assert, newQuote) {
+    await click('[data-test-quote-text] a');
+    await fillIn('[data-test-edit-quote-field] textarea', newQuote);
+    await click('[data-test-save-edited-quote-button]');
+    assert.dom(`[data-test-quote-text]`).hasText(newQuote);
   }
 });

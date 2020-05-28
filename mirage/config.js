@@ -15,6 +15,8 @@ export default function () {
   this.delete('/sources/:id');
 
   this.post('/quotes');
+  this.patch('/quotes/:id');
+  this.delete('/quotes/:id');
 
   this.get('/tags');
 
