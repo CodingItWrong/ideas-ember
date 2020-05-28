@@ -71,7 +71,11 @@
     >
       Save
     </Form.submit-button>
-    <PaperButton @warn={{true}} @onClick={{this.delete}}>
+    <PaperButton
+      @warn={{true}}
+      @onClick={{this.delete}}
+      data-test-delete-quote-button
+    >
       Delete
     </PaperButton>
     <PaperButton @onClick={{this.cancelEditing}}>

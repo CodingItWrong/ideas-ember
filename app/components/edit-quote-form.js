@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import ENV from '../config/environment';
 
 export default class EditQuoteForm extends Component {
   @service store;
@@ -101,8 +102,10 @@ export default class EditQuoteForm extends Component {
 
   @action
   delete() {
-    if (!confirm('Are you sure you want to delete this quote?')) {
-      return;
+    if (ENV.environment !== 'test') {
+      if (!confirm('Are you sure you want to delete this quote?')) {
+        return;
+      }
     }
 
     this.args.quote.destroyRecord();

@@ -16,6 +16,8 @@ module('Acceptance | administer quotes', function (hooks) {
 
     const newQuote = 'It always does.';
     await editQuote(assert, newQuote);
+
+    await deleteQuote(assert, newQuote);
   });
 
   async function setUpSource(server) {
@@ -45,5 +47,11 @@ module('Acceptance | administer quotes', function (hooks) {
     await fillIn('[data-test-edit-quote-field] textarea', newQuote);
     await click('[data-test-save-edited-quote-button]');
     assert.dom(`[data-test-quote-text]`).hasText(newQuote);
+  }
+
+  async function deleteQuote(assert, newQuote) {
+    await click('[data-test-quote-text] a');
+    await click('[data-test-delete-quote-button]');
+    assert.dom(`[data-test-quote-text]`).doesNotExist();
   }
 });
