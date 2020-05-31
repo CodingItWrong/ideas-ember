@@ -1,7 +1,7 @@
 <PaperCard as |Card|>
   {{#if this.editing}}
     <Card.content>
-      <EditQuoteForm
+      <Quote::EditForm
         @quote={{@quote}}
         @ideas={{@ideas}}
         @onSave={{this.stopEditing}}
