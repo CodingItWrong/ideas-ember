@@ -6,6 +6,10 @@ export default function () {
   this.delete('/authors/:id');
 
   this.get('/ideas');
+  this.post('/ideas');
+  this.patch('/ideas/:id');
+  this.delete('/ideas/:id');
+
   this.get('/media');
 
   this.get('/sources');

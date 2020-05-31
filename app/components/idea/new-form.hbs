@@ -3,7 +3,10 @@
     <Toolbar.tools>
       <h2>Ideas</h2>
       <span class="flex"></span>
-      <PaperButton @onClick={{action (mut this.isAdding) true}}>
+      <PaperButton
+        @onClick={{action (mut this.isAdding) true}}
+        data-test-add-idea-button
+      >
         Add
       </PaperButton>
     </Toolbar.tools>
@@ -18,10 +21,12 @@
           @value={{this.summary}}
           @onChange={{action (mut this.summary)}}
           @passThru={{hash autocapitalize="sentences"}}
+          data-test-idea-summary-field
         />
         <Form.submit-button
           @raised={{true}}
           @primary={{true}}
+          data-test-save-idea-button
         >
           Save
         </Form.submit-button>
