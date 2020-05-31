@@ -11,11 +11,11 @@
       </PaperItem>
       {{#each this.filteredSources as |source|}}
         {{#if (has-block)}}
-          <SourceItem @source={{source}}>
+          <Source::ListItem @source={{source}}>
             {{yield source}}
-          </SourceItem>
+          </Source::ListItem>
         {{else}}
-          <SourceItem @source={{source}} />
+          <Source::ListItem @source={{source}} />
         {{/if}}
       {{/each}}
     </PaperList>
