@@ -10,7 +10,7 @@
         />
       </PaperItem>
       {{#each this.filteredIdeas as |idea|}}
-        <IdeaItem @idea={{idea}} />
+        <Idea::ListItem @idea={{idea}} />
       {{/each}}
     </PaperList>
   </PaperCard>
