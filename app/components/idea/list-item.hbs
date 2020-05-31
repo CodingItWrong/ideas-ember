@@ -1,4 +1,8 @@
-<PaperItem @onClick={{this.goToIdeaDetail}} class="md-2-line">
+<PaperItem
+  @onClick={{this.goToIdeaDetail}}
+  class="md-2-line"
+  data-test-idea-summary
+>
   <div class="md-list-item-text">
     <p class="preserve-line-breaks">{{@idea.summary}}</p>
   </div>
