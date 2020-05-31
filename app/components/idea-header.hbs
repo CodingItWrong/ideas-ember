@@ -7,37 +7,12 @@
     </PaperToolbar>
     <Card.title as |Title|>
       <Title.text>
-        <PaperForm @onSubmit={{this.save}} as |Form|>
-          <Form.input
-            @textarea={{true}}
-            @block={{true}}
-            @placeholder="Idea"
-            @value={{this.editedIdeaSummary}}
-            @onChange={{action (mut this.editedIdeaSummary)}}
-            @passThru={{hash autocapitalize="sentences"}}
-          />
-          <Form.input
-            @textarea={{true}}
-            @block={{true}}
-            @placeholder="Comments"
-            @value={{this.editedIdeaComments}}
-            @onChange={{action (mut this.editedIdeaComments)}}
-            @passThru={{hash autocapitalize="sentences"}}
-          />
-          <Form.submit-button
-            @primary={{true}}
-            @raised={{true}}
-            @onClick={{this.save}}
-          >
-            Save
-          </Form.submit-button>
-          <PaperButton @warn={{true}} @onClick={{this.delete}}>
-            Delete
-          </PaperButton>
-          <PaperButton @onClick={{this.cancelEditing}}>
-            Cancel
-          </PaperButton>
-        </PaperForm>
+        <EditIdeaForm
+          @idea={{@idea}}
+          @onSave={{this.handleSave}}
+          @onCancel={{this.handleCancel}}
+          @onDelete={{this.handleDelete}}
+        />
       </Title.text>
     </Card.title>
   {{else}}
