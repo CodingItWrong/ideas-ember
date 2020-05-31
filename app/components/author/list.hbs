@@ -10,7 +10,7 @@
         />
       </PaperItem>
       {{#each this.filteredAuthors as |author|}}
-        <AuthorItem @author={{author}} />
+        <Author::ListItem @author={{author}} />
       {{/each}}
     </PaperList>
   </PaperCard>
