@@ -2,11 +2,11 @@
 
 <Author::Header @author={{this.model.author}} />
 
-<NewSourceForm
+<Source::NewForm
   @author={{this.model.author}}
   @media={{this.model.media}}
 />
 
-<SourceList @sources={{this.model.author.sources}} as |source|>
+<Source::List @sources={{this.model.author.sources}} as |source|>
   {{source.date}}
-</SourceList>
+</Source::List>
