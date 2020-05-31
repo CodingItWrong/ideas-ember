@@ -27,7 +27,7 @@ module('Integration | Component | edit-author-form', function (hooks) {
       this.set('handleSave', () => (calledOnSave = true));
 
       await render(
-        hbs`<EditAuthorForm @author={{this.author}} @onSave={{this.handleSave}} />`,
+        hbs`<Author::EditForm @author={{this.author}} @onSave={{this.handleSave}} />`,
       );
 
       await fillIn('[data-test-name] input', updatedName);
@@ -57,7 +57,7 @@ module('Integration | Component | edit-author-form', function (hooks) {
       this.set('handleCancel', () => (calledOnCancel = true));
 
       await render(
-        hbs`<EditAuthorForm @author={{author}} @onCancel={{this.handleCancel}} />`,
+        hbs`<Author::EditForm @author={{author}} @onCancel={{this.handleCancel}} />`,
       );
 
       await click('[data-test-cancel-button]');
@@ -82,7 +82,7 @@ module('Integration | Component | edit-author-form', function (hooks) {
       this.set('handleDelete', () => (calledOnDelete = true));
 
       await render(
-        hbs`<EditAuthorForm @author={{author}} @onDelete={{this.handleDelete}} />`,
+        hbs`<Author::EditForm @author={{author}} @onDelete={{this.handleDelete}} />`,
       );
 
       await click('[data-test-delete-button]');
