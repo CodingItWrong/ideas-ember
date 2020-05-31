@@ -1,6 +1,6 @@
 <BackButton @to="index" />
 
-<IdeaHeader @idea={{this.model}} />
+<Idea::Header @idea={{this.model}} />
 
 {{#each this.model.quotes as |quote|}}
   <QuoteCard @quote={{quote}} />
