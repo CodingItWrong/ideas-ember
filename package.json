@@ -49,7 +49,7 @@
     "ember-qunit": "^4.6.0",
     "ember-resolver": "^8.0.0",
     "ember-simple-auth": "^3.0.0",
-    "ember-source": "^3.18.0",
+    "ember-source": "^3.19.0",
     "ember-template-lint": "^2.8.0",
     "eslint": "^7.1.0",
     "eslint-config-codingitwrong": "^0.1.4",
