@@ -5707,10 +5707,10 @@ ember-modifier-manager-polyfill@^1.1.0:
     ember-cli-version-checker "^2.1.2"
     ember-compatibility-helpers "^1.2.0"
 
-ember-paper@1.0.0-beta.30:
-  version "1.0.0-beta.30"
-  resolved "https://registry.yarnpkg.com/ember-paper/-/ember-paper-1.0.0-beta.30.tgz#73074609b4a15b1ae1f6dd6e6813145b7863c689"
-  integrity sha512-n8LaGp0b9qXV4KsYda8BxN7PbVy7uFmmRQzgGrD8r1J8+FTAWQnpk/EcgTg12WllfpYLSlud6rn5Yk+jPhyDfA==
+ember-paper@1.0.0-beta.31:
+  version "1.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/ember-paper/-/ember-paper-1.0.0-beta.31.tgz#586e1ab2f50c57b87c370817bb8681546fa660a7"
+  integrity sha512-Yb97Fe0E8me1mQUgElLA3HMgMZMoEGMhBwnI6HbHxyzCG58V0qPDw3QiovPOV66qEJW5IDtLMdrqGBx3BclRxA==
   dependencies:
     "@html-next/vertical-collection" "^1.0.0"
     angular-material-styles "1.1.21"
