@@ -5255,11 +5255,6 @@ ember-cli-mirage@^1.1.7:
     lodash-es "^4.17.11"
     miragejs "^0.1.31"
 
-ember-cli-netlify@^0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-netlify/-/ember-cli-netlify-0.3.1.tgz#5092024b44d983260f18db87240c9a37f8e17595"
-  integrity sha512-NCjd19y+ok6XhrKssAyFy6+GySrESsMNlYyq1uw7a/wk+JgUaiazoWBE8V5HpQ+VB9MW9iBlaTLoFrV1uYrLGA==
-
 ember-cli-normalize-entity-name@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-normalize-entity-name/-/ember-cli-normalize-entity-name-1.0.0.tgz#0b14f7bcbc599aa117b5fddc81e4fd03c4bad5b7"
