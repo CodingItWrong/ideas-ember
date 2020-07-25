@@ -2,26 +2,18 @@
   <layout.sidenav>
     {{#if this.session.isAuthenticated}}
       <PaperList>
-        <PaperItem>
-          <NavButton @to="index">
-            Ideas
-          </NavButton>
-        </PaperItem>
-        <PaperItem>
-          <NavButton @to="sources">
-            Sources
-          </NavButton>
-        </PaperItem>
-        <PaperItem>
-          <NavButton @to="authors" data-test-authors-nav-link>
-            Authors
-          </NavButton>
-        </PaperItem>
-        <PaperItem>
-          <NavButton @to="tags">
-            Tags
-          </NavButton>
-        </PaperItem>
+        <NavItem @to="index">
+          Ideas
+        </NavItem>
+        <NavItem @to="sources">
+          Sources
+        </NavItem>
+        <NavItem @to="authors" data-test-authors-nav-link>
+          Authors
+        </NavItem>
+        <NavItem @to="tags">
+          Tags
+        </NavItem>
       </PaperList>
     {{/if}}
   </layout.sidenav>
