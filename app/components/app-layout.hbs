@@ -1,70 +1,46 @@
-<PaperSidenavContainer @class="inner-sidenav">
-  <PaperSidenav
-    @class="md-whiteframe-z2"
-    @name="left"
-    @open={{this.leftSideBarOpen}}
-    @onToggle={{action (mut this.leftSideBarOpen)}}
-  >
-    <PaperToolbar as |Toolbar|>
-      <Toolbar.tools>Ideas</Toolbar.tools>
-    </PaperToolbar>
-    <PaperContent @padding={{true}}>
-      {{#if this.session.isAuthenticated}}
-        <PaperList>
-          <PaperItem>
-            <NavButton @to="index">
-              Ideas
-            </NavButton>
-          </PaperItem>
-          <PaperItem>
-            <NavButton @to="sources">
-              Sources
-            </NavButton>
-          </PaperItem>
-          <PaperItem>
-            <NavButton @to="authors" data-test-authors-nav-link>
-              Authors
-            </NavButton>
-          </PaperItem>
-          <PaperItem>
-            <NavButton @to="tags">
-              Tags
-            </NavButton>
-          </PaperItem>
-          <PaperItem>
-            <PaperButton @onClick={{this.logOut}}>
-              Log Out
-            </PaperButton>
-          </PaperItem>
-        </PaperList>
-      {{/if}}
-    </PaperContent>
-  </PaperSidenav>
-
-  <div class="layout-fill">
-    <PaperToolbar>
-      <PaperToolbarTools>
-        <PaperSidenavToggle @name="left" as |toggleAction|>
-          <PaperButton
-            @onClick={{toggleAction}}
-            @iconButton={{true}}
-            class="show-lt-md hide-gt-sm"
-          >
-            {{paper-icon "menu"}}
-          </PaperButton>
-          <h2 class="show-lt-md hide-gt-sm">
+<LayoutContainer @title="Ideas" as |layout|>
+  <layout.sidenav>
+    {{#if this.session.isAuthenticated}}
+      <PaperList>
+        <PaperItem>
+          <NavButton @to="index">
             Ideas
-          </h2>
-        </PaperSidenavToggle>
-      </PaperToolbarTools>
-    </PaperToolbar>
-
-    <div class="layout-row">
-      <div class="hide show-gt-md flex-gt-md-10"></div>
-      <div class="flex-100 flex-gt-md-80">
-        {{yield}}
+          </NavButton>
+        </PaperItem>
+        <PaperItem>
+          <NavButton @to="sources">
+            Sources
+          </NavButton>
+        </PaperItem>
+        <PaperItem>
+          <NavButton @to="authors" data-test-authors-nav-link>
+            Authors
+          </NavButton>
+        </PaperItem>
+        <PaperItem>
+          <NavButton @to="tags">
+            Tags
+          </NavButton>
+        </PaperItem>
+        <PaperItem>
+          <PaperButton @onClick={{this.logOut}}>
+            Log Out
+          </PaperButton>
+        </PaperItem>
+      </PaperList>
+    {{/if}}
+  </layout.sidenav>
+  <layout.body as |body|>
+    <body.toolbar @showSideNavToggle={{this.session.isAuthenticated}}>
+    </body.toolbar>
+    <body.content>
+      <div class="layout-row">
+        <div class="hide show-gt-md flex-gt-md-10"></div>
+        <div class="flex-100 flex-gt-md-80">
+          {{yield}}
+        </div>
+        <div class="hide show-gt-md flex-gt-md-10"></div>
       </div>
-      <div class="hide show-gt-md flex-gt-md-10"></div>
-    </div>
-  </div>
-</PaperSidenavContainer>
+    </body.content>
+  </layout.body>
+</LayoutContainer>
