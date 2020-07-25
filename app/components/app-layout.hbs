@@ -22,16 +22,23 @@
             Tags
           </NavButton>
         </PaperItem>
-        <PaperItem>
-          <PaperButton @onClick={{this.logOut}}>
-            Log Out
-          </PaperButton>
-        </PaperItem>
       </PaperList>
     {{/if}}
   </layout.sidenav>
   <layout.body as |body|>
     <body.toolbar @showSideNavToggle={{this.session.isAuthenticated}}>
+      <PaperMenu as |menu|>
+        <menu.trigger>
+          <PaperButton @iconButton={{true}}>
+            {{paper-icon "account_circle"}}
+          </PaperButton>
+        </menu.trigger>
+        <menu.content @width={{4}} as |content|>
+          <content.menu-item @onClick={{this.signOut}}>
+            <span>Sign Out</span>
+          </content.menu-item>
+        </menu.content>
+      </PaperMenu>
     </body.toolbar>
     <body.content>
       <div class="layout-row">
