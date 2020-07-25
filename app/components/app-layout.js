@@ -6,7 +6,7 @@ export default class AppLayoutComponent extends Component {
   @service session;
 
   @action
-  logOut() {
+  signOut() {
     this.session.invalidate();
   }
 }
