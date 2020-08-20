@@ -55,7 +55,7 @@ module.exports = function (environment) {
 
   // eslint-disable-next-line no-empty
   if (environment === 'production') {
-    ENV.apiHost = 'https://api.ideas.codingitwrong.com';
+    ENV.apiHost = 'https://ciw-ideas-api.herokuapp.com';
   }
 
   return ENV;
