@@ -1,17 +1,17 @@
-<BackButton @to="authors.detail" @id={{this.model.source.author.id}} />
+<BackButton @to="authors.detail" @id={{@model.source.author.id}} />
 
 <Source::Header
-  @source={{this.model.source}}
-  @media={{this.model.media}}
+  @source={{@model.source}}
+  @media={{@model.media}}
 />
 
 <SourceTagList
-  @source={{this.model.source}}
-  @tags={{this.model.tags}}
+  @source={{@model.source}}
+  @tags={{@model.tags}}
 />
 
 <Quote::List
-  @quotes={{this.model.source.quotes}}
+  @quotes={{@model.source.quotes}}
   @ideas={{this.sortedIdeas}}
-  @source={{this.model.source}}
+  @source={{@model.source}}
 />

@@ -1,12 +1,12 @@
 <BackButton @to="authors" />
 
-<Author::Header @author={{this.model.author}} />
+<Author::Header @author={{@model.author}} />
 
 <Source::NewForm
-  @author={{this.model.author}}
-  @media={{this.model.media}}
+  @author={{@model.author}}
+  @media={{@model.media}}
 />
 
-<Source::List @sources={{this.model.author.sources}} as |source|>
+<Source::List @sources={{@model.author.sources}} as |source|>
   {{source.date}}
 </Source::List>
