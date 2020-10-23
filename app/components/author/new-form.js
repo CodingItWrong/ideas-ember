@@ -11,10 +11,8 @@ export default class NewAuthorFormComponent extends Component {
   name = '';
 
   @action
-  async createAuthor() {
-    const author = this.store.createRecord('author', { name: this.name });
-    await author.save();
-    // this.name = '';
+  createAuthor() {
+    const author = this.store.createRecord('author');
     this.router.transitionTo('authors.detail', author.id);
   }
 }
