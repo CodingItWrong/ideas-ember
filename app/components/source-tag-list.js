@@ -1,22 +1,22 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { sort } from '@ember/object/computed';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import sortBy from 'lodash/sortBy';
 
 export default class SourceTagList extends Component {
   @service router;
 
-  sortProperties = Object.freeze(['name:asc']);
-
   @tracked isAdding = false;
   @tracked tagToAdd = null;
 
-  @sort('args.tags', 'sortProperties')
-  sortedTags;
+  get sortedTags() {
+    return sortBy(this.args.tags.toArray(), ['name']);
+  }
 
-  @sort('args.source.tags', 'sortProperties')
-  sortedSourceTags;
+  get sortedSourceTags() {
+    return sortBy(this.args.source.tags.toArray(), ['name']);
+  }
 
   @action
   async addTagToSource() {
