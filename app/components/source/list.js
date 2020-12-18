@@ -1,20 +1,22 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { sort, filter } from '@ember/object/computed';
+import sortBy from 'lodash/sortBy';
+import reverse from 'lodash/reverse';
 
 export default class SourceListComponent extends Component {
-  sortProperties = Object.freeze(['createdAt:desc']);
-
   @tracked filter = '';
 
-  @sort('args.sources', 'sortProperties')
-  sortedSources;
+  get sortedSources() {
+    return reverse(sortBy(this.args.sources.toArray(), ['createdAt']));
+  }
 
-  @filter('sortedSources', ['filter'], function (source) {
-    return (
-      !this.filter ||
-      source.title.toLowerCase().includes(this.filter.toLowerCase())
+  get filteredSources() {
+    if (!this.filter) {
+      return this.sortedSources;
+    }
+
+    return this.sortedSources.filter(source =>
+      source.title.toLowerCase().includes(this.filter.toLowerCase()),
     );
-  })
-  filteredSources;
+  }
 }
