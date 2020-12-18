@@ -1,9 +1,8 @@
 import Component from '@glimmer/component';
-import { sort } from '@ember/object/computed';
+import sortBy from 'lodash/sortBy';
 
 export default class TagList extends Component {
-  sortProperties = Object.freeze(['name:asc']);
-
-  @sort('args.tags', 'sortProperties')
-  sortedTags;
+  get sortedTags() {
+    return sortBy(this.args.tags.toArray(), ['name']);
+  }
 }
