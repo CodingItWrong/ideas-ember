@@ -1,9 +1,9 @@
 import Controller from '@ember/controller';
-import { sort } from '@ember/object/computed';
+import sortBy from 'lodash/sortBy';
+import reverse from 'lodash/reverse';
 
 export default class SourcesDetailController extends Controller {
-  sortProperties = Object.freeze(['numericId:desc']);
-
-  @sort('model.ideas', 'sortProperties')
-  sortedIdeas;
+  get sortedIdeas() {
+    return reverse(sortBy(this.model.ideas.toArray(), ['numericId']));
+  }
 }
