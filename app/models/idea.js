@@ -5,4 +5,8 @@ export default class IdeaModel extends Model {
   @attr() comments;
   @attr('date') createdAt;
   @hasMany('quote') quotes;
+
+  get numericId() {
+    return Number(this.id);
+  }
 }
