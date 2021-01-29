@@ -27,7 +27,7 @@
     "@glimmer/tracking": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
-    "clean-css": "^4.2.3",
+    "clean-css": "^5.0.0",
     "ember-auto-import": "^1.10.1",
     "ember-classic-decorator": "^2.0.0",
     "ember-cli": "^3.23.0",
