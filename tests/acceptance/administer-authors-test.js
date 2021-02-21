@@ -18,14 +18,14 @@ module('Acceptance | administer authors', function (hooks) {
 
     // add
     await addAuthor(assert, authorName);
-    // await seeAuthorInList(assert, authorName);
+    await seeAuthorInList(assert, authorName);
 
     // edit
     const newAuthorName = 'Sandee Metz';
-    // await editAuthor(assert, authorName, newAuthorName);
+    await editAuthor(assert, authorName, newAuthorName);
 
     // delete
-    // await deleteCurrentAuthor(assert);
+    await deleteCurrentAuthor(assert);
   });
 
   async function addAuthor(assert, authorName) {
