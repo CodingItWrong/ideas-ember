@@ -1,0 +1,21 @@
+$bs-primary: rgb(255, 235, 59);
+
+.bg-primary,
+.btn-primary {
+  background-color: $bs-primary !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled):active {
+  border-color: $bs-primary;
+}
+
+.text-primary {
+  color: $bs-primary !important;
+}
+
+.form-control:focus {
+  border-color: $bs-primary;
+  box-shadow: 0 0 0 0.2rem $bs-primary;
+}
