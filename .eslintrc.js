@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: ['ember', 'prettier'],
   extends: [
+    'eslint:recommended',
     'plugin:ember/recommended',
     'codingitwrong',
     'plugin:prettier/recommended',
