@@ -6371,11 +6371,6 @@ escodegen@^1.11.0, escodegen@^1.14.1:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-codingitwrong@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-config-codingitwrong/-/eslint-config-codingitwrong-0.1.4.tgz#7c59cbf4dc6c9eb65486d7b73d49391722318fb3"
-  integrity sha512-Z89ffprPB/jFSIUNmPUTsaPfUvUT/0FxMN+sNfbofD1SlPBpK1iY0xKuH06inGUvEtgoCYWuETYrJ6hbgSqJjA==
-
 eslint-config-prettier@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-7.2.0.tgz#f4a4bd2832e810e8cc7c1411ec85b3e85c0c53f9"
