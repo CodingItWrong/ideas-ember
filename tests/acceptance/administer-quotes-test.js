@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, click, fillIn, pauseTest } from '@ember/test-helpers';
+import { visit, click, fillIn } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import { authenticateSession } from 'ember-simple-auth/test-support';
@@ -17,7 +17,7 @@ module('Acceptance | administer quotes', function (hooks) {
     const newQuote = 'It always does.';
     await editQuote(assert, newQuote);
 
-    await deleteQuote(assert, newQuote);
+    await deleteQuote(assert);
   });
 
   async function setUpSource(server) {
@@ -49,7 +49,7 @@ module('Acceptance | administer quotes', function (hooks) {
     assert.dom(`[data-test-quote-text]`).hasText(newQuote);
   }
 
-  async function deleteQuote(assert, newQuote) {
+  async function deleteQuote(assert) {
     await click('[data-test-quote-text] a');
     await click('[data-test-delete-quote-button]');
     assert.dom(`[data-test-quote-text]`).doesNotExist();
