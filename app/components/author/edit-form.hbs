@@ -1,4 +1,4 @@
-<PaperForm as |Form|>
+<PaperForm @onSubmit={{this.save}} as |Form|>
   <Form.input
     @block={{true}}
     @type="text"
@@ -17,25 +17,27 @@
     @passThru={{hash autocapitalize="sentences"}}
     data-test-affiliation
   />
-  <Form.submit-button
-    @primary={{true}}
-    @raised={{true}}
-    @onClick={{this.save}}
+  <button
+    type="submit"
+    class="btn btn-primary text-dark"
     data-test-save-button
   >
     Save
-  </Form.submit-button>
-  <PaperButton
+  </button>
+  <button
+    type="button"
+    class="btn btn-danger"
     data-test-delete-button
-    @warn={{true}}
-    @onClick={{this.delete}}
+    {{on "click" this.delete}}
   >
     Delete
-  </PaperButton>
-  <PaperButton
+  </button>
+  <button
+    type="button"
+    class="btn btn-light"
     data-test-cancel-button
-    @onClick={{@onCancel}}
+    {{on "click" @onCancel}}
   >
     Cancel
-  </PaperButton>
+  </button>
 </PaperForm>

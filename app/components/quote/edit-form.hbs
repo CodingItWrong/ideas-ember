@@ -37,9 +37,13 @@
           />
         </div>
         <div class="flex-sm-40 flex-gt-sm-30">
-          <PaperButton @onClick={{this.switchToExistingIdea}}>
+          <button
+            type="button"
+            class="btn btn-light"
+            {{on "click" this.switchToExistingIdea}}
+          >
             Switch to Existing Idea
-          </PaperButton>
+          </button>
         </div>
       </div>
     {{else}}
@@ -57,29 +61,39 @@
           </PaperSelect>
         </div>
         <div class="flex-sm-40 flex-gt-sm-30">
-          <PaperButton @onClick={{this.switchToNewIdea}}>
+          <button
+            type="button"
+            class="btn btn-light"
+            {{on "click" this.switchToNewIdea}}
+          >
             Switch to New Idea
-          </PaperButton>
+          </button>
         </div>
       </div>
     {{/if}}
-    <Form.submit-button
-      @raised={{true}}
-      @primary={{true}}
-      @onClick={{this.save}}
+
+    <button
+      type="submit"
+      class="btn btn-primary text-dark"
       data-test-save-edited-quote-button
     >
       Save
-    </Form.submit-button>
-    <PaperButton
-      @warn={{true}}
-      @onClick={{this.delete}}
+    </button>
+    <button
+      type="button"
+      class="btn btn-danger"
       data-test-delete-quote-button
+      {{on "click" this.delete}}
     >
       Delete
-    </PaperButton>
-    <PaperButton @onClick={{this.cancelEditing}}>
+    </button>
+    <button
+      type="button"
+      class="btn btn-light"
+      data-test-cancel-button
+      {{on "click" this.cancelEditing}}
+    >
       Cancel
-    </PaperButton>
+    </button>
   </Card.content>
 </PaperForm>

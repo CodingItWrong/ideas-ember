@@ -26,9 +26,13 @@
       <p class="preserve-line-breaks" data-test-quote-text>{{@quote.text}}</p>
     </Card.content>
     <Card.actions>
-      <PaperButton @onClick={{this.startEditing}}>
+      <button
+        type="button"
+        class="btn btn-light"
+        {{on "click" this.startEditing}}
+      >
         Edit
-      </PaperButton>
+      </button>
     </Card.actions>
   {{/if}}
 </PaperCard>
