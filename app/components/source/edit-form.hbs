@@ -1,4 +1,4 @@
-<PaperForm @onSubmit={{this.save}} as |Form|>
+<PaperForm @onSubmit={{this.save}}>
   <div
     class="form-group"
     data-test-title
@@ -13,16 +13,19 @@
       autocapitalize="sentences"
     />
   </div>
-  <Form.select
-    @block={{true}}
-    @label="Medium"
-    @options={{@media}}
-    @selected={{this.editedMedium}}
-    @onChange={{action (mut this.editedMedium)}}
-    as |medium|
-  >
-    {{medium.name}}
-  </Form.select>
+  <div class="form-group">
+    <label for="medium-field">
+      Medium
+    </label>
+    <PowerSelect
+      @options={{@media}}
+      @selected={{this.editedMedium}}
+      @onChange={{action (mut this.editedMedium)}}
+      as |medium|
+    >
+      {{medium.name}}
+    </PowerSelect>
+  </div>
   <div class="form-group">
     <label for="url-field">
       URL

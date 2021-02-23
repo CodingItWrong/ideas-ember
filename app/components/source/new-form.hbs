@@ -9,7 +9,7 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
-    <PaperForm @onSubmit={{this.createSource}} as |Form|>
+    <PaperForm @onSubmit={{this.createSource}}>
       <Card.content>
         <div
           class="form-group"
@@ -25,17 +25,22 @@
             autocapitalize="sentences"
           />
         </div>
-        <Form.select
-          @block={{true}}
-          @label="Medium"
-          @options={{@media}}
-          @selected={{this.medium}}
-          @onChange={{action (mut this.medium)}}
+        <div
+          class="form-group"
           data-test-medium-select
-          as |medium|
         >
-          {{medium.name}}
-        </Form.select>
+          <label for="medium-field">
+            Medium
+          </label>
+          <PowerSelect
+            @options={{@media}}
+            @selected={{this.editedMedium}}
+            @onChange={{action (mut this.editedMedium)}}
+            as |medium|
+          >
+            {{medium.name}}
+          </PowerSelect>
+        </div>
         <div
           class="form-group"
           data-test-url-field
