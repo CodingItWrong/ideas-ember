@@ -1,12 +1,15 @@
-<PaperForm @onSubmit={{this.save}} as |Form|>
-  <Form.input
-    @block={{true}}
-    @type="text"
-    @placeholder="Tag Name"
-    @value={{this.editedTagName}}
-    @onChange={{action (mut this.editedTagName)}}
-    @passThru={{hash autocapitalize="sentences"}}
-  />
+<PaperForm @onSubmit={{this.save}}>
+  <div class="form-group">
+    <label for="tag-name-field">
+      Tag Name
+    </label>
+    <Input
+      @value={{this.editedTagName}}
+      id="tag-name-field"
+      class="form-control"
+      autocapitalize="sentences"
+    />
+  </div>
   <button
     type="submit"
     class="btn btn-primary text-dark"

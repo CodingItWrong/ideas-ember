@@ -20,7 +20,7 @@ export default class NewQuoteFormComponent extends Component {
 
   @action
   saveInputElement(element) {
-    this.textInput = element.getElementsByTagName('textarea')[0];
+    this.textInput = element;
   }
 
   @action

@@ -1,5 +1,5 @@
 <PaperCard as |Card|>
-  <PaperForm @onSubmit={{this.logIn}} as |Form|>
+  <PaperForm @onSubmit={{this.logIn}}>
     <Card.content>
       {{#if this.errorMessage}}
         <div
@@ -10,22 +10,24 @@
           {{this.errorMessage}}
         </div>
       {{/if}}
-      <Form.input
-        @type="email"
-        @passThru={{hash name="email"}}
-        @block={{true}}
-        @label="Email"
-        @value={{this.email}}
-        @onChange={{action (mut this.email)}}
-      />
-      <Form.input
-        @passThru={{hash name="password"}}
-        @block={{true}}
-        @type="password"
-        @label="Password"
-        @value={{this.password}}
-        @onChange={{action (mut this.password)}}
-      />
+      <div class="form-group">
+        <label for="email-field">Email</label>
+        <Input
+          @value={{this.email}}
+          type="email"
+          id="email-field"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password-field">Password</label>
+        <Input
+          @value={{this.password}}
+          type="password"
+          id="password-field"
+          class="form-control"
+        />
+      </div>
     </Card.content>
     <Card.actions>
       <button

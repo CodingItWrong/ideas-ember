@@ -12,17 +12,20 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
-    <PaperForm @onSubmit={{this.createIdea}} as |Form|>
+    <PaperForm @onSubmit={{this.createIdea}}>
       <Card.content>
-        <Form.input
-          @textarea={{true}}
-          @block={{true}}
-          @label="New Idea"
-          @value={{this.summary}}
-          @onChange={{action (mut this.summary)}}
-          @passThru={{hash autocapitalize="sentences"}}
+        <div
+          class="form-group"
           data-test-idea-summary-field
-        />
+        >
+          <Textarea
+            @value={{this.summary}}
+            id="idea-summary-field"
+            class="form-control"
+            placeholder="New Idea"
+            autocapitalize="sentences"
+          />
+        </div>
         <button
           type="submit"
           class="btn btn-primary text-dark"

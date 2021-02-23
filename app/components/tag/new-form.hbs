@@ -9,15 +9,19 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
-    <PaperForm @onSubmit={{this.createTag}} as |Form|>
+    <PaperForm @onSubmit={{this.createTag}}>
       <Card.content>
-        <Form.input
-          @block={{true}}
-          @label="New Tag"
-          @value={{this.name}}
-          @onChange={{action (mut this.name)}}
-          @passThru={{hash autocapitalize="sentences"}}
-        />
+        <div class="form-group">
+          <label for="tag-name-field">
+            New Tag
+          </label>
+          <Input
+            @value={{this.name}}
+            id="tag-name-field"
+            class="form-control"
+            autocapitalize="sentences"
+          />
+        </div>
         <button
           type="submit"
           class="btn btn-primary text-dark"
