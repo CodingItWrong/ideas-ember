@@ -1,20 +1,32 @@
-<PaperForm @onSubmit={{this.save}} as |Form|>
-  <Form.input
-    @textarea={{true}}
-    @block={{true}}
-    @placeholder="Idea"
-    @value={{this.editedIdeaSummary}}
-    @onChange={{action (mut this.editedIdeaSummary)}}
-    @passThru={{hash autocapitalize="sentences"}}
-  />
-  <Form.input
-    @textarea={{true}}
-    @block={{true}}
-    @placeholder="Comments"
-    @value={{this.editedIdeaComments}}
-    @onChange={{action (mut this.editedIdeaComments)}}
-    @passThru={{hash autocapitalize="sentences"}}
-  />
+<PaperForm @onSubmit={{this.save}}>
+  <div
+    class="form-group"
+    data-test-author-name-field
+  >
+    <label for="idea-summary-field">
+      Idea
+    </label>
+    <Textarea
+      @value={{this.editedIdeaSummary}}
+      id="idea-summary-field"
+      class="form-control"
+      autocapitalize="sentences"
+    />
+  </div>
+  <div
+    class="form-group"
+    data-test-author-name-field
+  >
+    <label for="comments-field">
+      Comments
+    </label>
+    <Textarea
+      @value={{this.editedIdeaComments}}
+      id="comments-field"
+      class="form-control"
+      autocapitalize="sentences"
+    />
+  </div>
   <button
     type="submit"
     class="btn btn-primary text-dark"
