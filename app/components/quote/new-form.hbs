@@ -10,13 +10,13 @@
       {{did-insert this.saveInputElement}}
       data-test-quote-field
     />
-    <Form.submit-button
-      @raised={{true}}
-      @primary={{true}}
+    <button
+      type="submit"
+      class="btn btn-primary text-dark"
       disabled={{this.buttonDisabled}}
       data-test-save-quote-button
     >
       Save
-    </Form.submit-button>
+    </button>
   </Card.content>
 </PaperForm>

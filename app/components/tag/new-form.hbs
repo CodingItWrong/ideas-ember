@@ -18,15 +18,20 @@
           @onChange={{action (mut this.name)}}
           @passThru={{hash autocapitalize="sentences"}}
         />
-        <Form.submit-button
-          @raised={{true}}
-          @primary={{true}}
+        <button
+          type="submit"
+          class="btn btn-primary text-dark"
         >
           Save
-        </Form.submit-button>
-        <PaperButton @onClick={{action (mut this.isAdding) false}}>
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          data-test-cancel-button
+          {{on "click" (action (mut this.isAdding) false)}}
+        >
           Cancel
-        </PaperButton>
+        </button>
       </Card.content>
     </PaperForm>
   {{/if}}

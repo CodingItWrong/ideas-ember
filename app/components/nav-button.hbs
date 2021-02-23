@@ -1,3 +1,8 @@
-<PaperButton @onClick={{this.navigate}} ...attributes>
+<button
+  type="button"
+  class="btn btn-light"
+  {{on "click" this.navigate}}
+  ...attributes
+>
   {{yield}}
-</PaperButton>
+</button>

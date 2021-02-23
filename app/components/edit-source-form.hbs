@@ -32,13 +32,26 @@
     @value={{this.editedDate}}
     @onChange={{action (mut this.editedDate)}}
   />
-  <PaperButton @primary={{true}} @raised={{true}} @onClick={{this.save}} data-test-save-button>
+  <button
+    type="submit"
+    class="btn btn-primary text-dark"
+    data-test-save-button
+  >
     Save
-  </PaperButton>
-  <PaperButton @warn={{true}} @onClick={{this.delete}} data-test-delete-button>
+  </button>
+  <button
+    type="button"
+    class="btn btn-danger"
+    {{on "click" this.delete}}
+    data-test-delete-button
+  >
     Delete
-  </PaperButton>
-  <PaperButton @onClick={{this.cancelEditing}}>
+  </button>
+  <button
+    type="button"
+    class="btn btn-light"
+    {{on "click" this.cancelEditing}}
+  >
     Cancel
-  </PaperButton>
+  </button>
 </PaperForm>

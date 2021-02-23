@@ -47,16 +47,22 @@
           @onChange={{action (mut this.date)}}
           data-test-date-field
         />
-        <Form.submit-button
-          @raised={{true}}
-          @primary={{true}}
+
+        <button
+          type="submit"
+          class="btn btn-primary text-dark"
           data-test-save-source-button
         >
           Save
-        </Form.submit-button>
-        <PaperButton @onClick={{action (mut this.isAdding) false}}>
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          data-test-cancel-button
+          {{on "click" (action (mut this.isAdding) false)}}
+        >
           Cancel
-        </PaperButton>
+        </button>
       </Card.content>
     </PaperForm>
   {{/if}}

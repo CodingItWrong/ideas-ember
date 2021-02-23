@@ -10,6 +10,7 @@ module('Integration | Component | edit-author-form', function (hooks) {
   module('when save is clicked', () => {
     const updatedName = 'Sandi Q. Metz';
     const updatedAffiliation = 'POOD';
+    const noop = () => {};
 
     let author;
 
@@ -25,9 +26,10 @@ module('Integration | Component | edit-author-form', function (hooks) {
 
       this.set('author', author);
       this.set('handleSave', () => (calledOnSave = true));
+      this.set('handleCancel', noop);
 
       await render(
-        hbs`<Author::EditForm @author={{this.author}} @onSave={{this.handleSave}} />`,
+        hbs`<Author::EditForm @author={{this.author}} @onSave={{this.handleSave}} @onCancel={{this.handleCancel}} />`,
       );
 
       await fillIn('[data-test-name] input', updatedName);
@@ -80,9 +82,10 @@ module('Integration | Component | edit-author-form', function (hooks) {
 
       this.set('author', author);
       this.set('handleDelete', () => (calledOnDelete = true));
+      this.set('handleCancel', noop);
 
       await render(
-        hbs`<Author::EditForm @author={{author}} @onDelete={{this.handleDelete}} />`,
+        hbs`<Author::EditForm @author={{author}} @onDelete={{this.handleDelete}} @onCancel={{this.handleCancel}} />`,
       );
 
       await click('[data-test-delete-button]');

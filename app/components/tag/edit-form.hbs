@@ -7,17 +7,27 @@
     @onChange={{action (mut this.editedTagName)}}
     @passThru={{hash autocapitalize="sentences"}}
   />
-  <Form.submit-button
-    @primary={{true}}
-    @raised={{true}}
-    @onClick={{this.save}}
+  <button
+    type="submit"
+    class="btn btn-primary text-dark"
+    data-test-save-button
   >
     Save
-  </Form.submit-button>
-  <PaperButton @warn={{true}} @onClick={{this.delete}}>
+  </button>
+  <button
+    type="button"
+    class="btn btn-danger"
+    data-test-delete-button
+    {{on "click" this.delete}}
+  >
     Delete
-  </PaperButton>
-  <PaperButton @onClick={{this.cancelEditing}}>
+  </button>
+  <button
+    type="button"
+    class="btn btn-light"
+    data-test-cancel-button
+    {{on "click" this.cancelEditing}}
+  >
     Cancel
-  </PaperButton>
+  </button>
 </PaperForm>
