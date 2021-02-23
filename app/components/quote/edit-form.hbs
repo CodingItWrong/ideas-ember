@@ -1,40 +1,64 @@
-<PaperForm @onSubmit={{this.save}} as |Form|>
+<PaperForm @onSubmit={{this.save}}>
   <Card.content>
-    <Form.input
-      @textarea={{true}}
-      @block={{true}}
-      @placeholder="Quote"
-      @value={{this.editedQuoteText}}
-      @onChange={{action (mut this.editedQuoteText)}}
-      @passThru={{hash autocapitalize="sentences"}}
+    <div
+      class="form-group"
       data-test-edit-quote-field
-    />
-    <Form.input
-      @textarea={{true}}
-      @block={{true}}
-      @placeholder="Location (page, timestamp, etc)"
-      @value={{this.editedQuoteLocation}}
-      @onChange={{action (mut this.editedQuoteLocation)}}
-    />
-    <Form.input
-      @textarea={{true}}
-      @block={{true}}
-      @placeholder="Comments"
-      @value={{this.editedQuoteComments}}
-      @onChange={{action (mut this.editedQuoteComments)}}
-      @passThru={{hash autocapitalize="sentences"}}
-    />
+    >
+      <label for="quote-text-field">
+        Quote
+      </label>
+      <Textarea
+        @value={{this.editedQuoteText}}
+        id="quote-text-field"
+        class="form-control"
+        autocapitalize="sentences"
+      />
+    </div>
+    <div
+      class="form-group"
+      data-test-edit-quote-field
+    >
+      <label for="location-field">
+        Location (page, timestamp, etc)
+      </label>
+      <Textarea
+        @value={{this.editedQuoteLocation}}
+        id="location-field"
+        class="form-control"
+        autocapitalize="sentences"
+      />
+    </div>
+    <div
+      class="form-group"
+      data-test-edit-quote-field
+    >
+      <label for="comments-field">
+        Comments
+      </label>
+      <Textarea
+        @value={{this.editedQuoteComments}}
+        id="comments-field"
+        class="form-control"
+        autocapitalize="sentences"
+      />
+    </div>
     {{#if this.addingNewIdea}}
       <div class="layout-col layout-gt-xs-row">
         <div class="flex-sm-60 flex-gt-sm-70">
-          <Form.input
-            @textarea={{true}}
-            @block={{true}}
-            @placeholder="New Idea"
-            @value={{this.newIdeaSummary}}
-            @onChange={{action (mut this.newIdeaSummary)}}
-            @passThru={{hash autocapitalize="sentences"}}
-          />
+          <div
+            class="form-group"
+            data-test-edit-quote-field
+          >
+            <label for="new-idea-field">
+              New Idea
+            </label>
+            <Textarea
+              @value={{this.newIdeaSummary}}
+              id="new-idea-field"
+              class="form-control"
+              autocapitalize="sentences"
+            />
+          </div>
         </div>
         <div class="flex-sm-40 flex-gt-sm-30">
           <button

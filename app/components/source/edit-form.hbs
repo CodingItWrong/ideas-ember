@@ -1,13 +1,18 @@
 <PaperForm @onSubmit={{this.save}} as |Form|>
-  <Form.input
-    @type="text"
-    @block={{true}}
-    @label="Source"
-    @value={{this.editedTitle}}
-    @onChange={{action (mut this.editedTitle)}}
-    @passThru={{hash autocapitalize="sentences"}}
+  <div
+    class="form-group"
     data-test-title
-  />
+  >
+    <label for="title-field">
+      Source
+    </label>
+    <Input
+      @value={{this.editedTitle}}
+      id="title-field"
+      class="form-control"
+      autocapitalize="sentences"
+    />
+  </div>
   <Form.select
     @block={{true}}
     @label="Medium"
@@ -18,21 +23,29 @@
   >
     {{medium.name}}
   </Form.select>
-  <Form.input
-    @type="url"
-    @block={{true}}
-    @label="URL"
-    @value={{this.editedUrl}}
-    @onChange={{action (mut this.editedUrl)}}
-  />
-  <Form.input
-    @type="date"
-    @block={{true}}
-    @label="Date"
-    @value={{this.editedDate}}
-    @onChange={{action (mut this.editedDate)}}
-  />
-
+  <div class="form-group">
+    <label for="url-field">
+      URL
+    </label>
+    <Input
+      @value={{this.editedUrl}}
+      type="url"
+      id="url-field"
+      class="form-control"
+      autocapitalize="sentences"
+    />
+  </div>
+  <div class="form-group">
+    <label for="date-field">
+      Date
+    </label>
+    <Input
+      @value={{this.editedDate}}
+      type="date"
+      id="date-field"
+      class="form-control"
+    />
+  </div>
   <button
     type="submit"
     class="btn btn-primary text-dark"

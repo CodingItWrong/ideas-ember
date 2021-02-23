@@ -1,15 +1,18 @@
-<PaperForm @onSubmit={{this.createQuote}} class="layout-margin" as |Form|>
+<PaperForm @onSubmit={{this.createQuote}} class="layout-margin">
   <Card.content>
-    <Form.input
-      @textarea={{true}}
-      @block={{true}}
-      @label="New Quote"
-      @value={{this.text}}
-      @onChange={{action (mut this.text)}}
-      @passThru={{hash autocapitalize="sentences"}}
-      {{did-insert this.saveInputElement}}
+    <div
+      class="form-group"
       data-test-quote-field
-    />
+    >
+      <Textarea
+        @value={{this.text}}
+        id="comments-field"
+        class="form-control"
+        autocapitalize="sentences"
+        placeholder="New Quote"
+        {{did-insert this.saveInputElement}}
+      />
+    </div>
     <button
       type="submit"
       class="btn btn-primary text-dark"
