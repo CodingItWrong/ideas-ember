@@ -1,9 +1,12 @@
 <PaperSidenav @class="md-whiteframe-z2" @open={{@open}} @onToggle={{@onToggle}}>
-  <PaperToolbar as |toolbar|>
-    <toolbar.tools @class="show-gt-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <LinkTo
+      @route="index"
+      class="navbar-brand show-gt-sm"
+    >
       {{@title}}
-    </toolbar.tools>
-  </PaperToolbar>
+    </LinkTo>
+  </nav>
   <PaperContent @padding={{false}}>
     {{yield}}
   </PaperContent>

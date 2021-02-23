@@ -1,4 +1,4 @@
-<LayoutContainer @title="Ideas" as |layout|>
+<LayoutContainer @title="Ideas" @titleLinkRoute="index" as |layout|>
   <layout.sidenav>
     {{#if this.session.isAuthenticated}}
       <PaperList>
@@ -19,18 +19,19 @@
   </layout.sidenav>
   <layout.body as |body|>
     <body.toolbar @showSideNavToggle={{this.session.isAuthenticated}}>
-      <PaperMenu as |menu|>
-        <menu.trigger>
-          <PaperButton @iconButton={{true}}>
-            {{paper-icon "account_circle"}}
-          </PaperButton>
-        </menu.trigger>
-        <menu.content @width={{4}} as |content|>
-          <content.menu-item @onClick={{this.signOut}}>
-            <span>Sign Out</span>
-          </content.menu-item>
-        </menu.content>
-      </PaperMenu>
+      {{#if this.session.isAuthenticated}}
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#"
+              {{on "click" this.signOut}}
+            >
+              Sign Out
+            </a>
+          </li>
+        </ul>
+      {{/if}}
     </body.toolbar>
     <body.content>
       <div class="layout-row">

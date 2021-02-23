@@ -1,18 +1,29 @@
-<PaperToolbar>
-  <PaperToolbarTools>
-    {{#if @showSideNavToggle}}
-      <PaperButton
-        @iconButton={{true}}
-        @onClick={{@onToggleSideNav}}
-        @class="hide-gt-sm"
-      >
-        {{paper-icon "menu"}}
-      </PaperButton>
-    {{/if}}
-    <h2 class="hide-gt-sm" data-test-ember-paper-layout-title>
-      {{@title}}
-    </h2>
-    <span class="flex"></span>
-    {{yield}}
-  </PaperToolbarTools>
-</PaperToolbar>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+  {{#if @showSideNavToggle}}
+    <button
+      {{on "click" @onToggleSideNav}}
+      class="navbar-toggler d-lg-none mr-3"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  {{/if}}
+
+  <LinkTo
+    @route={{@titleLinkRoute}}
+    class="navbar-brand hide-gt-sm"
+  >
+    {{@title}}
+  </LinkTo>
+
+  <span class="flex-fill"></span>
+
+  {{yield}}
+
+</nav>
