@@ -1,10 +1,10 @@
 <PaperCard as |Card|>
   {{#if this.editing}}
-    <PaperToolbar as |Toolbar|>
-      <Toolbar.tools>
-        <h2>Author</h2>
-      </Toolbar.tools>
-    </PaperToolbar>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a class="navbar-brand" href="#">
+        Author
+      </a>
+    </nav>
     <Card.content>
       <Author::EditForm
         @author={{@author}}
@@ -14,18 +14,22 @@
       />
     </Card.content>
   {{else}}
-    <PaperToolbar as |Toolbar|>
-      <Toolbar.tools>
-        <h2 data-test-author-name>{{@author.name}}</h2>
-        <span class="flex"></span>
-        <PaperButton
-          @iconButton={{true}}
-          @onClick={{this.startEditing}}
-          data-test-edit-author-button
-        >
-          {{paper-icon "edit"}}
-        </PaperButton>
-      </Toolbar.tools>
-    </PaperToolbar>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <a
+        class="navbar-brand"
+        href="#"
+        data-test-author-name
+      >
+        {{@author.name}}
+      </a>
+      <span class="flex-fill"></span>
+      <PaperButton
+        @iconButton={{true}}
+        @onClick={{this.startEditing}}
+        data-test-edit-author-button
+      >
+        {{paper-icon "edit"}}
+      </PaperButton>
+    </nav>
   {{/if}}
 </PaperCard>
