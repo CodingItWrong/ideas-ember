@@ -1,6 +1,6 @@
-<PaperCard as |Card|>
+<div class="card">
   <form {{on "submit" this.logIn}}>
-    <Card.content>
+    <div class="card-body">
       {{#if this.errorMessage}}
         <div
           class="alert alert-danger"
@@ -28,14 +28,14 @@
           class="form-control"
         />
       </div>
-    </Card.content>
-    <Card.actions>
-      <button
-        type="submit"
-        class="btn btn-primary text-dark"
-      >
-        Log In
-      </button>
-    </Card.actions>
+      <div class="d-flex justify-content-end">
+        <button
+          type="submit"
+          class="btn btn-primary text-dark"
+        >
+          Log In
+        </button>
+      </div>
+    </div>
   </form>
-</PaperCard>
+</div>

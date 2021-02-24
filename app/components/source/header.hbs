@@ -1,11 +1,11 @@
-<PaperCard as |Card|>
-  {{#if this.editing}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        Source
-      </a>
-    </nav>
-    <Card.content>
+{{#if this.editing}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Source
+    </a>
+  </nav>
+  <div class="card">
+    <div class="card-body">
       <Source::EditForm
         @source={{@source}}
         @media={{@media}}
@@ -13,26 +13,29 @@
         @onCancel={{this.handleCancel}}
         @onDelete={{this.handleDelete}}
       />
-    </Card.content>
-  {{else}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a
-        class="navbar-brand"
-        href={{if @source.url @source.url "#"}}
-        data-test-source-title
-      >
-        {{@source.title}}
-      </a>
-      <span class="flex-fill"></span>
-      <PaperButton @iconButton={{true}} @onClick={{this.startEditing}} data-test-edit-source-button>
-        {{paper-icon "edit"}}
-      </PaperButton>
-    </nav>
-    <Card.content>
+    </div>
+  </div>
+{{else}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a
+      class="navbar-brand"
+      href={{if @source.url @source.url "#"}}
+      data-test-source-title
+    >
+      {{@source.title}}
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton @iconButton={{true}} @onClick={{this.startEditing}} data-test-edit-source-button>
+      {{paper-icon "edit"}}
+    </PaperButton>
+  </nav>
+
+  <div class="card">
+    <div class="card-body">
       <p>{{@source.author.name}}</p>
       {{#if @source.date}}
         <p>{{@source.date}}</p>
       {{/if}}
-    </Card.content>
-  {{/if}}
-</PaperCard>
+    </div>
+  </div>
+{{/if}}
