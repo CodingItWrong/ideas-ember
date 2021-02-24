@@ -1,7 +1,7 @@
 <PaperCard as |Card|>
   {{#if this.sortedSources}}
-    <PaperList>
-      <PaperItem class="md-2-line">
+    <div class="list-group">
+      <div class="list-group-item">
         <div class="form-group">
           <Input
             @value={{this.filter}}
@@ -10,7 +10,7 @@
             autocapitalize="sentences"
           />
         </div>
-      </PaperItem>
+      </div>
       {{#each this.filteredSources as |source|}}
         {{#if (has-block)}}
           <Source::ListItem @source={{source}}>
@@ -20,7 +20,7 @@
           <Source::ListItem @source={{source}} />
         {{/if}}
       {{/each}}
-    </PaperList>
+    </div>
   {{else}}
     <Card.content>
       <p>No sources added yet.</p>

@@ -1,8 +1,13 @@
-<PaperItem @onClick={{this.goToSourceDetail}} class="md-2-line" data-test-source={{@source.title}}>
-  <div class="md-list-item-text">
-    <h3 class="preserve-line-breaks">{{@source.title}}</h3>
-    {{#if (has-block)}}
-      <h4>{{yield}}</h4>
-    {{/if}}
-  </div>
-</PaperItem>
+<button
+  {{on "click" this.goToSourceDetail}}
+  type="button"
+  class="list-group-item list-group-item-action"
+  data-test-source={{@source.title}}
+>
+  <p>{{@source.title}}</p>
+  {{#if (has-block)}}
+    <div class="small muted">
+      {{yield}}
+    </div>
+  {{/if}}
+</button>
