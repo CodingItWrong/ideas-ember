@@ -19,7 +19,9 @@ export default class TagSourceList extends Component {
   }
 
   @action
-  async addSourceToTag() {
+  async addSourceToTag(e) {
+    e.preventDefault();
+
     const { tag } = this.args;
     tag.sources.pushObject(this.sourceToAdd);
     await tag.save();

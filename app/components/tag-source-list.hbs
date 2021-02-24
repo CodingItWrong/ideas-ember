@@ -10,7 +10,7 @@
   </PaperToolbar>
   {{#if this.isAdding}}
     <Card.content>
-      <PaperForm @onSubmit={{this.addSourceToTag}}>
+      <form {{on "submit" this.addSourceToTag}}>
         <div>
           <PaperSelect
             @block={{true}}
@@ -36,7 +36,7 @@
         >
           Cancel
         </button>
-      </PaperForm>
+      </form>
     </Card.content>
   {{/if}}
   {{#each this.sortedTagSources as |source|}}

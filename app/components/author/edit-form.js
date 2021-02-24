@@ -19,7 +19,9 @@ export default class EditAuthorForm extends Component {
   }
 
   @action
-  async save() {
+  async save(e) {
+    e.preventDefault();
+
     const { author, onSave } = this.args;
     author.set('name', this.editedName);
     author.set('affiliation', this.editedAffiliation);

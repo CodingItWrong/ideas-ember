@@ -11,7 +11,9 @@ export default class NewTagForm extends Component {
   name = '';
 
   @action
-  async createTag() {
+  async createTag(e) {
+    e.preventDefault();
+
     const tag = this.store.createRecord('tag', { name: this.name });
     await tag.save();
     this.name = '';

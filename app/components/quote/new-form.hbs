@@ -1,4 +1,4 @@
-<PaperForm @onSubmit={{this.createQuote}} class="layout-margin">
+<form {{on "submit" this.createQuote}} class="layout-margin">
   <Card.content>
     <div
       class="form-group"
@@ -22,4 +22,4 @@
       Save
     </button>
   </Card.content>
-</PaperForm>
+</form>

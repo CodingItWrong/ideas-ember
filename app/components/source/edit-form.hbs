@@ -1,4 +1,4 @@
-<PaperForm @onSubmit={{this.save}}>
+<form {{on "submit" this.save}}>
   <div
     class="form-group"
     data-test-title
@@ -72,4 +72,4 @@
   >
     Cancel
   </button>
-</PaperForm>
+</form>

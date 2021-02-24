@@ -22,7 +22,9 @@ export default class EditIdeaFormComponent extends Component {
   }
 
   @action
-  async save() {
+  async save(e) {
+    e.preventDefault();
+
     const { idea } = this.args;
     idea.setProperties({
       summary: this.editedIdeaSummary,

@@ -27,7 +27,9 @@ export default class EditSourceFormComponent extends Component {
   }
 
   @action
-  async save() {
+  async save(e) {
+    e.preventDefault();
+
     const { source } = this.args;
     source.setProperties({
       title: this.editedTitle,

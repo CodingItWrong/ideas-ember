@@ -24,7 +24,9 @@ export default class NewQuoteFormComponent extends Component {
   }
 
   @action
-  async createQuote() {
+  async createQuote(e) {
+    e.preventDefault();
+
     const quote = this.store.createRecord('quote', {
       source: this.args.source,
       text: this.text,

@@ -21,7 +21,9 @@ export default class EditTagFormComponent extends Component {
   }
 
   @action
-  async save() {
+  async save(e) {
+    e.preventDefault();
+
     const { tag } = this.args;
     tag.set('name', this.editedTagName);
     await tag.save();
