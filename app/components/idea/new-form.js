@@ -10,7 +10,9 @@ export default class NewIdeaFormComponent extends Component {
   summary = '';
 
   @action
-  async createIdea() {
+  async createIdea(e) {
+    e.preventDefault();
+
     const idea = this.store.createRecord('idea', { summary: this.summary });
     await idea.save();
     this.summary = '';

@@ -20,7 +20,9 @@ export default class NewSourceFormComponent extends Component {
   date = null;
 
   @action
-  async createSource() {
+  async createSource(e) {
+    e.preventDefault();
+
     const source = this.store.createRecord('source', {
       title: this.title,
       medium: this.medium,

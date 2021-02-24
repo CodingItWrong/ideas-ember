@@ -9,7 +9,7 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
-    <PaperForm @onSubmit={{this.createTag}}>
+    <form {{on "submit" this.createTag}}>
       <Card.content>
         <div class="form-group">
           <label for="tag-name-field">
@@ -37,6 +37,6 @@
           Cancel
         </button>
       </Card.content>
-    </PaperForm>
+    </form>
   {{/if}}
 </PaperCard>

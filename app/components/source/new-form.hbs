@@ -9,7 +9,7 @@
     </Toolbar.tools>
   </PaperToolbar>
   {{#if this.isAdding}}
-    <PaperForm @onSubmit={{this.createSource}}>
+    <form {{on "submit" this.createSource}}>
       <Card.content>
         <div
           class="form-group"
@@ -86,6 +86,6 @@
           Cancel
         </button>
       </Card.content>
-    </PaperForm>
+    </form>
   {{/if}}
 </PaperCard>

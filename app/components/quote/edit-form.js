@@ -74,7 +74,9 @@ export default class EditQuoteForm extends Component {
   }
 
   @action
-  async save() {
+  async save(e) {
+    e.preventDefault();
+
     const { quote } = this.args;
 
     let idea;
