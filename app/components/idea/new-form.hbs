@@ -1,16 +1,16 @@
 <PaperCard as |Card|>
-  <PaperToolbar as |Toolbar|>
-    <Toolbar.tools>
-      <h2>Ideas</h2>
-      <span class="flex"></span>
-      <PaperButton
-        @onClick={{action (mut this.isAdding) true}}
-        data-test-add-idea-button
-      >
-        Add
-      </PaperButton>
-    </Toolbar.tools>
-  </PaperToolbar>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Ideas
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton
+      @onClick={{action (mut this.isAdding) true}}
+      data-test-add-idea-button
+    >
+      Add
+    </PaperButton>
+  </nav>
   {{#if this.isAdding}}
     <form {{on "submit" this.createIdea}}>
       <Card.content>
