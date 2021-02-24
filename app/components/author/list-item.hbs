@@ -1,5 +1,8 @@
-<PaperItem @onClick={{this.goToAuthorDetail}} class="md-2-line" data-test-author={{@author.name}}>
-  <div class="md-list-item-text">
-    <h3 class="preserve-line-breaks">{{@author.name}}</h3>
-  </div>
-</PaperItem>
+<button
+  {{on "click" this.goToAuthorDetail}}
+  type="button"
+  class="list-group-item list-group-item-action"
+  data-test-author={{@author.name}}
+>
+  {{@author.name}}
+</button>

@@ -45,7 +45,7 @@ module('Acceptance | administer authors', function (hooks) {
   }
 
   async function editAuthor(assert, oldAuthorName, newAuthorName) {
-    await click(`[data-test-author="${oldAuthorName}"] button`);
+    await click(`[data-test-author="${oldAuthorName}"]`);
     await click('[data-test-edit-author-button]');
 
     await fillIn('[data-test-name] input[type="text"]', newAuthorName);

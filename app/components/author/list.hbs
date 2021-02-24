@@ -1,17 +1,15 @@
 {{#if this.sortedAuthors}}
-  <PaperCard>
-    <PaperList>
-      <PaperItem class="md-2-line">
-        <PaperInput
-          @label="Search"
-          @value={{this.filter}}
-          @onChange={{action (mut this.filter)}}
-          class="flex"
-        />
-      </PaperItem>
-      {{#each this.filteredAuthors as |author|}}
-        <Author::ListItem @author={{author}} />
-      {{/each}}
-    </PaperList>
-  </PaperCard>
+  <div class="list-group">
+    <div class="list-group-item">
+      <PaperInput
+        @label="Search"
+        @value={{this.filter}}
+        @onChange={{action (mut this.filter)}}
+        class="flex"
+      />
+    </div>
+    {{#each this.filteredAuthors as |author|}}
+      <Author::ListItem @author={{author}} />
+    {{/each}}
+  </div>
 {{/if}}
