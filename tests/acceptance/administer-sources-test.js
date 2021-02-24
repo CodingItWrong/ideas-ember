@@ -65,7 +65,7 @@ module('Acceptance | administer sources', function (hooks) {
   }
 
   async function editSource(assert, oldSourceTitle, newSourceTitle) {
-    await click(`[data-test-source="${oldSourceTitle}"] button`);
+    await click(`[data-test-source="${oldSourceTitle}"]`);
     await click('[data-test-edit-source-button]');
 
     await fillIn('[data-test-title] input[type="text"]', newSourceTitle);
