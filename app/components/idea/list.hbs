@@ -2,12 +2,14 @@
   <PaperCard>
     <PaperList>
       <PaperItem class="md-2-line">
-        <PaperInput
-          @label="Search"
-          @value={{this.filter}}
-          @onChange={{action (mut this.filter)}}
-          class="flex"
-        />
+        <div class="form-group">
+          <Input
+            @value={{this.filter}}
+            class="form-control"
+            placeholder="Search"
+            autocapitalize="sentences"
+          />
+        </div>
       </PaperItem>
       {{#each this.filteredIdeas as |idea|}}
         <Idea::ListItem @idea={{idea}} />
