@@ -1,12 +1,14 @@
 {{#if this.sortedAuthors}}
   <div class="list-group">
     <div class="list-group-item">
-      <PaperInput
-        @label="Search"
-        @value={{this.filter}}
-        @onChange={{action (mut this.filter)}}
-        class="flex"
-      />
+      <div class="form-group">
+        <Input
+          @value={{this.filter}}
+          class="form-control"
+          placeholder="Search"
+          autocapitalize="sentences"
+        />
+      </div>
     </div>
     {{#each this.filteredAuthors as |author|}}
       <Author::ListItem @author={{author}} />
