@@ -1,5 +1,7 @@
-<PaperItem @onClick={{this.goToTagDetail}} class="md-2-line">
-  <div class="md-list-item-text">
-    <h3 class="preserve-line-breaks">{{@tag.name}}</h3>
-  </div>
-</PaperItem>
+<button
+  {{on "click" this.goToTagDetail}}
+  type="button"
+  class="list-group-item list-group-item-action"
+>
+  {{@tag.name}}
+</button>
