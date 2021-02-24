@@ -1,19 +1,17 @@
 {{#if this.sortedIdeas}}
-  <PaperCard>
-    <PaperList>
-      <PaperItem class="md-2-line">
-        <div class="form-group">
-          <Input
-            @value={{this.filter}}
-            class="form-control"
-            placeholder="Search"
-            autocapitalize="sentences"
-          />
-        </div>
-      </PaperItem>
-      {{#each this.filteredIdeas as |idea|}}
-        <Idea::ListItem @idea={{idea}} />
-      {{/each}}
-    </PaperList>
-  </PaperCard>
+  <div class="list-group">
+    <div class="list-group-item">
+      <div class="form-group">
+        <Input
+          @value={{this.filter}}
+          class="form-control"
+          placeholder="Search"
+          autocapitalize="sentences"
+        />
+      </div>
+    </div>
+    {{#each this.filteredIdeas as |idea|}}
+      <Idea::ListItem @idea={{idea}} />
+    {{/each}}
+  </div>
 {{/if}}
