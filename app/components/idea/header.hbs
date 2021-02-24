@@ -1,34 +1,32 @@
-<PaperCard as |Card|>
-  {{#if this.editing}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        Idea
-      </a>
-    </nav>
-    <Card.title as |Title|>
-      <Title.text>
-        <EditIdeaForm
-          @idea={{@idea}}
-          @onSave={{this.handleSave}}
-          @onCancel={{this.handleCancel}}
-          @onDelete={{this.handleDelete}}
-        />
-      </Title.text>
-    </Card.title>
-  {{else}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        {{@idea.summary}}
-      </a>
-      <span class="flex-fill"></span>
-      <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
-        {{paper-icon "edit"}}
-      </PaperButton>
-    </nav>
-    {{#if @idea.comments}}
-      <Card.content>
-        {{@idea.comments}}
-      </Card.content>
-    {{/if}}
+{{#if this.editing}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Idea
+    </a>
+  </nav>
+  <div class="card">
+    <div class="card-body">
+      <EditIdeaForm
+        @idea={{@idea}}
+        @onSave={{this.handleSave}}
+        @onCancel={{this.handleCancel}}
+        @onDelete={{this.handleDelete}}
+      />
+    </div>
+  </div>
+{{else}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      {{@idea.summary}}
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+      {{paper-icon "edit"}}
+    </PaperButton>
+  </nav>
+  {{#if @idea.comments}}
+    <Card.content>
+      {{@idea.comments}}
+    </Card.content>
   {{/if}}
-</PaperCard>
+{{/if}}

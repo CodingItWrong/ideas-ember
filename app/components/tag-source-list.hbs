@@ -1,15 +1,16 @@
-<PaperCard as |Card|>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" href="#">
-      Sources
-    </a>
-    <span class="flex-fill"></span>
-    <PaperButton @onClick={{fn (mut this.isAdding) true}}>
-      Add
-    </PaperButton>
-  </nav>
-  {{#if this.isAdding}}
-    <Card.content>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">
+    Sources
+  </a>
+  <span class="flex-fill"></span>
+  <PaperButton @onClick={{fn (mut this.isAdding) true}}>
+    Add
+  </PaperButton>
+</nav>
+
+{{#if this.isAdding}}
+  <div class="card">
+    <div class="card-body">
       <form {{on "submit" this.addSourceToTag}}>
         <div>
           <PaperSelect
@@ -37,23 +38,24 @@
           Cancel
         </button>
       </form>
-    </Card.content>
-  {{/if}}
-  {{#each this.sortedTagSources as |source|}}
-    <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line" as |Controls|>
-      <div class="md-list-item-text">
-        <h3 class="preserve-line-breaks">{{source.title}}</h3>
-        <h4>{{source.author.name}}</h4>
-      </div>
-      <div class="md-secondary-container">
-        <Controls.button
-          @secondary={{true}}
-          @iconButton={{true}}
-          @onClick={{fn this.promptToRemoveSource source}}
-        >
-          {{paper-icon "delete"}}
-        </Controls.button>
-      </div>
-    </PaperItem>
-  {{/each}}
-</PaperCard>
+    </div>
+  </div>
+{{/if}}
+
+{{#each this.sortedTagSources as |source|}}
+  <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line" as |Controls|>
+    <div class="md-list-item-text">
+      <h3 class="preserve-line-breaks">{{source.title}}</h3>
+      <h4>{{source.author.name}}</h4>
+    </div>
+    <div class="md-secondary-container">
+      <Controls.button
+        @secondary={{true}}
+        @iconButton={{true}}
+        @onClick={{fn this.promptToRemoveSource source}}
+      >
+        {{paper-icon "delete"}}
+      </Controls.button>
+    </div>
+  </PaperItem>
+{{/each}}

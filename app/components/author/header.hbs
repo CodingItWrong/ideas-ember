@@ -1,35 +1,35 @@
-<PaperCard as |Card|>
-  {{#if this.editing}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        Author
-      </a>
-    </nav>
-    <Card.content>
+{{#if this.editing}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Author
+    </a>
+  </nav>
+  <div class="card">
+    <div class="card-body">
       <Author::EditForm
         @author={{@author}}
         @onSave={{this.stopEditing}}
         @onDelete={{this.handleDelete}}
         @onCancel={{this.stopEditing}}
       />
-    </Card.content>
-  {{else}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a
-        class="navbar-brand"
-        href="#"
-        data-test-author-name
-      >
-        {{@author.name}}
-      </a>
-      <span class="flex-fill"></span>
-      <PaperButton
-        @iconButton={{true}}
-        @onClick={{this.startEditing}}
-        data-test-edit-author-button
-      >
-        {{paper-icon "edit"}}
-      </PaperButton>
-    </nav>
-  {{/if}}
-</PaperCard>
+    </div>
+  </div>
+{{else}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a
+      class="navbar-brand"
+      href="#"
+      data-test-author-name
+    >
+      {{@author.name}}
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton
+      @iconButton={{true}}
+      @onClick={{this.startEditing}}
+      data-test-edit-author-button
+    >
+      {{paper-icon "edit"}}
+    </PaperButton>
+  </nav>
+{{/if}}

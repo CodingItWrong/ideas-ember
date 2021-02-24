@@ -1,16 +1,17 @@
-<PaperCard as |Card|>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <a class="navbar-brand" href="#">
-      Tags
-    </a>
-    <span class="flex-fill"></span>
-    <PaperButton @onClick={{action (mut this.isAdding) true}}>
-      Add
-    </PaperButton>
-  </nav>
-  {{#if this.isAdding}}
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">
+    Tags
+  </a>
+  <span class="flex-fill"></span>
+  <PaperButton @onClick={{action (mut this.isAdding) true}}>
+    Add
+  </PaperButton>
+</nav>
+
+{{#if this.isAdding}}
+  <div class="card">
     <form {{on "submit" this.createTag}}>
-      <Card.content>
+      <div class="card-body">
         <div class="form-group">
           <label for="tag-name-field">
             New Tag
@@ -36,7 +37,7 @@
         >
           Cancel
         </button>
-      </Card.content>
+      </div>
     </form>
-  {{/if}}
-</PaperCard>
+  </div>
+{{/if}}

@@ -1,27 +1,27 @@
-<PaperCard as |Card|>
-  {{#if this.editing}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        Tag
-      </a>
-    </nav>
-    <Card.content>
+{{#if this.editing}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Tag
+    </a>
+  </nav>
+  <div class="card">
+    <div class="card-body">
       <Tag::EditForm
         @tag={{@tag}}
         @onSave={{this.handleSave}}
         @onCancel={{this.handleCancel}}
         @onDelete={{this.handleDelete}}
       />
-    </Card.content>
-  {{else}}
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-      <a class="navbar-brand" href="#">
-        {{@tag.name}}
-      </a>
-      <span class="flex-fill"></span>
-      <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
-        {{paper-icon "edit"}}
-      </PaperButton>
-    </nav>
-  {{/if}}
-</PaperCard>
+    </div>
+  </div>
+{{else}}
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      {{@tag.name}}
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
+      {{paper-icon "edit"}}
+    </PaperButton>
+  </nav>
+{{/if}}
