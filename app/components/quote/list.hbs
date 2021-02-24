@@ -1,9 +1,13 @@
 <PaperCard as |Card|>
-  <PaperToolbar as |Toolbar|>
-    <Toolbar.tools>
-      <h2>Quotes</h2>
-    </Toolbar.tools>
-  </PaperToolbar>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand" href="#">
+      Quotes
+    </a>
+    <span class="flex-fill"></span>
+    <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-author-button>
+      Add
+    </PaperButton>
+  </nav>
   <Card.content>
     {{#each this.quotesToShow as |quote|}}
       <Quote::Line @quote={{quote}} @ideas={{@ideas}} />
