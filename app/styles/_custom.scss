@@ -8,3 +8,49 @@
   color: black;
   text-decoration: none;
 }
+
+/* https://css-tricks.com/overriding-default-button-styles/ */
+.unstyled-button {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+}
+
+.icon-button {
+  @extend .unstyled-button;
+  height: 40px;
+  padding: 8px;
+  margin: 0 6px;
+}
+
+.category-button {
+  border: 0;
+  background: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background-color: #555;
+
+  mask-size: 24px 24px;
+  -webkit-mask-size: 24px 24px;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
