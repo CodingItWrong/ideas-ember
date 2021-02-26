@@ -49,18 +49,22 @@
   </div>
 {{/if}}
 
-{{#each this.sortedSourceTags as |tag|}}
-  <PaperItem @onClick={{fn this.navigateToTag tag}} class="md-2-line">
-    <div class="md-list-item-text">
-      <h3 class="preserve-line-breaks">{{tag.name}}</h3>
-    </div>
-    <div class="md-secondary-container">
+<ul class="list-group">
+  {{#each this.sortedSourceTags as |tag|}}
+    <li class="list-group-item d-flex align-items-center">
+      <div class="flex-fill">
+        <LinkTo
+          @route="tags.detail"
+          @model={{tag.id}}
+        >
+          {{tag.name}}
+        </LinkTo>
+      </div>
       <IconButton
         @onClick={{fn this.promptToRemoveTag tag}}
-        data-test-edit-author-button
       >
         <AppIcon @icon="delete" @alt="delete" />
       </IconButton>
-    </div>
-  </PaperItem>
-{{/each}}
+    </li>
+  {{/each}}
+</ul>
