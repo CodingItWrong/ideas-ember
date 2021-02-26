@@ -43,19 +43,18 @@
 {{/if}}
 
 {{#each this.sortedTagSources as |source|}}
-  <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line" as |Controls|>
+  <PaperItem @onClick={{fn this.navigateToSource source}} class="md-2-line">
     <div class="md-list-item-text">
       <h3 class="preserve-line-breaks">{{source.title}}</h3>
       <h4>{{source.author.name}}</h4>
     </div>
     <div class="md-secondary-container">
-      <Controls.button
-        @secondary={{true}}
-        @iconButton={{true}}
+      <IconButton
         @onClick={{fn this.promptToRemoveSource source}}
+        data-test-edit-author-button
       >
-        {{paper-icon "delete"}}
-      </Controls.button>
+        <AppIcon @icon="delete" @alt="delete" />
+      </IconButton>
     </div>
   </PaperItem>
 {{/each}}

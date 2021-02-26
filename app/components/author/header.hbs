@@ -24,12 +24,11 @@
       {{@author.name}}
     </a>
     <span class="flex-fill"></span>
-    <PaperButton
-      @iconButton={{true}}
+    <IconButton
       @onClick={{this.startEditing}}
       data-test-edit-author-button
     >
-      {{paper-icon "edit"}}
-    </PaperButton>
+      <AppIcon @icon="edit" @alt="edit" />
+    </IconButton>
   </nav>
 {{/if}}

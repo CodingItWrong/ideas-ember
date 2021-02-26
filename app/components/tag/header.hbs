@@ -20,8 +20,8 @@
       {{@tag.name}}
     </a>
     <span class="flex-fill"></span>
-    <PaperButton @iconButton={{true}} @onClick={{this.startEditing}}>
-      {{paper-icon "edit"}}
-    </PaperButton>
+    <IconButton @onClick={{this.startEditing}}>
+      <AppIcon @icon="edit" @alt="edit" />
+    </IconButton>
   </nav>
 {{/if}}
