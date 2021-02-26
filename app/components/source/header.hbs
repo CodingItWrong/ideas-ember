@@ -25,9 +25,12 @@
       {{@source.title}}
     </a>
     <span class="flex-fill"></span>
-    <PaperButton @iconButton={{true}} @onClick={{this.startEditing}} data-test-edit-source-button>
-      {{paper-icon "edit"}}
-    </PaperButton>
+    <IconButton
+      @onClick={{this.startEditing}}
+      data-test-edit-source-button
+    >
+      <AppIcon @icon="edit" @alt="edit" />
+    </IconButton>
   </nav>
 
   <div class="card">
