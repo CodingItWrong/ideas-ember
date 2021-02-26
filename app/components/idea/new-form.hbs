@@ -3,12 +3,14 @@
     Ideas
   </a>
   <span class="flex-fill"></span>
-  <PaperButton
-    @onClick={{action (mut this.isAdding) true}}
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    {{on "click" (fn (mut this.isAdding) true)}}
     data-test-add-idea-button
   >
     Add
-  </PaperButton>
+  </button>
 </nav>
 
 {{#if this.isAdding}}

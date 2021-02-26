@@ -3,9 +3,14 @@
     Authors
   </a>
   <span class="flex-fill"></span>
-  <PaperButton @onClick={{action (mut this.isAdding) true}} data-test-add-author-button>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    {{on "click" (fn (mut this.isAdding) true)}}
+    data-test-add-author-button
+  >
     Add
-  </PaperButton>
+  </button>
 </nav>
 
 {{#if this.isAdding}}

@@ -3,9 +3,13 @@
     Sources
   </a>
   <span class="flex-fill"></span>
-  <PaperButton @onClick={{fn (mut this.isAdding) true}}>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    {{on "click" (fn (mut this.isAdding) true)}}
+  >
     Add
-  </PaperButton>
+  </button>
 </nav>
 
 {{#if this.isAdding}}
