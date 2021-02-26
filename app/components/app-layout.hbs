@@ -50,12 +50,14 @@
       {{/if}}
     </body.sidenav>
     <body.content>
-      <div class="layout-row">
-        <div class="hide show-gt-md flex-gt-md-10"></div>
-        <div class="flex-100 flex-gt-md-80">
-          {{yield}}
+      <div class="container">
+        <div class="row">
+          <div class="d-none d-xl-block col-xl-1"></div>
+          <div class="col-12 col-xl-10 mt-3">
+            {{yield}}
+          </div>
+          <div class="d-none d-xl-block col-xl-1"></div>
         </div>
-        <div class="hide show-gt-md flex-gt-md-10"></div>
       </div>
     </body.content>
   </layout.body>
