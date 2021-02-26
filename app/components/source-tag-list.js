@@ -30,11 +30,6 @@ export default class SourceTagList extends Component {
   }
 
   @action
-  navigateToTag(tag) {
-    this.router.transitionTo('tags.detail', tag.id);
-  }
-
-  @action
   async promptToRemoveTag(tag) {
     if (
       !confirm(
