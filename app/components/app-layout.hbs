@@ -20,20 +20,33 @@
   <layout.body as |body|>
     <body.sidenav>
       {{#if this.session.isAuthenticated}}
-        <PaperList>
-          <NavItem @to="index">
+        <div class="list-group">
+          <LinkTo
+            @route="index"
+            class="list-group-item list-group-item-action"
+          >
             Ideas
-          </NavItem>
-          <NavItem @to="sources">
+          </LinkTo>
+          <LinkTo
+            @route="sources"
+            class="list-group-item list-group-item-action"
+          >
             Sources
-          </NavItem>
-          <NavItem @to="authors" data-test-authors-nav-link>
+          </LinkTo>
+          <LinkTo
+            @route="authors"
+            class="list-group-item list-group-item-action"
+            data-test-authors-nav-link
+          >
             Authors
-          </NavItem>
-          <NavItem @to="tags">
+          </LinkTo>
+          <LinkTo
+            @route="tags"
+            class="list-group-item list-group-item-action"
+          >
             Tags
-          </NavItem>
-        </PaperList>
+          </LinkTo>
+        </div>
       {{/if}}
     </body.sidenav>
     <body.content>

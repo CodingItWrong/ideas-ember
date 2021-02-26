@@ -18,7 +18,7 @@ module('Acceptance | administer sources', function (hooks) {
     await authenticateSession({ access_token: 'ABC123' });
     await visit('/');
 
-    await click('[data-test-authors-nav-link] button');
+    await click('[data-test-authors-nav-link]');
     await addAuthor(assert, authorName);
 
     // add

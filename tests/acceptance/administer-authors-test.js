@@ -14,7 +14,7 @@ module('Acceptance | administer authors', function (hooks) {
     await authenticateSession({ access_token: 'ABC123' });
     await visit('/');
 
-    await click('[data-test-authors-nav-link] button');
+    await click('[data-test-authors-nav-link]');
 
     // add
     await addAuthor(assert, authorName);
@@ -40,7 +40,7 @@ module('Acceptance | administer authors', function (hooks) {
   }
 
   async function seeAuthorInList(assert, authorName) {
-    await click('[data-test-authors-nav-link] button');
+    await click('[data-test-authors-nav-link]');
     assert.dom(`[data-test-author="${authorName}"]`).exists();
   }
 

@@ -12,7 +12,7 @@ module('Acceptance | add quotes', function (hooks) {
     await authenticateSession({ access_token: 'ABC123' });
     await visit('/');
 
-    await click('[data-test-authors-nav-link] button');
+    await click('[data-test-authors-nav-link]');
 
     await click('[data-test-add-author-button]');
     await fillIn(
