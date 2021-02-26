@@ -1,13 +1,3 @@
-<PaperSidenav @class="md-whiteframe-z2" @open={{@open}} @onToggle={{@onToggle}}>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <LinkTo
-      @route="index"
-      class="navbar-brand show-gt-sm"
-    >
-      {{@title}}
-    </LinkTo>
-  </nav>
-  <PaperContent @padding={{false}}>
-    {{yield}}
-  </PaperContent>
-</PaperSidenav>
+<div class="flex-grow-1 d-none d-lg-block flex-lg-grow-0 {{if @open "d-block flex-grow-1"}}">
+  {{yield}}
+</div>

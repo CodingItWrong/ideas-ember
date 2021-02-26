@@ -1,13 +1,13 @@
-<PaperSidenavContainer @class="ember-paper-layout__full-height">
+<div>
   {{yield (hash
-    sidenav=(component "layout-sidenav"
+    toolbar=(component "layout-toolbar"
       title=@title
-      open=this.sideNavOpen
-      onToggle=(action (mut this.sideNavOpen))
+      onToggleSideNav=this.toggleSideNavOpen
     )
     body=(component "layout-body"
-      title=@title
-      onToggleSideNav=(action (mut this.sideNavOpen))
+      sideNavOpen=this.sideNavOpen
+      onToggleSideNav=this.toggleSideNavOpen
     )
+    hideSideNav=this.hideSideNav
   )}}
-</PaperSidenavContainer>
+</div>

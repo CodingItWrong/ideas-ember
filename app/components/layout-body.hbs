@@ -1,9 +1,12 @@
-<div class="layout-fill">
+<div class="d-flex">
   {{yield (hash
-    toolbar=(component "layout-toolbar"
-      title=@title
-      onToggleSideNav=@onToggleSideNav
+    sidenav=(
+      component "layout-sidenav"
+      open=@sideNavOpen
     )
-    content=(component "layout-content")
+    content=(
+      component "layout-content"
+      sideNavOpen=@sideNavOpen
+    )
   )}}
 </div>

@@ -1,38 +1,41 @@
 <LayoutContainer @title="Ideas" @titleLinkRoute="index" as |layout|>
-  <layout.sidenav>
+  <layout.toolbar
+    @showSideNavToggle={{this.session.isAuthenticated}}
+    @titleLinkRoute="index"
+  >
     {{#if this.session.isAuthenticated}}
-      <PaperList>
-        <NavItem @to="index">
-          Ideas
-        </NavItem>
-        <NavItem @to="sources">
-          Sources
-        </NavItem>
-        <NavItem @to="authors" data-test-authors-nav-link>
-          Authors
-        </NavItem>
-        <NavItem @to="tags">
-          Tags
-        </NavItem>
-      </PaperList>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            {{on "click" this.signOut}}
+          >
+            Sign Out
+          </a>
+        </li>
+      </ul>
     {{/if}}
-  </layout.sidenav>
+  </layout.toolbar>
   <layout.body as |body|>
-    <body.toolbar @showSideNavToggle={{this.session.isAuthenticated}}>
+    <body.sidenav>
       {{#if this.session.isAuthenticated}}
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              href="#"
-              {{on "click" this.signOut}}
-            >
-              Sign Out
-            </a>
-          </li>
-        </ul>
+        <PaperList>
+          <NavItem @to="index">
+            Ideas
+          </NavItem>
+          <NavItem @to="sources">
+            Sources
+          </NavItem>
+          <NavItem @to="authors" data-test-authors-nav-link>
+            Authors
+          </NavItem>
+          <NavItem @to="tags">
+            Tags
+          </NavItem>
+        </PaperList>
       {{/if}}
-    </body.toolbar>
+    </body.sidenav>
     <body.content>
       <div class="layout-row">
         <div class="hide show-gt-md flex-gt-md-10"></div>
