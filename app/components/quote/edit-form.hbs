@@ -43,57 +43,45 @@
       />
     </div>
     {{#if this.addingNewIdea}}
-      <div class="layout-col layout-gt-xs-row">
-        <div class="flex-sm-60 flex-gt-sm-70">
-          <div
-            class="form-group"
-            data-test-edit-quote-field
-          >
-            <label for="new-idea-field">
-              New Idea
-            </label>
-            <Textarea
-              @value={{this.newIdeaSummary}}
-              id="new-idea-field"
-              class="form-control"
-              autocapitalize="sentences"
-            />
-          </div>
-        </div>
-        <div class="flex-sm-40 flex-gt-sm-30">
-          <button
-            type="button"
-            class="btn btn-light"
-            {{on "click" this.switchToExistingIdea}}
-          >
-            Switch to Existing Idea
-          </button>
-        </div>
+      <div
+        class="form-group"
+        data-test-edit-quote-field
+      >
+        <label for="new-idea-field">
+          New Idea
+        </label>
+        <Textarea
+          @value={{this.newIdeaSummary}}
+          id="new-idea-field"
+          class="form-control"
+          autocapitalize="sentences"
+        />
       </div>
+      <button
+        type="button"
+        class="btn btn-light"
+        {{on "click" this.switchToExistingIdea}}
+      >
+        Switch to Existing Idea
+      </button>
     {{else}}
-      <div class="layout-col layout-gt-xs-row">
-        <div class="flex-sm-60 flex-gt-sm-70">
-          <PaperSelect
-            @block={{true}}
-            @label="Existing Idea"
-            @options={{@ideas}}
-            @selected={{this.idea}}
-            @onChange={{action (mut this.idea)}}
-            as |idea|
-          >
-            {{idea.summary}}
-          </PaperSelect>
-        </div>
-        <div class="flex-sm-40 flex-gt-sm-30">
-          <button
-            type="button"
-            class="btn btn-light"
-            {{on "click" this.switchToNewIdea}}
-          >
-            Switch to New Idea
-          </button>
-        </div>
-      </div>
+      <PaperSelect
+        @block={{true}}
+        @label="Existing Idea"
+        @options={{@ideas}}
+        @selected={{this.idea}}
+        @onChange={{action (mut this.idea)}}
+        as |idea|
+      >
+        {{idea.summary}}
+      </PaperSelect>
+      <button
+        type="button"
+        class="btn btn-light"
+        {{on "click" this.switchToNewIdea}}
+      >
+        Switch to New Idea
+      </button>
     {{/if}}
 
     <button
