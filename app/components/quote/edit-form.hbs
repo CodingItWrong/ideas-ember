@@ -65,16 +65,22 @@
         Switch to Existing Idea
       </button>
     {{else}}
-      <PaperSelect
-        @block={{true}}
-        @label="Existing Idea"
-        @options={{@ideas}}
-        @selected={{this.idea}}
-        @onChange={{action (mut this.idea)}}
-        as |idea|
-      >
-        {{idea.summary}}
-      </PaperSelect>
+      <div class="form-group">
+        <label for="idea-field">
+          Existing Idea
+        </label>
+        <ModelSelect
+          @value={{this.idea}}
+          @onChange={{fn (mut this.idea)}}
+          @options={{@ideas}}
+          @emptyLabel="(choose)"
+          id="idea-field"
+          class="form-control"
+          as |idea|
+        >
+          {{idea.summary}}
+        </ModelSelect>
+      </div>
       <button
         type="button"
         class="btn btn-light"
