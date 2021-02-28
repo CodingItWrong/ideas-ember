@@ -23,18 +23,21 @@
         <div class="list-group">
           <LinkTo
             @route="index"
+            {{on "click" layout.hideSideNav}}
             class="list-group-item list-group-item-action text-dark"
           >
             Ideas
           </LinkTo>
           <LinkTo
             @route="sources"
+            {{on "click" layout.hideSideNav}}
             class="list-group-item list-group-item-action text-dark"
           >
             Sources
           </LinkTo>
           <LinkTo
             @route="authors"
+            {{on "click" layout.hideSideNav}}
             class="list-group-item list-group-item-action text-dark"
             data-test-authors-nav-link
           >
@@ -42,6 +45,7 @@
           </LinkTo>
           <LinkTo
             @route="tags"
+            {{on "click" layout.hideSideNav}}
             class="list-group-item list-group-item-action text-dark"
           >
             Tags
