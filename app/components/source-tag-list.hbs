@@ -16,19 +16,22 @@
   <div class="card">
     <div class="card-body">
       <form {{on "submit" this.addTagToSource}}>
-        <div>
-          <PaperSelect
-            @block={{true}}
-            @label="Tags"
-            @options={{this.sortedTags}}
-            @selected={{this.tagToAdd}}
+        <div class="form-group">
+          <label for="tag-field">
+            Tags
+          </label>
+          <ModelSelect
+            @value={{this.tagToAdd}}
             @onChange={{fn (mut this.tagToAdd)}}
+            @options={{this.sortedTags}}
+            @emptyLabel="(choose)"
+            id="tag-field"
+            class="form-control"
             as |tag|
           >
             {{tag.name}}
-          </PaperSelect>
+          </ModelSelect>
         </div>
-
         <button
           type="submit"
           class="btn btn-primary text-dark"

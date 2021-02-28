@@ -17,14 +17,17 @@
     <label for="medium-field">
       Medium
     </label>
-    <PowerSelect
+    <ModelSelect
+      @value={{this.editedMedium}}
+      @onChange={{fn (mut this.editedMedium)}}
       @options={{@media}}
-      @selected={{this.editedMedium}}
-      @onChange={{action (mut this.editedMedium)}}
+      @emptyLabel="(choose)"
+      id="medium-field"
+      class="form-control"
       as |medium|
     >
       {{medium.name}}
-    </PowerSelect>
+    </ModelSelect>
   </div>
   <div class="form-group">
     <label for="url-field">
